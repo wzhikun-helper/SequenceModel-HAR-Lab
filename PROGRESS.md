@@ -9,7 +9,7 @@
 | Day 01数据实践 | 通过 | 教师依据Codex摘要验收；既有审计与独立复核 |
 | 教师最终笔记本地归档 | 已完成 | learning_notes/day01/ |
 | 原始问答归档完整性 | 部分可恢复 | 已有原题4、5、10、12；其余8题原答/过程缺失，未编造 |
-| Git/GitHub同步 | 已配置用户指定origin/main；实际推送结果以核验报告为准 | https://github.com/wzhikun-helper/SequenceModel-HAR-Lab.git；本地报告logs/day01_github_sync_20261028_run01/ |
+| Git/GitHub同步 | Day 01成果已推送，首批提交远程/本地哈希一致 | 见reports/day01_github_sync_20261028_run01/sync_receipt.md；最终分支核验保存在本地logs/day01_github_sync_20261028_run01/ |
 | Day 01整体收尾 | 待教师复核归档与同步结果 | 不自行宣布整体结束 |
 | 第四章 | 未开始 | 本次不开展任何模型训练 |
 | Day 02 | 未开始 | 等待教师决定下一阶段 |
@@ -22,3 +22,5 @@
 当前只记录已有学习成果；没有执行CNN、GRU、Transformer、Mamba训练或Day 02任务。
 
 - 2026-10-28（同步阶段）：用户提供目标HTTPS地址，初始化main并配置origin；复制两张已检查的真实PNG及小型元数据至docs/day01，不改原始产物。提交和推送结果单独保存并核验，不提前记录为成功。
+
+- 2026-10-28（首批推送核验）：61个文件已推送至origin/main；本地与远程均为fb64f6710a83df49b1d7a98fffbe6602cb4d7971，工作区干净。新增本条及同步回执后再次提交、推送并核对最终哈希，结果以本地同步报告为准。第四章与Day 02仍未开始。
