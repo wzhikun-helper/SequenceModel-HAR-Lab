@@ -1,0 +1,215 @@
+{
+  "run_id": "day01_data_20261026_run02",
+  "started_at": "2026-10-26T11:20:55.234442+08:00",
+  "python": "3.9.13",
+  "numpy": "1.24.4",
+  "stages": {
+    "archive_to_raw_hashes": "PASS",
+    "official_schema_all_18_signals": "PASS",
+    "subject_disjoint_split": "PASS"
+  },
+  "channels": [
+    "body_acc_x",
+    "body_acc_y",
+    "body_acc_z",
+    "body_gyro_x",
+    "body_gyro_y",
+    "body_gyro_z",
+    "total_acc_x",
+    "total_acc_y",
+    "total_acc_z"
+  ],
+  "layout": "N, time=128, channels=9",
+  "labels": {
+    "1": "WALKING",
+    "2": "WALKING_UPSTAIRS",
+    "3": "WALKING_DOWNSTAIRS",
+    "4": "SITTING",
+    "5": "STANDING",
+    "6": "LAYING"
+  },
+  "split_rule": "Sort official training subject IDs ascending; reserve the first 4 for validation; all other official training subjects for training. Official test rows/subjects unchanged. No random or label-based selection.",
+  "official": {
+    "train": {
+      "windows": 7352,
+      "subjects": [
+        1,
+        3,
+        5,
+        6,
+        7,
+        8,
+        11,
+        14,
+        15,
+        16,
+        17,
+        19,
+        21,
+        22,
+        23,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "signal_shape": [
+        7352,
+        128,
+        9
+      ],
+      "features_561": {
+        "shape": [
+          7352,
+          561
+        ],
+        "minimum": -1.0,
+        "maximum": 1.0,
+        "finite": true
+      }
+    },
+    "test": {
+      "windows": 2947,
+      "subjects": [
+        2,
+        4,
+        9,
+        10,
+        12,
+        13,
+        18,
+        20,
+        24
+      ],
+      "signal_shape": [
+        2947,
+        128,
+        9
+      ],
+      "features_561": {
+        "shape": [
+          2947,
+          561
+        ],
+        "minimum": -1.0,
+        "maximum": 1.0,
+        "finite": true
+      }
+    }
+  },
+  "splits": {
+    "train": {
+      "official_source": "train",
+      "subjects": [
+        7,
+        8,
+        11,
+        14,
+        15,
+        16,
+        17,
+        19,
+        21,
+        22,
+        23,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "n_subjects": 17,
+      "n_windows": 6037,
+      "class_counts": {
+        "WALKING": 960,
+        "WALKING_UPSTAIRS": 863,
+        "WALKING_DOWNSTAIRS": 793,
+        "SITTING": 1088,
+        "STANDING": 1147,
+        "LAYING": 1186
+      }
+    },
+    "validation": {
+      "official_source": "train",
+      "subjects": [
+        1,
+        3,
+        5,
+        6
+      ],
+      "n_subjects": 4,
+      "n_windows": 1315,
+      "class_counts": {
+        "WALKING": 266,
+        "WALKING_UPSTAIRS": 210,
+        "WALKING_DOWNSTAIRS": 193,
+        "SITTING": 198,
+        "STANDING": 227,
+        "LAYING": 221
+      }
+    },
+    "test": {
+      "official_source": "test",
+      "subjects": [
+        2,
+        4,
+        9,
+        10,
+        12,
+        13,
+        18,
+        20,
+        24
+      ],
+      "n_subjects": 9,
+      "n_windows": 2947,
+      "class_counts": {
+        "WALKING": 496,
+        "WALKING_UPSTAIRS": 471,
+        "WALKING_DOWNSTAIRS": 420,
+        "SITTING": 491,
+        "STANDING": 532,
+        "LAYING": 537
+      }
+    }
+  },
+  "exact_duplicates": {
+    "within_split_extra_windows": {
+      "train": 0,
+      "validation": 0,
+      "test": 0
+    },
+    "cross_split_identical_windows": [
+      {
+        "splits": [
+          "train",
+          "validation"
+        ],
+        "count": 0
+      },
+      {
+        "splits": [
+          "train",
+          "test"
+        ],
+        "count": 0
+      },
+      {
+        "splits": [
+          "validation",
+          "test"
+        ],
+        "count": 0
+      }
+    ]
+  },
+  "status": "FAILED",
+  "error": {
+    "type": "TypeError",
+    "message": "Object of type int64 is not JSON serializable"
+  },
+  "finished_at": "2026-10-26T11:20:58.472236+08:00"
+}

@@ -1,0 +1,3 @@
+This audit attempt FAILED while serializing scaler parameters. See audit_results.json and logs/day01_data_20261026_run02_audit.log.
+The successful audit is in reports/day01_data_20261026_run02/audit02/.
+The successful processed data is in data/processed/day01_data_20261026_run02_audit02/.

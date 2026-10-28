@@ -1,0 +1,12 @@
+{
+  "run_id": "day01_data_20261026_run01",
+  "source_page": "https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones",
+  "download_url": "https://archive.ics.uci.edu/static/public/240/human%2Bactivity%2Brecognition%2Busing%2Bsmartphones.zip",
+  "started_at": "2026-10-26T11:18:04.907159+08:00",
+  "status": "FAILED",
+  "official_published_sha256": null,
+  "checksum_scope": "Local SHA256 + HTTP Content-Length + ZIP CRC; no publisher checksum was supplied by the official page.",
+  "error_type": "URLError",
+  "error": "<urlopen error [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。>",
+  "finished_at": "2026-10-26T11:18:05.003493+08:00"
+}

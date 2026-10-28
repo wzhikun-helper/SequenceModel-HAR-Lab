@@ -1,0 +1,30 @@
+{
+  "within_split_extra_windows": {
+    "train": 0,
+    "validation": 0,
+    "test": 0
+  },
+  "cross_split_identical_windows": [
+    {
+      "splits": [
+        "train",
+        "validation"
+      ],
+      "count": 0
+    },
+    {
+      "splits": [
+        "train",
+        "test"
+      ],
+      "count": 0
+    },
+    {
+      "splits": [
+        "validation",
+        "test"
+      ],
+      "count": 0
+    }
+  ]
+}

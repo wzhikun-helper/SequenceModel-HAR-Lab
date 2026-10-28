@@ -1,0 +1,33 @@
+[
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "--show-toplevel"
+    ],
+    "exit_code": 128,
+    "stdout": "",
+    "stderr": "fatal: not a git repository (or any of the parent directories): .git\n"
+  },
+  {
+    "command": [
+      "git",
+      "status",
+      "--short",
+      "--branch"
+    ],
+    "exit_code": 128,
+    "stdout": "",
+    "stderr": "fatal: not a git repository (or any of the parent directories): .git\n"
+  },
+  {
+    "command": [
+      "git",
+      "remote",
+      "-v"
+    ],
+    "exit_code": 128,
+    "stdout": "",
+    "stderr": "fatal: not a git repository (or any of the parent directories): .git\n"
+  }
+]

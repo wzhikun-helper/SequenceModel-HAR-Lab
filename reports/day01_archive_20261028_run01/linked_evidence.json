@@ -1,0 +1,74 @@
+{
+  "data_audit": {
+    "path": "reports/day01_data_20261026_run02/day01_data_audit.md",
+    "exists": true,
+    "bytes": 13618,
+    "sha256": "df8d796b433ce9a6a15f07b8a6c802bc2916812c8ad548fb318a4beeceeb2ce7"
+  },
+  "execution_index": {
+    "path": "reports/day01_data_20261026_run02/execution_log.md",
+    "exists": true,
+    "bytes": 3513,
+    "sha256": "fd175c88af55ef7e811d24f18f601fb88ecc5a2efeed13ccd409e1abde2593e1"
+  },
+  "download_provenance": {
+    "path": "reports/day01_data_20261026_run02/download_provenance.json",
+    "exists": true,
+    "bytes": 1434,
+    "sha256": "fb3ca404dd80a6f6dbb64ce0a5b127cdc7c112f5e7f4753c1e96b721cdab9608"
+  },
+  "archive_integrity": {
+    "path": "reports/day01_data_20261026_run02/archive_integrity.json",
+    "exists": true,
+    "bytes": 18299,
+    "sha256": "4ab4420d79bea1df0218f8e80531b4a3c43ae16dc5dbfa6e8fc66e59b564eccc"
+  },
+  "independent_verification": {
+    "path": "reports/day01_data_20261026_run02/independent_verification.json",
+    "exists": true,
+    "bytes": 1457,
+    "sha256": "0153b16823686329e90a36da88e8253a5065d6558defa280e7501d4b6eb1f857"
+  },
+  "split_metadata": {
+    "path": "data/processed/day01_data_20261026_run02_audit02/splits/split_metadata.json",
+    "exists": true,
+    "bytes": 1951,
+    "sha256": "6150ae803d2d3bc84913a217a0a24fe81d5b5299fe5e5f4eb7cda605f71503fc"
+  },
+  "sample_manifest": {
+    "path": "data/processed/day01_data_20261026_run02_audit02/splits/sample_manifest.csv",
+    "exists": true,
+    "bytes": 523462,
+    "sha256": "6f7828b88bd8f0cefdb022f61304f55ffe75615566d3e70a22110d170bb369a4"
+  },
+  "scaler": {
+    "path": "data/processed/day01_data_20261026_run02_audit02/scaler_train_only.json",
+    "exists": true,
+    "bytes": 1812,
+    "sha256": "5efe9f855f6a14a19704d5700f60c71e7ea70c28e6ca7c1528f70abbcdd22d89"
+  },
+  "walking_png": {
+    "path": "outputs/figures/day01_data_20261026_run02_audit02/fig01_walking_nine_channels.png",
+    "exists": true,
+    "bytes": 676076,
+    "sha256": "e93dc05d695b1f1adfef7b78b91b94ef3414435543bc1097a8dd591ddaff9182"
+  },
+  "walking_pdf": {
+    "path": "outputs/figures/day01_data_20261026_run02_audit02/fig01_walking_nine_channels.pdf",
+    "exists": true,
+    "bytes": 34967,
+    "sha256": "057dd6a1f99c30fe6c00ea37c2adfc04df8019a655e6727686576fa85c2ec3b7"
+  },
+  "standing_png": {
+    "path": "outputs/figures/day01_data_20261026_run02_audit02/fig01_standing_nine_channels.png",
+    "exists": true,
+    "bytes": 403786,
+    "sha256": "1ec49a01c7d25783c5357cab67722379e5e7e6f45d291db97ffd141e697fcb5e"
+  },
+  "standing_pdf": {
+    "path": "outputs/figures/day01_data_20261026_run02_audit02/fig01_standing_nine_channels.pdf",
+    "exists": true,
+    "bytes": 32764,
+    "sha256": "d2f840d61fb65615f204b17ca09116e74cb4cf2b3b1fa6bc0f32b36776239c7c"
+  }
+}

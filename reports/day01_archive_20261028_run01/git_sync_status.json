@@ -1,0 +1,44 @@
+{
+  "status": "BLOCKED",
+  "reason": "NO_LOCAL_GIT_REPOSITORY_AND_NO_REMOTE",
+  "repository_exists": false,
+  "remote_url": null,
+  "local_commit": null,
+  "remote_commit": null,
+  "authentication_verified": false,
+  "push_permission_verified": false,
+  "github_cli_available": false,
+  "git_config_presence_only": {
+    "user.name_configured": true,
+    "user.email_configured": true,
+    "credential.helper_configured": true
+  },
+  "git_add": "NOT_RUN",
+  "git_commit": "NOT_RUN",
+  "git_push": "NOT_RUN",
+  "remote_hash_verification": "NOT_RUN",
+  "commands": [
+    {
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: not a git repository (or any of the parent directories): .git\n"
+    },
+    {
+      "command": [
+        "git",
+        "remote",
+        "-v"
+      ],
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: not a git repository (or any of the parent directories): .git\n"
+    }
+  ],
+  "note": "Credential helper presence does not establish login or write permission. No credential contents read."
+}

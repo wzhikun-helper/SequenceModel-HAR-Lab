@@ -1,0 +1,2 @@
+# Preserve historical unified-diff context lines, including a single space on blank lines.
+reports/day01_archive_20261028_run01/README.diff whitespace=-blank-at-eol

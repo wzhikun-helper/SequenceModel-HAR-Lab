@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-10-26T13:58:57.325574+08:00",
+  "artifact_run": "day01_data_20261026_run02_audit02",
+  "checks": {
+    "archive_sha256_unchanged": "PASS",
+    "29_original_files_and_4_existing_files_unchanged": "PASS",
+    "all_10299_manifest_rows_and_saved_npz_metadata": "PASS",
+    "official_test_order_labels_subjects_preserved": "PASS",
+    "three_subject_sets_disjoint_and_validation_rule_exact": "PASS",
+    "train_only_scaler_independent_moments": {
+      "status": "PASS",
+      "max_mean_abs_error": 2.7644553313166398e-14,
+      "max_std_abs_error": 1.659783421814609e-14
+    },
+    "all_saved_normalized_values_exactly_match_raw_and_train_scaler": "PASS",
+    "both_example_csvs_match_all_original_128_by_9_values": "PASS",
+    "two_figures_png_pdf_svg_and_labels": [
+      {
+        "activity": "walking",
+        "png_pixels": [
+          2460,
+          3450
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "pdf_signature": "PASS",
+        "svg_editable_text_and_labels": "PASS"
+      },
+      {
+        "activity": "standing",
+        "png_pixels": [
+          2460,
+          3450
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "pdf_signature": "PASS",
+        "svg_editable_text_and_labels": "PASS"
+      }
+    ],
+    "no_git_repository_and_existing_data_model_ignore_rules": "PASS"
+  },
+  "status": "PASS"
+}

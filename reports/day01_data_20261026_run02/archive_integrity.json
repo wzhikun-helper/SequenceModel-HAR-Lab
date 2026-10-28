@@ -1,0 +1,404 @@
+[
+  {
+    "archive": "data/raw/day01_data_20261026_run02/human_activity_recognition_using_smartphones.zip",
+    "crc_all_members": "PASS",
+    "files": [
+      {
+        "path": "data/raw/day01_data_20261026_run02/official_bundle/UCI HAR Dataset.names",
+        "size": 6304,
+        "crc32": "2e002145",
+        "sha256": "eaee53f45825f349681a1a1b92a997a0082648f9b5bf93ddb3290caeede4b3a8"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/official_bundle/UCI HAR Dataset.zip",
+        "size": 60999314,
+        "crc32": "2c58e81c",
+        "sha256": "2045e435c955214b38145fb5fa00776c72814f01b203fec405152dac7d5bfeb0"
+      }
+    ]
+  },
+  {
+    "archive": "data/raw/day01_data_20261026_run02/official_bundle/UCI HAR Dataset.zip",
+    "crc_all_members": "PASS",
+    "files": [
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/.DS_Store",
+        "size": 6148,
+        "crc32": "6d88006a",
+        "sha256": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/._.DS_Store",
+        "size": 120,
+        "crc32": "bcd719f4",
+        "sha256": "74694443e1068dda8cb89e61b380ea27bcf410293bb68b4680e9d1253da73d4d"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/activity_labels.txt",
+        "size": 80,
+        "crc32": "0a692fb5",
+        "sha256": "f6e6b292704438261f0283b2a82659ab0661447dc16520938bdf379ed1bf8de0"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/._activity_labels.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/features.txt",
+        "size": 15785,
+        "crc32": "cdef5f98",
+        "sha256": "b384889885b1c8680ecf250e0e605b4c79536cdf09ce9f2fa7225a3c6773b5c7"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/._features.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/features_info.txt",
+        "size": 2809,
+        "crc32": "0a5f2d62",
+        "sha256": "5d7e7d1f204dcfba846043029ef7a15a07c2b3711ee0a122da031f5971b3b585"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/._features_info.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/README.txt",
+        "size": 6304,
+        "crc32": "2e002145",
+        "sha256": "eaee53f45825f349681a1a1b92a997a0082648f9b5bf93ddb3290caeede4b3a8"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/._README.txt",
+        "size": 605,
+        "crc32": "80e734c9",
+        "sha256": "fffe033828029a3bff1048bfb5b1cd4de4db5fec837de346ba4b203b0665d476"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/test/Inertial Signals/body_acc_x_test.txt",
+        "size": 6041350,
+        "crc32": "cda383e6",
+        "sha256": "c07eb8ee8c76eafcd94b42111082700e10f4956b769fbbb0d5413c14f38774fa"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/test/Inertial Signals/._body_acc_x_test.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/test/Inertial Signals/body_acc_y_test.txt",
+        "size": 6041350,
+        "crc32": "50bd1143",
+        "sha256": "0ed0057b41f6870b16a6953ef17f6d42bc5542fa304319fb6b7f424dd3380f0b"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/test/Inertial Signals/._body_acc_y_test.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/test/Inertial Signals/body_acc_z_test.txt",
+        "size": 6041350,
+        "crc32": "0c1333e3",
+        "sha256": "a2b58317137533bdbf2342bf301ae854c15b1168259cc7b582c2dd131e3d81d5"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/test/Inertial Signals/._body_acc_z_test.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/test/Inertial Signals/body_gyro_x_test.txt",
+        "size": 6041350,
+        "crc32": "f4ad059e",
+        "sha256": "fb4f27f13e4e08055043f34ed52f6d8bbe8ebce7dff9475ff92be03b3d3f607c"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/test/Inertial Signals/._body_gyro_x_test.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/test/Inertial Signals/body_gyro_y_test.txt",
+        "size": 6041350,
+        "crc32": "db40bc30",
+        "sha256": "d2501166b2b1f645b51f722fcf31f3aa1e9a3edae18d49322612f37b4495cb80"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/test/Inertial Signals/._body_gyro_y_test.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/test/Inertial Signals/body_gyro_z_test.txt",
+        "size": 6041350,
+        "crc32": "8b301bf2",
+        "sha256": "90a18ce534be0dfc616cefdac9874e2ea599ae20421cd161361c2a33f40cfa5e"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/test/Inertial Signals/._body_gyro_z_test.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/test/Inertial Signals/total_acc_x_test.txt",
+        "size": 6041350,
+        "crc32": "70d55429",
+        "sha256": "ea71c339c828561bc1dc6f7301a54aeb7e61e6312cb2387ebaea832ffd04203d"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/test/Inertial Signals/._total_acc_x_test.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/test/Inertial Signals/total_acc_y_test.txt",
+        "size": 6041350,
+        "crc32": "580a0145",
+        "sha256": "32692c617b40c16e020bf059a316bd6bf3a63d771f030dfc5fa4003f390b6f67"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/test/Inertial Signals/._total_acc_y_test.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/test/Inertial Signals/total_acc_z_test.txt",
+        "size": 6041350,
+        "crc32": "1f050998",
+        "sha256": "622ddf1d9532fbe340472074ef1edd1a2f58aa332682542bb36a8c03c9ba9e04"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/test/Inertial Signals/._total_acc_z_test.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/test/._Inertial Signals",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/test/subject_test.txt",
+        "size": 7934,
+        "crc32": "f8fb3041",
+        "sha256": "63b8c577f4a85431c06bd87f6384608c90a9f72f05c7956dd21255dc63515c07"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/test/._subject_test.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/test/X_test.txt",
+        "size": 26458166,
+        "crc32": "1adf212a",
+        "sha256": "99035209add50d17650e847d8a4658d784a5707466ebb7c2deb97c28e5250a78"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/test/._X_test.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/test/y_test.txt",
+        "size": 5894,
+        "crc32": "96286fe2",
+        "sha256": "2a94cb53ca46b956c1b2aebd4a09a72badd8a8e9ea9cdfe9f31b3306a08666bb"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/test/._y_test.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/._test",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/train/Inertial Signals/body_acc_x_train.txt",
+        "size": 15071600,
+        "crc32": "867ca652",
+        "sha256": "89f7bf5e360384804439d00f463dd2f717c452c683cac6c0a09b1a191d8ce4a2"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/train/Inertial Signals/._body_acc_x_train.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/train/Inertial Signals/body_acc_y_train.txt",
+        "size": 15071600,
+        "crc32": "e0ecedce",
+        "sha256": "4775a586a5a1acc6706edee08c685835daea7bc1d9274e7e7e8d660fea173944"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/train/Inertial Signals/._body_acc_y_train.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/train/Inertial Signals/body_acc_z_train.txt",
+        "size": 15071600,
+        "crc32": "802ba2f0",
+        "sha256": "9155718981ff1331dcd2d30aee545905ffba71af9ece5a08d6dfdeeb7d2ec4fb"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/train/Inertial Signals/._body_acc_z_train.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/train/Inertial Signals/body_gyro_x_train.txt",
+        "size": 15071600,
+        "crc32": "be8ca648",
+        "sha256": "423f6806f09059de3c1f443cf1d04a3c3907dc7ee17b5d296ed775b07aa6cde6"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/train/Inertial Signals/._body_gyro_x_train.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/train/Inertial Signals/body_gyro_y_train.txt",
+        "size": 15071600,
+        "crc32": "5801b23b",
+        "sha256": "42419d8aaefd1a319561998defb167bfa57f7e51d656b6012d5a59c0b10f5260"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/train/Inertial Signals/._body_gyro_y_train.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/train/Inertial Signals/body_gyro_z_train.txt",
+        "size": 15071600,
+        "crc32": "f4f1b591",
+        "sha256": "05bc629faee918b0f5b99cd2e68f860c785889627ec8efeb85c29282f3963988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/train/Inertial Signals/._body_gyro_z_train.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/train/Inertial Signals/total_acc_x_train.txt",
+        "size": 15071600,
+        "crc32": "198f3a2b",
+        "sha256": "41a7fe1da7b529cc6c2c3d7df97c98752bea74d7a142673dd59c7820fad3b5e6"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/train/Inertial Signals/._total_acc_x_train.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/train/Inertial Signals/total_acc_y_train.txt",
+        "size": 15071600,
+        "crc32": "c85a527b",
+        "sha256": "03bd3a80c0c04bf354597ad62920158b4b6605e157d856a1aab9abb357d40c5d"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/train/Inertial Signals/._total_acc_y_train.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/train/Inertial Signals/total_acc_z_train.txt",
+        "size": 15071600,
+        "crc32": "21e47300",
+        "sha256": "5be3b593f88d49bb8f740c1c41379fc928ea8608d706594ebbba81cd800a5a33"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/train/Inertial Signals/._total_acc_z_train.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/train/._Inertial Signals",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/train/subject_train.txt",
+        "size": 20152,
+        "crc32": "a38f818b",
+        "sha256": "66e1e2fbe9b396fa5155f531dc3348c803f503be663e2318772d49947db9153a"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/train/._subject_train.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/train/X_train.txt",
+        "size": 66006256,
+        "crc32": "d2038ddd",
+        "sha256": "9c1246099c8d5463779eec5a3845cc3898df9d8c715441ab2a1232d4421fc42f"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/train/._X_train.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/UCI HAR Dataset/train/y_train.txt",
+        "size": 14704,
+        "crc32": "24f2b48d",
+        "sha256": "415b3357e2e2d5e70a45c781947c6bdd80e0410a579d862eedcd6bbce3c694ef"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/train/._y_train.txt",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/UCI HAR Dataset/._train",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      },
+      {
+        "path": "data/raw/day01_data_20261026_run02/extracted/__MACOSX/._UCI HAR Dataset",
+        "size": 226,
+        "crc32": "3fa7ca9b",
+        "sha256": "7f60b374cf6d8f4e3816767a6c1c0c343eb7019becd99b2362877f304cf73988"
+      }
+    ]
+  }
+]

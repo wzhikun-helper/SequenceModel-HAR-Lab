@@ -1,0 +1,26 @@
+[
+  {
+    "source": "outputs/figures/day01_data_20261026_run02_audit02/fig01_walking_nine_channels.png",
+    "documentation_copy": "docs/day01/walking_nine_channels.png",
+    "bytes": 676076,
+    "sha256": "e93dc05d695b1f1adfef7b78b91b94ef3414435543bc1097a8dd591ddaff9182"
+  },
+  {
+    "source": "outputs/figures/day01_data_20261026_run02_audit02/fig01_standing_nine_channels.png",
+    "documentation_copy": "docs/day01/standing_nine_channels.png",
+    "bytes": 403786,
+    "sha256": "1ec49a01c7d25783c5357cab67722379e5e7e6f45d291db97ffd141e697fcb5e"
+  },
+  {
+    "source": "data/processed/day01_data_20261026_run02_audit02/splits/split_metadata.json",
+    "documentation_copy": "docs/day01/split_metadata.json",
+    "bytes": 1951,
+    "sha256": "6150ae803d2d3bc84913a217a0a24fe81d5b5299fe5e5f4eb7cda605f71503fc"
+  },
+  {
+    "source": "data/processed/day01_data_20261026_run02_audit02/scaler_train_only.json",
+    "documentation_copy": "docs/day01/standardization_train_only.json",
+    "bytes": 1812,
+    "sha256": "5efe9f855f6a14a19704d5700f60c71e7ea70c28e6ca7c1528f70abbcdd22d89"
+  }
+]
