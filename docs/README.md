@@ -14,5 +14,7 @@
 | 核对数据实践的实际执行结果 | [报告与历史档案](../reports/README.md) |
 | 查找可运行的数据脚本 | [脚本说明](../scripts/README.md) |
 | 确认当前阶段 | [项目进度](../PROGRESS.md) |
+| English overview | [README.en.md](../README.en.md) |
+| 查看版本演进与提交约定 | [更新记录](../CHANGELOG.md)、[贡献说明](../CONTRIBUTING.md) |
 
 数据与训练状态以已有证据为准。当前没有模型训练结果，历史教学记录中的训练流程说明不等于执行记录。

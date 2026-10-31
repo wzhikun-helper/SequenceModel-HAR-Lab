@@ -14,7 +14,8 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = [
-    'README.md', 'PROGRESS.md', 'docs/README.md', 'docs/data_protocol.md',
+    'README.md', 'README.en.md', 'CONTRIBUTING.md', 'CHANGELOG.md',
+    'PROGRESS.md', 'docs/README.md', 'docs/data_protocol.md',
     'docs/reproducing_day01.md', 'docs/day01/README.md',
     'learning_notes/day01/README.md', 'scripts/README.md', 'reports/README.md',
 ]
