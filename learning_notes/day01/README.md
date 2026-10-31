@@ -6,6 +6,7 @@
 | --- | --- |
 | 完整知识笔记 | [教师确认的最终笔记](2026-10-28_teacher_final_notes.md) |
 | 理解题、错误修正与补学 | [原规划问题1—12记录](questions_01_12.md) |
+| 区分逐字原文、教师摘要和缺失项 | [第一轮证据类型复核](evidence_index.md) |
 | 与实际数据和图对应 | [工程证据关联](engineering_evidence.md)、[公开信号图](../../docs/day01/README.md) |
 | 实验使用的具体约定 | [数据协议](../../docs/data_protocol.md) |
 

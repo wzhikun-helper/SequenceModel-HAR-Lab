@@ -12,12 +12,16 @@ import re
 import struct
 from urllib.parse import unquote, urlsplit
 
+from har_contracts import validate_scaler_provenance
+
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = [
     'README.md', 'README.en.md', 'CONTRIBUTING.md', 'CHANGELOG.md',
     'PROGRESS.md', 'docs/README.md', 'docs/data_protocol.md',
     'docs/reproducing_day01.md', 'docs/day01/README.md',
+    'docs/verification.md',
     'learning_notes/day01/README.md', 'scripts/README.md', 'reports/README.md',
+    'learning_notes/day01/evidence_index.md', 'reports/remediation_round1_20261031/README.md',
 ]
 
 
@@ -80,19 +84,14 @@ def main():
     meta = json.loads((ROOT / 'docs/day01/split_metadata.json').read_text(encoding='utf-8'))
     scaler = json.loads((ROOT / 'docs/day01/standardization_train_only.json').read_text(encoding='utf-8'))
     splits = meta['splits']
-    groups = {name: set(values['subjects']) for name, values in splits.items()}
-    require(groups['validation'] == {1, 3, 5, 6}, 'validation metadata changed', errors)
-    require(not (groups['train'] & groups['validation'] or groups['train'] & groups['test'] or
-                 groups['validation'] & groups['test']), 'published subject sets overlap', errors)
+    try:
+        validate_scaler_provenance(scaler, meta)
+    except (KeyError, TypeError, ValueError) as exc:
+        errors.append('published data contract: ' + str(exc))
+    require(splits['validation']['subjects'] == [1, 3, 5, 6], 'validation metadata changed', errors)
     for name, expected in [('train', 6037), ('validation', 1315), ('test', 2947)]:
         require(splits[name]['n_windows'] == expected, name + ': window count mismatch', errors)
         require(sum(splits[name]['class_counts'].values()) == expected, name + ': class counts mismatch', errors)
-    require(scaler['fit_subject_ids'] == splits['train']['subjects'], 'scaler provenance mismatch', errors)
-    require(scaler['sample_manifest_sha256'] == meta['sample_manifest_sha256'], 'split/scaler hash mismatch', errors)
-    require(len(scaler['channels']) == len(scaler['mean']) == len(scaler['std']) == 9,
-            'scaler channel dimension mismatch', errors)
-    require(scaler['fit_values_per_channel'] == 6037 * 128 and scaler['ddof'] == 0,
-            'scaler fitting definition mismatch', errors)
 
     assets = json.loads((ROOT / 'docs/day01/asset_provenance.json').read_text(encoding='utf-8'))
     for asset in assets:

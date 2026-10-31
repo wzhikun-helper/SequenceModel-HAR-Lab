@@ -5,12 +5,16 @@ import datetime as dt
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 import sys
 import traceback
 import xml.etree.ElementTree as ET
 
 import numpy as np
 from PIL import Image
+
+from har_contracts import (validate_channel_order, validate_labels, validate_scaler_provenance,
+                           validate_subject_groups, validate_window_shape)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -27,16 +31,19 @@ def read_json(path):
     return json.loads(path.read_text(encoding='utf-8'))
 
 
-def main(source_run, artifact_run):
+def main(source_run, artifact_run, verification_id=None):
     if not all(name.replace('_', '').isalnum() for name in [source_run, artifact_run]):
         raise ValueError('Unsafe run ID')
     reports = ROOT / 'reports' / source_run
     processed = ROOT / 'data' / 'processed' / artifact_run
     figures = ROOT / 'outputs' / 'figures' / artifact_run
-    output = reports / 'independent_verification.json'
+    if verification_id is not None and not verification_id.replace('_', '').isalnum():
+        raise ValueError('Unsafe verification ID')
+    suffix = '_' + verification_id if verification_id else ''
+    output = reports / ('independent_verification' + suffix + '.json')
     result = {'timestamp': dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).isoformat(),
               'artifact_run': artifact_run, 'checks': {}, 'status': 'STARTED'}
-    with (ROOT / 'logs' / (artifact_run + '_verification.log')).open('x', encoding='utf-8', buffering=1) as log:
+    with (ROOT / 'logs' / (artifact_run + '_verification' + suffix + '.log')).open('x', encoding='utf-8', buffering=1) as log:
         def mark(name, info='PASS'):
             result['checks'][name] = info
             message = name + ': ' + str(info)
@@ -57,6 +64,7 @@ def main(source_run, artifact_run):
             mark('29_original_files_and_4_existing_files_unchanged')
             metadata = read_json(processed / 'splits' / 'split_metadata.json')
             scaler = read_json(processed / 'scaler_train_only.json')
+            validate_scaler_provenance(scaler, metadata)
             manifest_path = processed / 'splits' / 'sample_manifest.csv'
             assert digest(manifest_path) == metadata['sample_manifest_sha256'] == scaler['sample_manifest_sha256']
             with manifest_path.open(encoding='utf-8', newline='') as stream:
@@ -88,13 +96,17 @@ def main(source_run, artifact_run):
                 with np.load(processed / f'{split}_standardized.npz', allow_pickle=False) as archive:
                     loaded[split] = {key: archive[key] for key in archive.files}
                 data = loaded[split]
-                assert data['X'].shape == (len(part_rows), 128, 9) and data['X'].dtype == np.float32
+                validate_window_shape(data['X'].shape, expected_windows=len(part_rows))
+                validate_channel_order(data['channels'].tolist())
+                validate_labels(data['y'].tolist(), require_all=True)
+                assert data['X'].dtype == np.float32
                 assert np.isfinite(data['X']).all()
                 assert np.array_equal(data['y'], [int(row['activity_id']) for row in part_rows])
                 assert np.array_equal(data['subject'], [int(row['subject_id']) for row in part_rows])
                 assert np.array_equal(data['official_row_1based'], [int(row['official_row_1based']) for row in part_rows])
                 assert data['channels'].tolist() == scaler['channels']
             sets = {split: set(data['subject'].tolist()) for split, data in loaded.items()}
+            validate_subject_groups(sets)
             assert sets['validation'] == set(sorted(set(original['train'][1].tolist()))[:4]) == {1, 3, 5, 6}
             assert not (sets['train'] & sets['validation'] or sets['train'] & sets['test'] or sets['validation'] & sets['test'])
             assert np.array_equal(loaded['test']['official_row_1based'], np.arange(1, 2948))
@@ -157,9 +169,19 @@ def main(source_run, artifact_run):
                 image_checks.append({'activity': activity, 'png_pixels': size, 'dpi': dpi,
                                      'pdf_signature': 'PASS', 'svg_editable_text_and_labels': 'PASS'})
             mark('two_figures_png_pdf_svg_and_labels', image_checks)
-            assert not (ROOT / '.git').exists()
+            # A Git repository is expected after initial project setup; only the
+            # tracking boundary matters, not whether .git exists.
+            tracked = subprocess.run(['git', '-C', str(ROOT), 'ls-files', '-z', '--',
+                                      'data', 'models', 'outputs', 'logs', '.aws', '.ssh'],
+                                     capture_output=True)
+            if tracked.returncode == 0:
+                if tracked.stdout:
+                    raise ValueError('Local data/model/log/credential directories are tracked by Git')
+                mark('git_tracking_boundary', 'PASS: protected directories are not tracked')
+            else:
+                raise RuntimeError('Git tracking boundary could not be verified')
             assert '/data/' in (ROOT / '.gitignore').read_text() and '/models/' in (ROOT / '.gitignore').read_text()
-            mark('no_git_repository_and_existing_data_model_ignore_rules')
+            mark('existing_data_model_ignore_rules')
             result['status'] = 'PASS'
         except Exception as exc:
             result['status'] = 'FAIL'
@@ -173,4 +195,10 @@ def main(source_run, artifact_run):
 
 
 if __name__ == '__main__':
-    main(sys.argv[1], sys.argv[2])
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('source_run')
+    parser.add_argument('artifact_run')
+    parser.add_argument('--verification-id', help='Fresh suffix for an additional read-only verification report')
+    args = parser.parse_args()
+    main(args.source_run, args.artifact_run, args.verification_id)

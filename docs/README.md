@@ -14,6 +14,7 @@
 | 核对数据实践的实际执行结果 | [报告与历史档案](../reports/README.md) |
 | 查找可运行的数据脚本 | [脚本说明](../scripts/README.md) |
 | 确认当前阶段 | [项目进度](../PROGRESS.md) |
+| 区分轻量CI与真实数据完整复现 | [验证层次与运行证据](verification.md) |
 | English overview | [README.en.md](../README.en.md) |
 | 查看版本演进与提交约定 | [更新记录](../CHANGELOG.md)、[贡献说明](../CONTRIBUTING.md) |
 

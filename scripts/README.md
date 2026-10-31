@@ -21,6 +21,18 @@ python -B scripts/check_public_docs.py
 
 仅检查公开入口的本地链接、图片、元数据一致性和Python源码语法，不访问网络、不导入实验脚本、不读取原始数据、不写文件。
 
+## 共享契约与轻量测试
+
+[har_contracts.py](har_contracts.py)定义真实审计、磁盘验证和公开文档共用的形状、通道、人员、标签与标准化来源约束；仅使用标准库。
+
+```sh
+python -I -S -B -m unittest discover -s tests -v
+```
+
+合成测试不代表真实数据复现。[两层验证的范围与最新证据](../docs/verification.md)。
+
+[compare_day01_runs.py](compare_day01_runs.py)读取两个已完成的真实运行，比较压缩包、划分、参数、三集合数组与图形，向全新报告目录写结果；不修改两个输入运行。
+
 ## 历史归档工具
 
 [archive_day01_20261028.py](archive_day01_20261028.py) 与 [prepare_day01_git_sync.py](prepare_day01_git_sync.py) 保留当日归档操作，使用固定日期、快照及独占输出目录，不属于可反复执行的通用数据API。阅读历史实现即可，不要为重新运行它们而删除已有成果。

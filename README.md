@@ -64,6 +64,15 @@ python -B scripts/check_public_docs.py
 
 以上检查仅用Python标准库，不下载数据。完整的数据准备命令、已验证依赖和新运行目录约定见[Day 01复现指南](docs/reproducing_day01.md)。数据流程无需GPU或PyTorch。
 
+## 验证状态
+
+| 验证层 | 最新证据 | 范围 |
+| --- | --- | --- |
+| 轻量CI | 文档检查与25个合成契约测试；运行状态见上方Actions标识 | 不下载完整数据、不训练、不需要第三方包或GPU |
+| 独立环境真实数据复现 | 2026-10-31已完整运行并通过，与旧运行的数值及PNG像素一致 | 新venv、新运行ID、官方重新下载、实际审计/标准化/绘图/逐值复核 |
+
+[整改报告与实际运行证据](reports/remediation_round1_20261031/README.md) · [两层验证的范围与限制](docs/verification.md)。轻量CI通过不能替代真实数据完整复现通过。
+
 | 目录 | 内容 |
 | --- | --- |
 | [docs/](docs/README.md) | 数据协议、复现指南、代表图与小型元数据 |

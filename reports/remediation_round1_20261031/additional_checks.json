@@ -1,0 +1,45 @@
+[
+  {
+    "step": "11_docs",
+    "command": [
+      ".venv\\day01_repro_20261031_run01\\Scripts\\python.exe",
+      "-B",
+      "scripts\\check_public_docs.py"
+    ],
+    "started_at": "2026-10-31T11:45:40.453555+08:00",
+    "finished_at": "2026-10-31T11:45:40.763911+08:00",
+    "exit_code": 1,
+    "elapsed_seconds": 0.31043550000000003
+  },
+  {
+    "step": "12_docs_final",
+    "command": [
+      ".venv\\day01_repro_20261031_run01\\Scripts\\python.exe",
+      "-B",
+      "scripts\\check_public_docs.py"
+    ],
+    "started_at": "2026-10-31T11:46:54.112355+08:00",
+    "finished_at": "2026-10-31T11:46:54.412865+08:00",
+    "exit_code": 0,
+    "elapsed_seconds": 0.3002403
+  },
+  {
+    "step": "13_tests_final",
+    "command": [
+      ".venv\\day01_repro_20261031_run01\\Scripts\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "started_at": "2026-10-31T11:47:50.480792+08:00",
+    "finished_at": "2026-10-31T11:47:50.709702+08:00",
+    "exit_code": 0,
+    "elapsed_seconds": 0.2283903
+  }
+]

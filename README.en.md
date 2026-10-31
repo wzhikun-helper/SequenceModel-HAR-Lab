@@ -40,6 +40,12 @@ python -B scripts/check_public_docs.py
 
 The documentation check uses only the Python standard library and does not access the network or raw data. The [reproduction guide](docs/reproducing_day01.md) describes the complete data workflow, tested dependency versions, and fresh run IDs. It does not require a GPU or PyTorch.
 
+## Verification levels
+
+Lightweight CI runs the documentation checks and 25 synthetic shared-contract tests without site packages, raw data, or a GPU. This is separate from the full real-data reproduction completed on 2026-10-31 in a fresh Python virtual environment and fresh run directories. The latter reran the official download, audit, preprocessing, plotting, and value-by-value verification; arrays matched the earlier valid run exactly and PNG pixels matched. PDF/SVG bytes differ, with different creation dates recorded.
+
+See the [remediation report](reports/remediation_round1_20261031/README.md) and [verification scope](docs/verification.md). A passing lightweight CI run is not a claim that CI downloaded or reproduced the full dataset.
+
 ## Repository guide
 
 | Location | Purpose |

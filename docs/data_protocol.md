@@ -1,6 +1,6 @@
 # 数据与评估协议
 
-本页整理已执行的 UCI HAR 数据约定，便于后续实验使用同一输入和划分。证据来自[最终审计](../reports/day01_data_20261026_run02/audit02/audit_results.json)，本次文档整理没有重新划分或拟合数据。
+本页整理已执行的 UCI HAR 数据约定，便于后续实验使用同一输入和划分。原证据来自[最终审计](../reports/day01_data_20261026_run02/audit02/audit_results.json)；2026-10-31[独立环境完整复现](../reports/remediation_round1_20261031/README.md)再次按相同协议执行，没有更改人员划分、参数拟合范围或旧产物。
 
 ## 输入与标签
 

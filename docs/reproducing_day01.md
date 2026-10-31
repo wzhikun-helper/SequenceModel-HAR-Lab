@@ -1,10 +1,12 @@
 # Day 01 数据流程复现
 
-本指南说明现有脚本的调用顺序。当前整理只检查脚本和文档，不重新下载数据、运行预处理或训练模型；实际已执行结果见[2026-10-26 审计](../reports/day01_data_20261026_run02/day01_data_audit.md)。
+本指南说明现有脚本的调用顺序。2026-10-31已按此顺序在独立venv、新运行ID中重新执行官方下载、审计、标准化、绘图和逐值复核。[本轮实际结果](../reports/remediation_round1_20261031/README.md)与[2026-10-26原始审计](../reports/day01_data_20261026_run02/day01_data_audit.md)分别保留，没有训练模型。
 
 ## 1. 准备独立环境
 
 原数据流程使用 Python 3.9.13、NumPy 1.24.4、Matplotlib 3.7.5、Pillow 9.5.0。根目录依赖文件记录这些已验证直接依赖，没有声称其他版本已验证；它不是完整锁文件。数据流程不需要 PyTorch 或 CUDA。
+
+完整验证还要求系统Git可用，以检查本项目的追踪边界；这一步不需要GitHub网络访问或认证。
 
 以下是 Windows PowerShell 示例，在项目根目录执行：
 
@@ -13,6 +15,7 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements-data.txt
 python -B scripts/check_public_docs.py
+python -I -S -B -m unittest discover -s tests -v
 ```
 
 ## 2. 使用新的运行 ID
@@ -65,4 +68,6 @@ python -B -u scripts/verify_day01_data.py $Run $Artifacts
 - `scripts/archive_day01_20261028.py` 和 `scripts/prepare_day01_git_sync.py` 是有固定历史路径的一次性归档工具，不能当作通用数据预处理入口重新运行。
 - 既有 `verify_day01_data.py` 使用断言检查，不要加 `python -O`，否则会关闭这些检查。
 - 历史 `day01_data_20261026_run02/` 的首次处理目录包含已标记的失败产物；当日有效处理产物 ID 是 `day01_data_20261026_run02_audit02`。
-- 全量数据复现、依赖重新安装或新环境兼容性检查不包含在本次公开文档整理中。
+- 2026-10-31完整复现使用Python 3.9.13的新venv，禁用用户级包及系统site packages继承，重新安装文档指定直接依赖；传递依赖的实际解析清单和逐步命令/退出码/耗时见[整改报告](../reports/remediation_round1_20261031/README.md)。这不是跨Python版本或跨操作系统兼容性声明。
+- 验证脚本现在检查禁止目录不被Git追踪，允许正常存在`.git`；不再把已初始化仓库误判成失败。额外报告可使用`--verification-id <新ID>`，不覆盖原始验证文件。
+- 轻量契约测试不读取UCI数据；[轻量CI与完整复现](verification.md)的结论必须分开记录。

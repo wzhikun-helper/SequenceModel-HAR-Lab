@@ -1,0 +1,181 @@
+[
+  {
+    "step": "00_venv",
+    "command": [
+      "python",
+      "-m",
+      "venv",
+      ".venv\\day01_repro_20261031_run01"
+    ],
+    "started_at": "2026-10-31T11:36:56.363479+08:00",
+    "finished_at": "2026-10-31T11:37:10.052740+08:00",
+    "exit_code": 0,
+    "elapsed_seconds": 13.689954400000001,
+    "cwd": "D:\\SequenceModel-HAR-Lab"
+  },
+  {
+    "step": "01_dependencies",
+    "command": [
+      ".venv\\day01_repro_20261031_run01\\Scripts\\python.exe",
+      "-m",
+      "pip",
+      "install",
+      "--disable-pip-version-check",
+      "--index-url",
+      "https://pypi.org/simple",
+      "-r",
+      "requirements-data.txt"
+    ],
+    "started_at": "2026-10-31T11:37:29.217958+08:00",
+    "finished_at": "2026-10-31T11:38:05.254120+08:00",
+    "exit_code": 0,
+    "elapsed_seconds": 36.036321099999995,
+    "cwd": "D:\\SequenceModel-HAR-Lab"
+  },
+  {
+    "step": "02_lightweight",
+    "command": [
+      ".venv\\day01_repro_20261031_run01\\Scripts\\python.exe",
+      "-I",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "started_at": "2026-10-31T11:39:12.252989+08:00",
+    "finished_at": "2026-10-31T11:39:12.485825+08:00",
+    "exit_code": 0,
+    "elapsed_seconds": 0.23275980000000002,
+    "cwd": "D:\\SequenceModel-HAR-Lab"
+  },
+  {
+    "step": "03_environment",
+    "command": [
+      ".venv\\day01_repro_20261031_run01\\Scripts\\python.exe",
+      "-B",
+      "logs\\remediation_round1_20261031_run01\\environment.py"
+    ],
+    "started_at": "2026-10-31T11:39:37.574062+08:00",
+    "finished_at": "2026-10-31T11:39:38.934015+08:00",
+    "exit_code": 0,
+    "elapsed_seconds": 1.3601868000000001,
+    "cwd": "D:\\SequenceModel-HAR-Lab"
+  },
+  {
+    "step": "04_freeze",
+    "command": [
+      ".venv\\day01_repro_20261031_run01\\Scripts\\python.exe",
+      "-m",
+      "pip",
+      "freeze",
+      "--all"
+    ],
+    "started_at": "2026-10-31T11:39:39.153381+08:00",
+    "finished_at": "2026-10-31T11:39:40.936244+08:00",
+    "exit_code": 0,
+    "elapsed_seconds": 1.7821762,
+    "cwd": "D:\\SequenceModel-HAR-Lab"
+  },
+  {
+    "step": "05_download",
+    "command": [
+      ".venv\\day01_repro_20261031_run01\\Scripts\\python.exe",
+      "-B",
+      "-u",
+      "scripts\\day01_download_uci.py",
+      "day01_repro_20261031_run01"
+    ],
+    "started_at": "2026-10-31T11:39:43.721083+08:00",
+    "finished_at": "2026-10-31T11:39:53.622015+08:00",
+    "exit_code": 0,
+    "elapsed_seconds": 9.901141599999999,
+    "cwd": "D:\\SequenceModel-HAR-Lab"
+  },
+  {
+    "step": "06_audit",
+    "command": [
+      ".venv\\day01_repro_20261031_run01\\Scripts\\python.exe",
+      "-B",
+      "-u",
+      "scripts\\day01_audit_uci.py",
+      "day01_repro_20261031_run01",
+      "audit02"
+    ],
+    "started_at": "2026-10-31T11:40:02.040219+08:00",
+    "finished_at": "2026-10-31T11:40:07.829920+08:00",
+    "exit_code": 0,
+    "elapsed_seconds": 5.7898964,
+    "cwd": "D:\\SequenceModel-HAR-Lab"
+  },
+  {
+    "step": "07_figures",
+    "command": [
+      ".venv\\day01_repro_20261031_run01\\Scripts\\python.exe",
+      "-B",
+      "-u",
+      "scripts\\fig01_day01_signals.py",
+      "day01_repro_20261031_run01_audit02"
+    ],
+    "started_at": "2026-10-31T11:40:15.719351+08:00",
+    "finished_at": "2026-10-31T11:40:21.427160+08:00",
+    "exit_code": 0,
+    "elapsed_seconds": 5.7083191,
+    "cwd": "D:\\SequenceModel-HAR-Lab"
+  },
+  {
+    "step": "08_verify",
+    "command": [
+      ".venv\\day01_repro_20261031_run01\\Scripts\\python.exe",
+      "-B",
+      "-u",
+      "scripts\\verify_day01_data.py",
+      "day01_repro_20261031_run01",
+      "day01_repro_20261031_run01_audit02"
+    ],
+    "started_at": "2026-10-31T11:40:25.438624+08:00",
+    "finished_at": "2026-10-31T11:40:28.707314+08:00",
+    "exit_code": 0,
+    "elapsed_seconds": 3.2684226,
+    "cwd": "D:\\SequenceModel-HAR-Lab"
+  },
+  {
+    "step": "09_compare",
+    "command": [
+      ".venv\\day01_repro_20261031_run01\\Scripts\\python.exe",
+      "-B",
+      "-u",
+      "scripts\\compare_day01_runs.py",
+      "day01_data_20261026_run02",
+      "day01_repro_20261031_run01",
+      "reports\\remediation_round1_20261031\\comparison"
+    ],
+    "started_at": "2026-10-31T11:41:23.823261+08:00",
+    "finished_at": "2026-10-31T11:41:26.165551+08:00",
+    "exit_code": 0,
+    "elapsed_seconds": 2.3424711,
+    "cwd": "D:\\SequenceModel-HAR-Lab"
+  },
+  {
+    "step": "10_stdlib_only",
+    "command": [
+      ".venv\\day01_repro_20261031_run01\\Scripts\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "started_at": "2026-10-31T11:42:30.952591+08:00",
+    "finished_at": "2026-10-31T11:42:31.155725+08:00",
+    "exit_code": 0,
+    "elapsed_seconds": 0.2033652,
+    "cwd": "D:\\SequenceModel-HAR-Lab"
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "run_id": "day01_repro_20261031_run01",
+  "source_page": "https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones",
+  "download_url": "https://archive.ics.uci.edu/static/public/240/human%2Bactivity%2Brecognition%2Busing%2Bsmartphones.zip",
+  "started_at": "2026-10-31T11:39:43.950344+08:00",
+  "status": "COMPLETE",
+  "official_published_sha256": null,
+  "checksum_scope": "Local SHA256 + HTTP Content-Length + ZIP CRC; no publisher checksum was supplied by the official page.",
+  "http_status": 200,
+  "final_url": "https://archive.ics.uci.edu/static/public/240/human%2Bactivity%2Brecognition%2Busing%2Bsmartphones.zip",
+  "headers": {
+    "Content-Length": null,
+    "Content-Type": null,
+    "ETag": null,
+    "Last-Modified": null
+  },
+  "downloaded_bytes": 61005872,
+  "sha256": "c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031",
+  "filename": "human_activity_recognition_using_smartphones.zip",
+  "relative_path": "data/raw/day01_repro_20261031_run01/human_activity_recognition_using_smartphones.zip",
+  "inner_archive": {
+    "path": "data/raw/day01_repro_20261031_run01/official_bundle/UCI HAR Dataset.zip",
+    "bytes": 60999314,
+    "sha256": "2045e435c955214b38145fb5fa00776c72814f01b203fec405152dac7d5bfeb0"
+  },
+  "dataset_root": "data/raw/day01_repro_20261031_run01/extracted/UCI HAR Dataset",
+  "finished_at": "2026-10-31T11:39:53.607927+08:00"
+}

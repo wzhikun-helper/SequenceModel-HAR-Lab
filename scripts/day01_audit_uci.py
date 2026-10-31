@@ -11,10 +11,11 @@ import traceback
 
 import numpy as np
 
+from har_contracts import (CHANNELS, NAMES, activity_name, validate_activity_mapping,
+                           validate_labels, validate_scaler_provenance,
+                           validate_subject_groups, validate_window_shape, validation_subject_ids)
+
 ROOT = Path(__file__).resolve().parents[1]
-CHANNELS = [f'{group}_{axis}' for group in ('body_acc', 'body_gyro', 'total_acc') for axis in 'xyz']
-NAMES = {1: 'WALKING', 2: 'WALKING_UPSTAIRS', 3: 'WALKING_DOWNSTAIRS',
-         4: 'SITTING', 5: 'STANDING', 6: 'LAYING'}
 
 
 def sha(path):
@@ -87,7 +88,7 @@ def main(run, attempt='audit'):
             jwrite(report / 'original_files_before.json', raw_before)
             status['stages']['archive_to_raw_hashes'] = 'PASS'
             labels = dict((int(line.split()[0]), line.split()[1]) for line in (dataset / 'activity_labels.txt').read_text().splitlines())
-            assert labels == NAMES
+            validate_activity_mapping(labels)
             features = (dataset / 'features.txt').read_text().splitlines()
             assert len(features) == 561
             official = {}
@@ -97,7 +98,7 @@ def main(run, attempt='audit'):
                 y = np.loadtxt(part / f'y_{partition}.txt', dtype=np.int64)
                 subjects = np.loadtxt(part / f'subject_{partition}.txt', dtype=np.int64)
                 assert y.shape == subjects.shape == (expected,)
-                assert set(y.tolist()) == set(NAMES)
+                validate_labels(y.tolist(), require_all=True)
                 assert np.all((subjects >= 1) & (subjects <= 30))
                 feature_matrix = np.loadtxt(part / f'X_{partition}.txt', dtype=np.float64)
                 assert feature_matrix.shape == (expected, 561) and np.isfinite(feature_matrix).all()
@@ -120,7 +121,7 @@ def main(run, attempt='audit'):
                                          'sha256': raw_before[path.relative_to(ROOT).as_posix()]})
                 x = np.stack(arrays, axis=-1)
                 del arrays
-                assert x.shape == (expected, 128, 9)
+                validate_window_shape(x.shape, expected_windows=expected)
                 official[partition] = {'x': x, 'y': y, 'subject': subjects,
                                        'row': np.arange(1, expected + 1), 'features': feature_info}
                 say(f'Official {partition}: X={x.shape}, y={y.shape}, subjects={np.unique(subjects).tolist()}, finite=True')
@@ -135,7 +136,7 @@ def main(run, attempt='audit'):
             status['stages']['official_schema_all_18_signals'] = 'PASS'
 
             # Rule fixed before reading class counts; labels do not choose validation subjects.
-            validation_subjects = np.unique(official['train']['subject'])[:4]
+            validation_subjects = validation_subject_ids(official['train']['subject'].tolist())
             train_mask = ~np.isin(official['train']['subject'], validation_subjects)
             selections = {'train': ('train', train_mask), 'validation': ('train', ~train_mask),
                           'test': ('test', np.ones(len(official['test']['y']), dtype=bool))}
@@ -156,7 +157,7 @@ def main(run, attempt='audit'):
                     manifest_rows.append({'sample_id': f'{source}:{row:06d}', 'split': split,
                                           'split_index_0based': split_index, 'official_split': source,
                                           'official_row_1based': int(row), 'subject_id': int(subject),
-                                          'activity_id': int(y), 'activity_name': NAMES[int(y)]})
+                                          'activity_id': int(y), 'activity_name': activity_name(int(y))})
                 for label in NAMES:
                     distributions.append({'split': split, 'activity_id': label,
                                           'activity_name': NAMES[label], 'windows': counts[NAMES[label]]})
@@ -167,6 +168,7 @@ def main(run, attempt='audit'):
                                              'activity_name': NAMES[label], 'windows': count})
                 say(f'{split}: subjects={ids}; windows={len(data["y"])}; classes={counts}')
             id_sets = {name: set(data['subject']) for name, data in split_data.items()}
+            validate_subject_groups(id_sets)
             assert not (id_sets['train'] & id_sets['validation'] or id_sets['train'] & id_sets['test'] or id_sets['validation'] & id_sets['test'])
             assert len(manifest_rows) == 10299
             assert len({row['sample_id'] for row in manifest_rows}) == 10299
@@ -210,6 +212,7 @@ def main(run, attempt='audit'):
                       'source_archive_sha256': provenance['sha256'],
                       'overlap_weighting': 'Each retained window/timepoint has equal weight; 50%-overlapping windows are not deduplicated.',
                       'raw_signals': 'Official preprocessed physical-unit inertial signals; not the official 561 normalized engineered features.'}
+            validate_scaler_provenance(scaler, split_metadata)
             jwrite(processed / 'scaler_train_only.json', scaler)
             standardization_checks = {}
             for split, data in split_data.items():

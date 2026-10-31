@@ -1,0 +1,99 @@
+{
+  "reference": "day01_data_20261026_run02",
+  "candidate": "day01_repro_20261031_run01",
+  "attempt": "audit02",
+  "checks": {
+    "official_archive_sha256_equal": true,
+    "inner_archive_sha256_equal": true,
+    "sample_manifest_bytes_equal": true,
+    "split_metadata_equal": true,
+    "scaler_metadata_equal": true,
+    "train_arrays_exactly_equal": true,
+    "validation_arrays_exactly_equal": true,
+    "test_arrays_exactly_equal": true,
+    "walking_png_pixels_equal": true,
+    "walking_svg_geometry_and_text_equal": true,
+    "standing_png_pixels_equal": true,
+    "standing_svg_geometry_and_text_equal": true
+  },
+  "scope": "Actual archived files and arrays, not model evaluation.",
+  "scaler_max_mean_abs_difference": 0.0,
+  "scaler_max_std_abs_difference": 0.0,
+  "arrays": {
+    "train": {
+      "all_fields_equal": true,
+      "shape": [
+        6037,
+        128,
+        9
+      ],
+      "dtype": "float32",
+      "container_sha256_equal": true,
+      "max_X_abs_difference": 0.0
+    },
+    "validation": {
+      "all_fields_equal": true,
+      "shape": [
+        1315,
+        128,
+        9
+      ],
+      "dtype": "float32",
+      "container_sha256_equal": true,
+      "max_X_abs_difference": 0.0
+    },
+    "test": {
+      "all_fields_equal": true,
+      "shape": [
+        2947,
+        128,
+        9
+      ],
+      "dtype": "float32",
+      "container_sha256_equal": true,
+      "max_X_abs_difference": 0.0
+    }
+  },
+  "figures": {
+    "walking": {
+      "png_pixels_equal": true,
+      "svg_bytes_equal": false,
+      "pdf_bytes_equal": false,
+      "svg_path_geometry_equal": true,
+      "svg_text_equal": true,
+      "svg_dates": [
+        [
+          "2026-10-26T13:57:40.758481"
+        ],
+        [
+          "2026-10-31T11:40:20.226779"
+        ]
+      ],
+      "pdf_creation_dates": [
+        "D:20261026135740+08'00'",
+        "D:20261031114019+08'00'"
+      ]
+    },
+    "standing": {
+      "png_pixels_equal": true,
+      "svg_bytes_equal": false,
+      "pdf_bytes_equal": false,
+      "svg_path_geometry_equal": true,
+      "svg_text_equal": true,
+      "svg_dates": [
+        [
+          "2026-10-26T13:57:41.686111"
+        ],
+        [
+          "2026-10-31T11:40:21.239969"
+        ]
+      ],
+      "pdf_creation_dates": [
+        "D:20261026135741+08'00'",
+        "D:20261031114020+08'00'"
+      ]
+    }
+  },
+  "status": "PASS",
+  "interpretation": "Numerical and image checks are reported separately from file-byte equality. PDF/SVG byte differences and observed creation dates are preserved, not hidden. Matching SVG path geometry/text does not claim all vector metadata bytes match."
+}
