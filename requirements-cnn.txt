@@ -1,0 +1,4 @@
+# Verified Windows CPU environment, Python 3.9.13. No GPU required.
+# Install from the official PyTorch CPU index; see docs/day02_cnn.md.
+torch==2.0.1+cpu
+numpy==1.24.4

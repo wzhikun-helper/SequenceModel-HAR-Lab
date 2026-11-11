@@ -6,7 +6,7 @@
 
 [![Documentation checks](https://github.com/wzhikun-helper/SequenceModel-HAR-Lab/actions/workflows/docs.yml/badge.svg)](https://github.com/wzhikun-helper/SequenceModel-HAR-Lab/actions/workflows/docs.yml)
 
-基于 UCI HAR 手机传感器信号，研究多通道时序数据的表示、预处理与独立评价。当前已完成数据基础阶段：官方数据校验、跨受试者划分、训练集标准化和真实窗口可视化。序列模型对比尚未开始。
+基于 UCI HAR 手机传感器信号，研究多通道时序数据的表示、预处理与独立评价。已完成Day 01数据基础，并用真实训练窗口运行两层1D CNN的前向、反向与未训练权重重载检查。正式训练和序列模型对比尚未开始。
 
 **128 × 9** 每窗口输入 · **50 Hz** 采样率 · **6** 类活动 · **30** 位受试者
 
@@ -20,6 +20,7 @@
 | 窗口与标签审计 | 全部18路信号文件、10,299个窗口、六类活动与受试者ID |
 | 跨受试者协议 | 训练17人、验证4人、测试9人；保留官方测试集 |
 | 标准化与复核 | 仅最终训练集拟合；独立复核保存数组与原始行的对应关系 |
+| CNN最小工程 | 六个真实训练窗口、27,270参数、一次反向、checkpoint重载输出一致；不含优化器更新 |
 
 [数据审计报告](reports/day01_data_20261026_run02/day01_data_audit.md) · [独立复核结果](reports/day01_data_20261026_run02/independent_verification.json)
 
@@ -73,6 +74,8 @@ python -B scripts/check_public_docs.py
 
 [整改报告与实际运行证据](reports/remediation_round1_20261031/README.md) · [两层验证的范围与限制](docs/verification.md)。轻量CI通过不能替代真实数据完整复现通过。
 
+**Day 02 CNN最小工程：** 本地4个PyTorch测试和真实样本检查通过；[结果报告](reports/day02_cnn_20261111_run01/README.md) · [运行说明](docs/day02_cnn.md) · [理论学习与原答](learning_notes/day02/README.md)。上方轻量CI不运行PyTorch或CNN真实数据验证。
+
 | 目录 | 内容 |
 | --- | --- |
 | [docs/](docs/README.md) | 数据协议、复现指南、代表图与小型元数据 |
@@ -84,7 +87,7 @@ python -B scripts/check_public_docs.py
 
 ## 当前阶段与后续计划
 
-数据基础与Day 01学习验收已完成。CNN、GRU、Transformer和Mamba的训练、统一指标对比与消融分析均为后续计划；**尚无模型训练结果**。第四章与Day 02未开始，详见[进度记录](PROGRESS.md)。
+Day 01已验收；Day 02 Lesson 01–02理论已由教师确认通过，CNN最小工程已运行并提交证据，等待教师审阅。CNN正式训练、GRU、Transformer、Mamba、统一评价及消融尚未执行，**尚无模型性能结果**。[进度记录](PROGRESS.md)。
 
 ## 数据引用
 

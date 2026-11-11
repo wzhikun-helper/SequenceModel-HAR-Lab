@@ -1,0 +1,22 @@
+[
+  "CHANGELOG.md",
+  "PROGRESS.md",
+  "README.en.md",
+  "README.md",
+  "docs/README.md",
+  "docs/day02_cnn.md",
+  "learning_notes/day02/README.md",
+  "learning_notes/day02/source_transcript.md",
+  "reports/README.md",
+  "reports/day02_cnn_20261111_run01/README.md",
+  "reports/day02_cnn_20261111_run01/changed_files.json",
+  "reports/day02_cnn_20261111_run01/commands.json",
+  "reports/day02_cnn_20261111_run01/result.json",
+  "requirements-cnn.txt",
+  "scripts/README.md",
+  "scripts/check_public_docs.py",
+  "scripts/day02_cnn_smoke.py",
+  "src/har_lab/__init__.py",
+  "src/har_lab/cnn.py",
+  "tests_torch/test_cnn.py"
+]

@@ -59,7 +59,9 @@ Raw datasets, processed arrays, model weights, credentials, and local logs are e
 
 ## Roadmap
 
-The data foundation is complete. CNN, GRU, Transformer, and Mamba implementations, unified evaluation, and ablation studies remain future work. The project has not entered its model-training stage. [Current progress](PROGRESS.md).
+The data foundation is complete. Day 02 now includes a two-layer 1D CNN smoke check on six real training windows: 27,270 parameters, one backward pass, no optimizer updates, and exact checkpoint reload outputs. Four local CPU PyTorch tests passed. [Evidence](reports/day02_cnn_20261111_run01/README.md) · [Reproduction](docs/day02_cnn.md) · [Learning records](learning_notes/day02/README.md).
+
+The standard-library CI does not execute these PyTorch checks. Lesson 01–02 theory is teacher-approved; engineering evidence awaits teacher review. Formal CNN training, GRU, Transformer, Mamba, performance evaluation and ablations remain future work. [Current progress](PROGRESS.md).
 
 ## Dataset reference
 

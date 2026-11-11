@@ -22,6 +22,8 @@ PAGES = [
     'docs/verification.md',
     'learning_notes/day01/README.md', 'scripts/README.md', 'reports/README.md',
     'learning_notes/day01/evidence_index.md', 'reports/remediation_round1_20261031/README.md',
+    'docs/day02_cnn.md', 'learning_notes/day02/README.md',
+    'reports/day02_cnn_20261111_run01/README.md',
 ]
 
 

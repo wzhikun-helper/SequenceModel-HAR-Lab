@@ -1,0 +1,68 @@
+[
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests_torch",
+      "-v"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-11T11:10:00.581560+08:00",
+    "finished_at": "2026-11-11T11:10:06.996575+08:00",
+    "elapsed_seconds": 6.415316,
+    "exit_code": 0,
+    "log": "logs/day02_cnn_20261111_run01/01_torch_tests.log"
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "-u",
+      "scripts/day02_cnn_smoke.py",
+      "day02_cnn_20261111_run01"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-11T11:10:07.218579+08:00",
+    "finished_at": "2026-11-11T11:10:16.646643+08:00",
+    "elapsed_seconds": 9.4283179,
+    "exit_code": 0,
+    "log": "logs/day02_cnn_20261111_run01/02_real_smoke.log"
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-11T11:13:53.293059+08:00",
+    "finished_at": "2026-11-11T11:13:53.545719+08:00",
+    "elapsed_seconds": 0.25320600000000004,
+    "exit_code": 0,
+    "log": "logs/day02_cnn_20261111_run01/03_data_contract_tests.log"
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "scripts/check_public_docs.py"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-11T11:14:18.506359+08:00",
+    "finished_at": "2026-11-11T11:14:19.001366+08:00",
+    "elapsed_seconds": 0.49536330000000006,
+    "exit_code": 0,
+    "log": "logs/day02_cnn_20261111_run01/04_docs.log"
+  }
+]
