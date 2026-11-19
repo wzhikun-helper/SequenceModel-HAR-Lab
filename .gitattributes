@@ -4,3 +4,6 @@ reports/day01_archive_20261028_run01/README.diff whitespace=-blank-at-eol
 # Preserve original bytes for metadata copies whose SHA-256 is published.
 docs/day01/split_metadata.json -text whitespace=cr-at-eol
 docs/day01/standardization_train_only.json -text whitespace=cr-at-eol
+
+# Preserve generated vector bytes and published SHA-256; SVG path whitespace is valid.
+reports/cnn_baseline_seed42_20261119_run01/*.svg -text whitespace=-blank-at-eol

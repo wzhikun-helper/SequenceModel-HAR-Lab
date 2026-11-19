@@ -14,6 +14,7 @@
 | 核对数据实践的实际执行结果 | [报告与历史档案](../reports/README.md) |
 | 查找可运行的数据脚本 | [脚本说明](../scripts/README.md) |
 | 确认当前阶段 | [项目进度](../PROGRESS.md) |
+| 复核CNN Baseline A正式训练 | [报告](../reports/cnn_baseline_seed42_20261119_run01/execution_report.md)、[复现说明](../reports/cnn_baseline_seed42_20261119_run01/reproducibility.md) |
 | 复现CNN最小真实样本工程 | [Day 02运行说明](day02_cnn.md)、[工程报告](../reports/day02_cnn_20261111_run01/README.md)、[学习原答](../learning_notes/day02/README.md) |
 | 区分轻量CI与真实数据完整复现 | [验证层次与运行证据](verification.md) |
 | English overview | [README.en.md](../README.en.md) |

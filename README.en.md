@@ -6,7 +6,7 @@
 
 [![Documentation checks](https://github.com/wzhikun-helper/SequenceModel-HAR-Lab/actions/workflows/docs.yml/badge.svg)](https://github.com/wzhikun-helper/SequenceModel-HAR-Lab/actions/workflows/docs.yml)
 
-This repository develops a time-series classification workflow using smartphone accelerometer and gyroscope signals from UCI HAR. The current milestone covers data acquisition, auditing, subject-disjoint splits, training-only standardization, and real signal inspection. Model training and comparisons are planned; no classification results are reported yet.
+This repository develops a time-series classification workflow using smartphone accelerometer and gyroscope signals from UCI HAR. The current milestone covers data acquisition, auditing, subject-disjoint splits, training-only standardization, and real signal inspection. CNN Baseline A has completed one seed-42 run: test Accuracy 89.7523% and Macro-F1 89.8202%. Cross-model comparisons are not performed.
 
 ## Data at a glance
 
@@ -61,7 +61,7 @@ Raw datasets, processed arrays, model weights, credentials, and local logs are e
 
 The data foundation is complete. Day 02 now includes a two-layer 1D CNN smoke check on six real training windows: 27,270 parameters, one backward pass, no optimizer updates, and exact checkpoint reload outputs. Four local CPU PyTorch tests passed. [Evidence](reports/day02_cnn_20261111_run01/README.md) · [Reproduction](docs/day02_cnn.md) · [Learning records](learning_notes/day02/README.md).
 
-The standard-library CI does not execute these PyTorch checks. Lesson 01–02 theory is teacher-approved; engineering evidence awaits teacher review. Formal CNN training, GRU, Transformer, Mamba, performance evaluation and ablations remain future work. [Current progress](PROGRESS.md).
+The standard-library CI does not execute these PyTorch checks. Lesson 01–02 theory is teacher-approved; engineering evidence awaits teacher review. CNN Baseline A training completed on 2026-11-19 (best epoch 7, early stopping at epoch 15); [full evidence](reports/cnn_baseline_seed42_20261119_run01/execution_report.md). Other models and ablations remain future work; teacher review is pending. [Current progress](PROGRESS.md).
 
 ## Dataset reference
 

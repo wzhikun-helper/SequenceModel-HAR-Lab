@@ -6,7 +6,7 @@
 
 [![Documentation checks](https://github.com/wzhikun-helper/SequenceModel-HAR-Lab/actions/workflows/docs.yml/badge.svg)](https://github.com/wzhikun-helper/SequenceModel-HAR-Lab/actions/workflows/docs.yml)
 
-基于 UCI HAR 手机传感器信号，研究多通道时序数据的表示、预处理与独立评价。已完成Day 01数据基础，并用真实训练窗口运行两层1D CNN的前向、反向与未训练权重重载检查。正式训练和序列模型对比尚未开始。
+基于 UCI HAR 手机传感器信号，研究多通道时序数据的表示、预处理与独立评价。已完成Day 01数据基础，并用真实训练窗口运行两层1D CNN的前向、反向与未训练权重重载检查。现已完成CNN Baseline A Seed42正式训练，其他模型与消融未执行。
 
 **128 × 9** 每窗口输入 · **50 Hz** 采样率 · **6** 类活动 · **30** 位受试者
 
@@ -85,9 +85,17 @@ python -B scripts/check_public_docs.py
 
 数据集、处理数组、模型权重和本地日志不进入版本管理。[变更与贡献约定](CONTRIBUTING.md)。
 
+## CNN Baseline A · Seed42
+
+固定配置正式运行，最佳Epoch7，连续8轮无改善后第15轮停止。官方测试2947窗口：**Accuracy 89.7523% · Macro-F1 89.8202%**。单种子、CPU，等待教师验收。
+
+[完整报告](reports/cnn_baseline_seed42_20261119_run01/execution_report.md) · [配置/逐轮证据](reports/cnn_baseline_seed42_20261119_run01/README.md) · [学习补充](learning_notes/day02/2026-11-19_cnn_baseline_a.md)
+
+![官方测试混淆矩阵](reports/cnn_baseline_seed42_20261119_run01/confusion_matrix.png)
+
 ## 当前阶段与后续计划
 
-Day 01已验收；Day 02 Lesson 01–02理论已由教师确认通过，CNN最小工程已运行并提交证据，等待教师审阅。CNN正式训练、GRU、Transformer、Mamba、统一评价及消融尚未执行，**尚无模型性能结果**。[进度记录](PROGRESS.md)。
+Day 01已验收；Day 02 Lesson 01–02理论已由教师确认通过，CNN最小工程已运行并提交证据，等待教师审阅。CNN Baseline A单种子正式训练已完成；GRU、Transformer、Mamba、跨模型比较与消融未执行。Day 02整体等待教师验收。[进度记录](PROGRESS.md)。
 
 ## 数据引用
 

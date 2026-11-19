@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "best_epoch": 7,
+  "config_sha256": "e6d6d9fe4b3684e7bed0d202e3fe9969a7c64249da8312263f35cb2c844ea3eb",
+  "strict_load": true,
+  "weights_only": true,
+  "max_abs_difference": 0.0,
+  "validation_replay_exact": true,
+  "probe": "first 8 fixed validation rows, eval/no_grad",
+  "checkpoint_path": "checkpoints/cnn_baseline_seed42_20261119_run01/epoch_007.pt",
+  "bytes": 111635,
+  "sha256": "55b03a82d8075ab12f563acd2edf95cecca5e99090d229263f50dac1a2171fd5"
+}

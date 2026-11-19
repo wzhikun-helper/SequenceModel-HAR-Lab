@@ -1,6 +1,6 @@
 # 项目进度
 
-更新日期：2026-11-11。当前阶段：**Day 02 Lesson 01–02理论通过；CNN最小工程已运行，等待教师审阅；正式训练未开始。**
+更新日期：2026-11-19。当前阶段：**CNN Baseline A Seed42正式训练和最终测试已执行，等待教师验收；Day 02未宣布全部完成。**
 
 ## 实验进度
 
@@ -12,7 +12,8 @@
 | 真实信号观察 | 已完成 | WALKING、STANDING 各一个九路窗口 |
 | 学习验收 | 第三章 12/12 通过 | 教师确认的[最终笔记](learning_notes/day01/2026-10-28_teacher_final_notes.md) |
 | CNN最小工程 | 本地执行通过，待教师验收 | 六个真实训练窗口、前向/反向、未训练权重本地保存与重载一致；无优化器更新 |
-| CNN正式训练 / GRU / Transformer / Mamba | 未开始 | 无正式训练或性能指标 |
+| CNN Baseline A | 已执行，待教师验收 | Seed42，最佳Epoch7，15轮Early Stopping；测试Accuracy 89.7523% / Macro-F1 89.8202% |
+| GRU / Transformer / Mamba / 消融 | 未开始 | 无对应结果 |
 
 训练集 6,037 窗口，验证集 1,315 窗口，测试集 2,947 窗口。[协议与元数据](docs/data_protocol.md) · [数据独立复核](reports/day01_data_20261026_run02/independent_verification.json)。
 
@@ -28,6 +29,10 @@
 | 2026-11-11 | 教师确认Lesson 01–02理论通过；完成CNN真实样本最小工程，保存实际命令、损失、梯度与重载证据；取回五轮教学原文。 |
 
 2026-10-28 已核验的同步提交为 `b6ac9ced33474068f69f4505d38a01222a9e6562`；这只是当日快照，不作为后续最新提交的固定值。[当日同步回执](reports/day01_github_sync_20261028_run01/sync_receipt.md)。
+
+## 2026-11-19正式训练证据
+
+[完整报告](reports/cnn_baseline_seed42_20261119_run01/execution_report.md) · [配置/CSV/图表](reports/cnn_baseline_seed42_20261119_run01/README.md) · [学习补充](learning_notes/day02/2026-11-19_cnn_baseline_a.md)。数据划分、标准化与.gitignore未改，测试不选模。
 
 ## 学习记录的完整性
 

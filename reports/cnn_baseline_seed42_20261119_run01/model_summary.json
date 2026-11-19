@@ -1,0 +1,59 @@
+{
+  "architecture": "CNNBaselineA(\n  (conv1): Conv1d(9, 64, kernel_size=(3,), stride=(1,), padding=(1,))\n  (relu1): ReLU()\n  (conv2): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(1,))\n  (relu2): ReLU()\n  (pool): AdaptiveAvgPool1d(output_size=1)\n  (flatten): Flatten(start_dim=1, end_dim=-1)\n  (classifier): Linear(in_features=128, out_features=6, bias=True)\n  (maxpool): MaxPool1d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n)",
+  "input_shape": [
+    64,
+    9,
+    128
+  ],
+  "layer_shapes": {
+    "conv1": [
+      64,
+      64,
+      128
+    ],
+    "relu1": [
+      64,
+      64,
+      128
+    ],
+    "maxpool": [
+      64,
+      64,
+      64
+    ],
+    "conv2": [
+      64,
+      128,
+      64
+    ],
+    "relu2": [
+      64,
+      128,
+      64
+    ],
+    "pool": [
+      64,
+      128,
+      1
+    ],
+    "flatten": [
+      64,
+      128
+    ],
+    "classifier": [
+      64,
+      6
+    ]
+  },
+  "parameter_calculation": {
+    "layers": {
+      "conv1": 1792,
+      "conv2": 24704,
+      "classifier": 774
+    },
+    "total": 27270
+  },
+  "actual_parameters": 27270,
+  "maxpool_parameters": 0,
+  "difference_from_minimal": "MaxPool1d(2) after first ReLU; old model unchanged"
+}

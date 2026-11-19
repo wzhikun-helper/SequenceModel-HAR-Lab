@@ -24,6 +24,10 @@ PAGES = [
     'learning_notes/day01/evidence_index.md', 'reports/remediation_round1_20261031/README.md',
     'docs/day02_cnn.md', 'learning_notes/day02/README.md',
     'reports/day02_cnn_20261111_run01/README.md',
+    'reports/cnn_baseline_seed42_20261119_run01/README.md',
+    'reports/cnn_baseline_seed42_20261119_run01/execution_report.md',
+    'reports/cnn_baseline_seed42_20261119_run01/reproducibility.md',
+    'learning_notes/day02/2026-11-19_cnn_baseline_a.md',
 ]
 
 

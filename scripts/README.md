@@ -37,6 +37,10 @@ python -I -S -B -m unittest discover -s tests -v
 
 [day02_cnn_smoke.py](day02_cnn_smoke.py)复用Day 01有效训练产物，检查真实前向、一次反向和未训练checkpoint重载；不执行优化器更新。[模型](../src/har_lab/cnn.py) · [运行说明](../docs/day02_cnn.md)。需要CPU PyTorch，独立合成测试位于`tests_torch/`，未接入不含第三方依赖的轻量CI。
 
+## CNN Baseline A正式训练
+
+[train_cnn_baseline_a.py](train_cnn_baseline_a.py)分audit/preflight/train阶段，固定Day 01有效来源。[verify_cnn_baseline_a.py](verify_cnn_baseline_a.py)从预测独立复算；[fig02_cnn_baseline_a.py](fig02_cnn_baseline_a.py)读CSV绘图。[运行说明](../reports/cnn_baseline_seed42_20261119_run01/reproducibility.md)。
+
 ## 历史归档工具
 
 [archive_day01_20261028.py](archive_day01_20261028.py) 与 [prepare_day01_git_sync.py](prepare_day01_git_sync.py) 保留当日归档操作，使用固定日期、快照及独占输出目录，不属于可反复执行的通用数据API。阅读历史实现即可，不要为重新运行它们而删除已有成果。

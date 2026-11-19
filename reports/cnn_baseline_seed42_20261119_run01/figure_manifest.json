@@ -1,0 +1,98 @@
+[
+  {
+    "path": "reports/cnn_baseline_seed42_20261119_run01/train_val_loss.png",
+    "local_original": "outputs/figures/cnn_baseline_seed42_20261119_run01/train_val_loss.png",
+    "sha256": "16781fb8932631a125b5893fa5efd879c9607970af09cc77007b99ba5de94c83",
+    "bytes": 122106,
+    "source_csv": "training_history.csv",
+    "source_sha256": "bd71fba6b1c74c2485130c0a4cd7e27bd36db3335d7a9999b9189003984aa0f5",
+    "pixels": [
+      1950,
+      1080
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ]
+  },
+  {
+    "path": "reports/cnn_baseline_seed42_20261119_run01/train_val_loss.pdf",
+    "local_original": "outputs/figures/cnn_baseline_seed42_20261119_run01/train_val_loss.pdf",
+    "sha256": "9582f7fae0d0c5d88d11b65d89911fcb362983a0f90cb6fc32bb9ef73a12e98a",
+    "bytes": 14270,
+    "source_csv": "training_history.csv",
+    "source_sha256": "bd71fba6b1c74c2485130c0a4cd7e27bd36db3335d7a9999b9189003984aa0f5"
+  },
+  {
+    "path": "reports/cnn_baseline_seed42_20261119_run01/train_val_loss.svg",
+    "local_original": "outputs/figures/cnn_baseline_seed42_20261119_run01/train_val_loss.svg",
+    "sha256": "b2f77fb0c407f250ef3d55bda12622740d389f2568ecd3213d297815ac734e94",
+    "bytes": 15367,
+    "source_csv": "training_history.csv",
+    "source_sha256": "bd71fba6b1c74c2485130c0a4cd7e27bd36db3335d7a9999b9189003984aa0f5"
+  },
+  {
+    "path": "reports/cnn_baseline_seed42_20261119_run01/validation_macro_f1.png",
+    "local_original": "outputs/figures/cnn_baseline_seed42_20261119_run01/validation_macro_f1.png",
+    "sha256": "271c2b669bacbb56e30b31e7886fe19311bccc63456e8ceadf36df55629d509b",
+    "bytes": 102717,
+    "source_csv": "training_history.csv",
+    "source_sha256": "bd71fba6b1c74c2485130c0a4cd7e27bd36db3335d7a9999b9189003984aa0f5",
+    "pixels": [
+      1950,
+      1080
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ]
+  },
+  {
+    "path": "reports/cnn_baseline_seed42_20261119_run01/validation_macro_f1.pdf",
+    "local_original": "outputs/figures/cnn_baseline_seed42_20261119_run01/validation_macro_f1.pdf",
+    "sha256": "72dd1df5ed699ac218f5f4f57e892ebc3275b4ef973de8bd5aa60c6125d8d3bb",
+    "bytes": 13932,
+    "source_csv": "training_history.csv",
+    "source_sha256": "bd71fba6b1c74c2485130c0a4cd7e27bd36db3335d7a9999b9189003984aa0f5"
+  },
+  {
+    "path": "reports/cnn_baseline_seed42_20261119_run01/validation_macro_f1.svg",
+    "local_original": "outputs/figures/cnn_baseline_seed42_20261119_run01/validation_macro_f1.svg",
+    "sha256": "283a03b1447447edba5c5dcf5b37b25c52c4c52a7259f7c00c57b932cec5e6e4",
+    "bytes": 12803,
+    "source_csv": "training_history.csv",
+    "source_sha256": "bd71fba6b1c74c2485130c0a4cd7e27bd36db3335d7a9999b9189003984aa0f5"
+  },
+  {
+    "path": "reports/cnn_baseline_seed42_20261119_run01/confusion_matrix.png",
+    "local_original": "outputs/figures/cnn_baseline_seed42_20261119_run01/confusion_matrix.png",
+    "sha256": "12bf1a493069ecd663ae61d98c48dd39587d2ef5c71a323a6b3f409a7d525ae2",
+    "bytes": 161203,
+    "source_csv": "confusion_matrix.csv",
+    "source_sha256": "5d4b69f3d15c47214df765208f53965fe761e8b927029d5e611f528af8771732",
+    "pixels": [
+      2010,
+      1650
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ]
+  },
+  {
+    "path": "reports/cnn_baseline_seed42_20261119_run01/confusion_matrix.pdf",
+    "local_original": "outputs/figures/cnn_baseline_seed42_20261119_run01/confusion_matrix.pdf",
+    "sha256": "76b4f6c1bdabbb2994f0e47107f84e8788b0e6b45a7c707f5010813d426bd5f7",
+    "bytes": 22597,
+    "source_csv": "confusion_matrix.csv",
+    "source_sha256": "5d4b69f3d15c47214df765208f53965fe761e8b927029d5e611f528af8771732"
+  },
+  {
+    "path": "reports/cnn_baseline_seed42_20261119_run01/confusion_matrix.svg",
+    "local_original": "outputs/figures/cnn_baseline_seed42_20261119_run01/confusion_matrix.svg",
+    "sha256": "b38746e6c44f8585ad49a950f54545eaf9116440403eaced68ecd35ace271c28",
+    "bytes": 31267,
+    "source_csv": "confusion_matrix.csv",
+    "source_sha256": "5d4b69f3d15c47214df765208f53965fe761e8b927029d5e611f528af8771732"
+  }
+]

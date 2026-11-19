@@ -4,6 +4,8 @@
 
 ## 推荐阅读
 
+最新正式实验：[CNN Baseline A Seed42](cnn_baseline_seed42_20261119_run01/execution_report.md)，含最终测试、曲线与独立复算；待教师验收。
+
 最新工程：[2026-11-11 Day 02 CNN最小验证](day02_cnn_20261111_run01/README.md)，包含真实窗口前向/反向、参数量与未训练checkpoint重载证据；不属于正式训练。
 
 数据复现：[2026-10-31第一轮整改](remediation_round1_20261031/README.md)，包含独立venv全流程的真实运行、旧结果比较、轻量测试及归档复核；与下列历史原始报告分开保存。

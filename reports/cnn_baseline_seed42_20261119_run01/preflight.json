@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "batches": 2,
+  "losses": [
+    1.8032444715499878,
+    1.7392711639404297
+  ],
+  "gradients": [
+    {
+      "conv1.weight": {
+        "finite": true,
+        "l2": 0.17430482804775238,
+        "nonzero": 1728
+      },
+      "conv1.bias": {
+        "finite": true,
+        "l2": 0.029883624985814095,
+        "nonzero": 64
+      },
+      "conv2.weight": {
+        "finite": true,
+        "l2": 0.55803382396698,
+        "nonzero": 24573
+      },
+      "conv2.bias": {
+        "finite": true,
+        "l2": 0.06324424594640732,
+        "nonzero": 128
+      },
+      "classifier.weight": {
+        "finite": true,
+        "l2": 0.43458959460258484,
+        "nonzero": 768
+      },
+      "classifier.bias": {
+        "finite": true,
+        "l2": 0.10109686851501465,
+        "nonzero": 6
+      }
+    },
+    {
+      "conv1.weight": {
+        "finite": true,
+        "l2": 0.20875383913516998,
+        "nonzero": 1728
+      },
+      "conv1.bias": {
+        "finite": true,
+        "l2": 0.039968058466911316,
+        "nonzero": 64
+      },
+      "conv2.weight": {
+        "finite": true,
+        "l2": 0.6402750015258789,
+        "nonzero": 24496
+      },
+      "conv2.bias": {
+        "finite": true,
+        "l2": 0.09352120012044907,
+        "nonzero": 128
+      },
+      "classifier.weight": {
+        "finite": true,
+        "l2": 0.5423409342765808,
+        "nonzero": 768
+      },
+      "classifier.bias": {
+        "finite": true,
+        "l2": 0.21605563163757324,
+        "nonzero": 6
+      }
+    }
+  ],
+  "parameter_tensors_updated": {
+    "conv1.weight": true,
+    "conv1.bias": true,
+    "conv2.weight": true,
+    "conv2.bias": true,
+    "classifier.weight": true,
+    "classifier.bias": true
+  },
+  "reload_max_abs_difference": 0.0,
+  "checkpoint_path": "checkpoints/cnn_baseline_seed42_20261119_run01/preflight.pt",
+  "checkpoint_bytes": 110999,
+  "checkpoint_sha256": "b613bbdff3683a901c423994bc1a70e67d265b219daf2f947b815669298acd15",
+  "formal_run_reinitializes_model_optimizer_and_all_rngs": true
+}

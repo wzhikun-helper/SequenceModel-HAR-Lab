@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "selection_replayed": true,
+  "early_stopping_replayed": true,
+  "train_epoch_coverage": true,
+  "test_prediction_rows": 2947,
+  "official_true_labels_match": true,
+  "confusion_and_all_metrics_independently_recomputed": true,
+  "max_allowed_metric_error": 1e-14,
+  "protected_input_hashes_unchanged": true,
+  "checkpoint_hash_matches": true,
+  "model_evaluation_performed": false
+}
