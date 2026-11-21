@@ -1,0 +1,34 @@
+{
+  "logs/gru_baseline_seed42_20261121_run01/01_tests.log": {
+    "bytes": 1320,
+    "sha256": "11f7b6730180f1f8725b49e4ca76f26b3c06c2c1da6817c61bd5bce44b70aaaa"
+  },
+  "logs/gru_baseline_seed42_20261121_run01/02_training.log": {
+    "bytes": 12268,
+    "sha256": "22bcf0870b7b6a320df1ffd442e1b4a6871b4000ce4b58c7fc74edffea40d087"
+  },
+  "logs/gru_baseline_seed42_20261121_run01/03_verify.log": {
+    "bytes": 566,
+    "sha256": "f9b14fde744ec0cbc116546f72e5a96c7378cebf1015303a97d0092c77768a79"
+  },
+  "logs/gru_baseline_seed42_20261121_run01/04_figures.log": {
+    "bytes": 92,
+    "sha256": "1d68616ae7527ebad0be696cc0a9b36f20310013be56e806d782d9e928825127"
+  },
+  "logs/gru_baseline_seed42_20261121_run01/05_figures_revision.log": {
+    "bytes": 92,
+    "sha256": "1d68616ae7527ebad0be696cc0a9b36f20310013be56e806d782d9e928825127"
+  },
+  "logs/gru_baseline_seed42_20261121_run01/06_contract_tests.log": {
+    "bytes": 2074,
+    "sha256": "57241f6823f86c32f7411084a4d1d920dada9ce744cdcd85fe1b83bd9405a73d"
+  },
+  "logs/gru_baseline_seed42_20261121_run01/07_docs.log": {
+    "bytes": 205,
+    "sha256": "b748fc95de2c146350dafb0c9a05a4f293e0a21b491153fc47a29d76b8b8d402"
+  },
+  "logs/gru_baseline_seed42_20261121_run01/08_remote_before.log": {
+    "bytes": 58,
+    "sha256": "bfa2f492ca19b908b6ae3a49c7b2dcc747eb028d3a72a415709b8139ca06e1b8"
+  }
+}

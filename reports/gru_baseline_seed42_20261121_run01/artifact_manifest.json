@@ -1,0 +1,190 @@
+{
+  "scope": "This experiment publication files; manifest itself excluded to avoid circular hashes",
+  "public": [
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/changed_files.json",
+      "bytes": 2679,
+      "sha256": "6b4770d17a6a45c7388d9f8f5de2f0881ac64e2365418f1fa9e20e74e3b05247"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/checkpoint_reload_verification.json",
+      "bytes": 842,
+      "sha256": "b1ee76261ebdb5dec0c83b00b7b9716356002ba9440547a07e74cc4d02be748f"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/classification_report.json",
+      "bytes": 1036,
+      "sha256": "aae32c6ed538b0f63c2de87c392f247e3cbde59a97970b466776c3aa53d8b98f"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/cnn_gru_comparison.md",
+      "bytes": 3204,
+      "sha256": "b79a0923de2751903b2b41aa7f1e7f2fbec5982732b7d9e49415d59b0c36bf68"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/commands.json",
+      "bytes": 4146,
+      "sha256": "8e96e669cb797198cd29d1889a0adcd8a461704a587eb154b332fede710db777"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/config.json",
+      "bytes": 1819,
+      "sha256": "eafef58dbfac049c3c73cb225190d0167dd71e2eadbfe50d56008546974d6928"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/confusion_matrix.csv",
+      "bytes": 247,
+      "sha256": "6ad16c927923423486a222f999bbc795740970124dd896cd500fac3e747beb20"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/confusion_matrix.pdf",
+      "bytes": 23046,
+      "sha256": "52ad66956a975fbf6db2579690d8359406afd063cc511422ad8222e6cc6ad2a4"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/confusion_matrix.png",
+      "bytes": 160368,
+      "sha256": "47855515c32e1cc5369901cb16dde8b1b04b24a4927f58c4a6d0fd38084250d4"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/environment.json",
+      "bytes": 545,
+      "sha256": "beaf655df7172072f9158faf124f30e73c2bdb77e629daa40c3be64b4177165e"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/execution_report.md",
+      "bytes": 9153,
+      "sha256": "28cb0f33ce10e949efa281ff347b105f539fd2523f6af6a94afd182dff35ea15"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/figure_manifest.json",
+      "bytes": 2876,
+      "sha256": "532c24f17b939b6d3e09d060877c3b0e26e1244fc2463a2aa783bcf3ef4b6a15"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/figure_quality.md",
+      "bytes": 984,
+      "sha256": "c9de82c751870dae11acba17c6527bca959195c66909b67f4a01bbf4626c27ee"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/independent_verification.json",
+      "bytes": 606,
+      "sha256": "8b070167ef8e18cc1836bd6fc1cb71f6c2f1e3fb812957b86f38c7b54c72f0b4"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/integrated_preflight.json",
+      "bytes": 2292,
+      "sha256": "087cb58d770b3742cbcc456de29398408c717a113c4f75420e8dfa4501669cbf"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/local_log_manifest.json",
+      "bytes": 1383,
+      "sha256": "845f7eff50a2c4d3900047d0ffd9cce83a3ec705b87f086690a6d87d592dad5a"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/metrics.json",
+      "bytes": 1667,
+      "sha256": "95367c6ec8308d776c2ce1b4b6c867d2723ab39c74cc1b4e8309c16ccb1108e6"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/model_summary.json",
+      "bytes": 1543,
+      "sha256": "8241aa9ff12bf2a5cb7f39caa627d1715a8f8e079cb0c399e41b64632dad5646"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/per_class_metrics.csv",
+      "bytes": 484,
+      "sha256": "4ef469a28c2ea8e5063581b47c4fd9af0c35bae8093ad817380d89c608c27e7d"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/README.md",
+      "bytes": 419,
+      "sha256": "cc7bfaa2893cfbb65083017bd8b4f557d3da2d468dcac8b1664e5c0b57c9f3b1"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/reproducibility.md",
+      "bytes": 2256,
+      "sha256": "7182c58d135ba97728121968ed05a0b247e91ba24da6aee8ffd90c26ee54545e"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/runtime_conditions.json",
+      "bytes": 792,
+      "sha256": "81e62fd66495cb491a3bfb9972ae78681a59f8e596b9db529aa568676d4fc953"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/source_provenance.json",
+      "bytes": 7360,
+      "sha256": "ffdb38d8e8cd8534b31acf3a7d6aeefdacce433c25ec63af4a38f2fd51e3172a"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/test_metrics.json",
+      "bytes": 1667,
+      "sha256": "95367c6ec8308d776c2ce1b4b6c867d2723ab39c74cc1b4e8309c16ccb1108e6"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/test_predictions.csv",
+      "bytes": 28425,
+      "sha256": "0b9e15d3e868d04a9304a578df0fd8408d4b5e8c3a35dab3215fcb2d3c693518"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/training_curves.pdf",
+      "bytes": 17619,
+      "sha256": "da1afb5f95a330558cfa0b4b217a4d7be5488c868737678a88ec369b270c8694"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/training_curves.png",
+      "bytes": 230146,
+      "sha256": "c3b9eabf37141637b4da1d354bba32c050d01727dcb4136c487e0ca764a8d0c7"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/training_history.csv",
+      "bytes": 4430,
+      "sha256": "061a86d96e7fd8d7083724bc55252b4a82020dbbe1af27bfdf9d9d794abfa0ae"
+    },
+    {
+      "path": "reports/gru_baseline_seed42_20261121_run01/training_result.json",
+      "bytes": 2685,
+      "sha256": "5136bdcee5f087d82a7883826afcd7d2ca64550ee4bb382d81ac59b48fcbf4ff"
+    }
+  ],
+  "local_only": [
+    {
+      "kind": "best",
+      "path": "checkpoints/gru_baseline_seed42_20261121_run01/best_checkpoint.pt",
+      "bytes": 61587,
+      "sha256": "3c21fc23bd9bb9853e81a1aa3f07951a845968e193ed31bd869f129b34c40abf"
+    },
+    {
+      "kind": "last",
+      "path": "checkpoints/gru_baseline_seed42_20261121_run01/last_checkpoint.pt",
+      "bytes": 61143,
+      "sha256": "0bd1677855d33c9a4e3fa90e1d22c116b8892da4ac409555625ad2abe68932ba"
+    },
+    {
+      "kind": "editable_vector",
+      "path": "outputs/figures/gru_baseline_seed42_20261121_run01_layout02/training_curves.svg",
+      "bytes": 41520,
+      "sha256": "77933eb40ca62559d841c6a3f170386298ed6337c51fc5fb86d2ababe881f52f"
+    },
+    {
+      "kind": "editable_vector",
+      "path": "outputs/figures/gru_baseline_seed42_20261121_run01_layout02/confusion_matrix.svg",
+      "bytes": 31253,
+      "sha256": "61d69763b563a9c5bfb089278c9b514b6892a995a201030d6a3649285bcebcf9"
+    },
+    {
+      "kind": "first_visual_attempt",
+      "path": "logs/gru_baseline_seed42_20261121_run01/figure_attempt01/hashes.json",
+      "bytes": 572,
+      "sha256": "8b2a807f29d81d4d23190de3e2177e6b1ac7da8480d8404957871efeb71ebc78"
+    }
+  ],
+  "cnn_history_unchanged": true,
+  "scripts_sha256": {
+    "scripts/train_gru_baseline.py": "b2bd02546a598e6880c51c21ae340ffefa0559991b6c2494f7d9e0c84692719d",
+    "scripts/verify_gru_baseline.py": "ffb5f4670537b64639915559bd77e8120936ed90dbd391a4b00b442a6c057161",
+    "scripts/fig03_gru_baseline.py": "f1bd92750c1ac93428317f5d53e6100f0d66fb4b6399b4db0927dbf230d79f53",
+    "src/har_lab/gru_baseline_b.py": "da407adb782541dac71cccacdd1ce506bfc3e8884215dfe934d96606b3f8ca9e",
+    "tests_torch/test_gru_baseline.py": "17609dc10bca1261291a18917d0ceb1768c4b57f8a533c0e91b17043e7c319c2"
+  }
+}

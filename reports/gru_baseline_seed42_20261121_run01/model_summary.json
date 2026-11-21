@@ -1,0 +1,90 @@
+{
+  "architecture": "GRUBaselineB(\n  (gru): GRU(9, 64, batch_first=True)\n  (classifier): Linear(in_features=64, out_features=6, bias=True)\n)",
+  "shapes": {
+    "input": [
+      64,
+      128,
+      9
+    ],
+    "output": [
+      64,
+      128,
+      64
+    ],
+    "h_n": [
+      1,
+      64,
+      64
+    ],
+    "last_hidden": [
+      64,
+      64
+    ],
+    "classifier_input": [
+      64,
+      64
+    ],
+    "logits": [
+      64,
+      6
+    ]
+  },
+  "calculated": {
+    "layers": {
+      "weight_ih": 1728,
+      "weight_hh": 12288,
+      "bias_ih": 192,
+      "bias_hh": 192,
+      "classifier": 390
+    },
+    "total": 14790
+  },
+  "actual_parameters": 14790,
+  "parameters": {
+    "gru.weight_ih_l0": {
+      "shape": [
+        192,
+        9
+      ],
+      "numel": 1728,
+      "dtype": "torch.float32"
+    },
+    "gru.weight_hh_l0": {
+      "shape": [
+        192,
+        64
+      ],
+      "numel": 12288,
+      "dtype": "torch.float32"
+    },
+    "gru.bias_ih_l0": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "dtype": "torch.float32"
+    },
+    "gru.bias_hh_l0": {
+      "shape": [
+        192
+      ],
+      "numel": 192,
+      "dtype": "torch.float32"
+    },
+    "classifier.weight": {
+      "shape": [
+        6,
+        64
+      ],
+      "numel": 384,
+      "dtype": "torch.float32"
+    },
+    "classifier.bias": {
+      "shape": [
+        6
+      ],
+      "numel": 6,
+      "dtype": "torch.float32"
+    }
+  }
+}

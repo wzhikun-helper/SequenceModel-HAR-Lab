@@ -1,0 +1,132 @@
+{
+  "status": "PASS",
+  "seed": 42,
+  "best_epoch": 23,
+  "epochs_completed": 30,
+  "final_stale_count": 7,
+  "stopped_early": false,
+  "stop_reason": "max_epochs",
+  "best_validation": {
+    "n": 1315,
+    "accuracy": 0.9589353612167301,
+    "macro_f1": 0.9578617072375346,
+    "precision": [
+      0.9851851851851852,
+      0.9951690821256038,
+      1.0,
+      0.8083333333333333,
+      0.9836956521739131,
+      1.0
+    ],
+    "recall": [
+      1.0,
+      0.9809523809523809,
+      1.0,
+      0.9797979797979798,
+      0.7973568281938326,
+      1.0
+    ],
+    "f1": [
+      0.9925373134328358,
+      0.988009592326139,
+      1.0,
+      0.8858447488584474,
+      0.8807785888077859,
+      1.0
+    ],
+    "support": [
+      266,
+      210,
+      193,
+      198,
+      227,
+      221
+    ],
+    "confusion_matrix": [
+      [
+        266,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        206,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        193,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        194,
+        3,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        46,
+        181,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        221
+      ]
+    ],
+    "zero_division": 0,
+    "macro_classes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "confusion_orientation": "rows=true, columns=predicted",
+    "loss": 0.11084003212220768
+  },
+  "epoch_loop_seconds": 223.95418199999997,
+  "epoch_seconds_sum": 223.94953020000008,
+  "started_at": "2026-11-21T21:14:50.850994+08:00",
+  "finished_at": "2026-11-21T21:18:38.224389+08:00",
+  "optimizer_steps": 2850,
+  "test_evaluation_passes": 1,
+  "inference_seconds": null,
+  "inference_timing_status": "not separately measured",
+  "checkpoints": {
+    "best_epoch": 23,
+    "best_validation_macro_f1": 0.9578617072375346,
+    "best_validation_loss": 0.11084003212220768,
+    "best_epoch_file": "checkpoints/gru_baseline_seed42_20261121_run01/epoch_023.pt",
+    "best": {
+      "path": "checkpoints/gru_baseline_seed42_20261121_run01/best_checkpoint.pt",
+      "bytes": 61587,
+      "sha256": "3c21fc23bd9bb9853e81a1aa3f07951a845968e193ed31bd869f129b34c40abf"
+    },
+    "last": {
+      "path": "checkpoints/gru_baseline_seed42_20261121_run01/last_checkpoint.pt",
+      "bytes": 61143,
+      "sha256": "0bd1677855d33c9a4e3fa90e1d22c116b8892da4ac409555625ad2abe68932ba"
+    }
+  },
+  "input_hashes_unchanged": true
+}

@@ -1,0 +1,35 @@
+{
+  "optimizer_defaults": {
+    "lr": 0.001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null
+  },
+  "zero_grad_set_to_none": true,
+  "dtype": "torch.float32",
+  "threads": 2,
+  "deterministic_algorithms": true,
+  "amp": false,
+  "gradient_clipping": null,
+  "scheduler": null,
+  "loss_reduction": "mean",
+  "parameter_updates_validation": false,
+  "test_model_passes_before_selection": 0,
+  "loader": {
+    "batch_size": 64,
+    "drop_last": false,
+    "num_workers": 0,
+    "sampler": "RandomSampler",
+    "validation_sampler": "SequentialSampler",
+    "generator_seed": 42
+  }
+}

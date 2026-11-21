@@ -4,6 +4,8 @@
 
 ## 推荐阅读
 
+最新：[GRU Baseline B](gru_baseline_seed42_20261121_run01/execution_report.md) · [实施前CNN配置审计](gru_baseline_preflight_20261121/audit_report.md) · [固定条件CNN—GRU比较](gru_baseline_seed42_20261121_run01/cnn_gru_comparison.md)。历史CNN报告不修改。
+
 最新正式实验：[CNN Baseline A Seed42](cnn_baseline_seed42_20261119_run01/execution_report.md)，含最终测试、曲线与独立复算；待教师验收。
 
 最新工程：[2026-11-11 Day 02 CNN最小验证](day02_cnn_20261111_run01/README.md)，包含真实窗口前向/反向、参数量与未训练checkpoint重载证据；不属于正式训练。

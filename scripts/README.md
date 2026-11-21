@@ -41,6 +41,10 @@ python -I -S -B -m unittest discover -s tests -v
 
 [train_cnn_baseline_a.py](train_cnn_baseline_a.py)分audit/preflight/train阶段，固定Day 01有效来源。[verify_cnn_baseline_a.py](verify_cnn_baseline_a.py)从预测独立复算；[fig02_cnn_baseline_a.py](fig02_cnn_baseline_a.py)读CSV绘图。[运行说明](../reports/cnn_baseline_seed42_20261119_run01/reproducibility.md)。
 
+## GRU Baseline B
+
+[train_gru_baseline.py](train_gru_baseline.py)集成预检查及正式训练，复用审计后的CNN种子/评价/选模逻辑；[verify_gru_baseline.py](verify_gru_baseline.py)复算保存预测，[fig03_gru_baseline.py](fig03_gru_baseline.py)读CSV生成图。[复现与审计前置条件](../reports/gru_baseline_seed42_20261121_run01/reproducibility.md)。
+
 ## 历史归档工具
 
 [archive_day01_20261028.py](archive_day01_20261028.py) 与 [prepare_day01_git_sync.py](prepare_day01_git_sync.py) 保留当日归档操作，使用固定日期、快照及独占输出目录，不属于可反复执行的通用数据API。阅读历史实现即可，不要为重新运行它们而删除已有成果。

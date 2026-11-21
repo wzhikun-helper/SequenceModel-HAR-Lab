@@ -1,0 +1,68 @@
+[
+  {
+    "local_path": "outputs/figures/gru_baseline_seed42_20261121_run01_layout02/training_curves.png",
+    "bytes": 230146,
+    "sha256": "c3b9eabf37141637b4da1d354bba32c050d01727dcb4136c487e0ca764a8d0c7",
+    "source_csv": "training_history.csv",
+    "source_sha256": "061a86d96e7fd8d7083724bc55252b4a82020dbbe1af27bfdf9d9d794abfa0ae",
+    "public_path": "reports/gru_baseline_seed42_20261121_run01/training_curves.png",
+    "pixels": [
+      2100,
+      2340
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ]
+  },
+  {
+    "local_path": "outputs/figures/gru_baseline_seed42_20261121_run01_layout02/training_curves.pdf",
+    "bytes": 17619,
+    "sha256": "da1afb5f95a330558cfa0b4b217a4d7be5488c868737678a88ec369b270c8694",
+    "source_csv": "training_history.csv",
+    "source_sha256": "061a86d96e7fd8d7083724bc55252b4a82020dbbe1af27bfdf9d9d794abfa0ae",
+    "public_path": "reports/gru_baseline_seed42_20261121_run01/training_curves.pdf"
+  },
+  {
+    "local_path": "outputs/figures/gru_baseline_seed42_20261121_run01_layout02/training_curves.svg",
+    "bytes": 41520,
+    "sha256": "77933eb40ca62559d841c6a3f170386298ed6337c51fc5fb86d2ababe881f52f",
+    "source_csv": "training_history.csv",
+    "source_sha256": "061a86d96e7fd8d7083724bc55252b4a82020dbbe1af27bfdf9d9d794abfa0ae",
+    "public_path": null,
+    "scope": "Editable SVG retained in ignored local outputs; PNG/PDF published"
+  },
+  {
+    "local_path": "outputs/figures/gru_baseline_seed42_20261121_run01_layout02/confusion_matrix.png",
+    "bytes": 160368,
+    "sha256": "47855515c32e1cc5369901cb16dde8b1b04b24a4927f58c4a6d0fd38084250d4",
+    "source_csv": "confusion_matrix.csv",
+    "source_sha256": "6ad16c927923423486a222f999bbc795740970124dd896cd500fac3e747beb20",
+    "public_path": "reports/gru_baseline_seed42_20261121_run01/confusion_matrix.png",
+    "pixels": [
+      2010,
+      1650
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ]
+  },
+  {
+    "local_path": "outputs/figures/gru_baseline_seed42_20261121_run01_layout02/confusion_matrix.pdf",
+    "bytes": 23046,
+    "sha256": "52ad66956a975fbf6db2579690d8359406afd063cc511422ad8222e6cc6ad2a4",
+    "source_csv": "confusion_matrix.csv",
+    "source_sha256": "6ad16c927923423486a222f999bbc795740970124dd896cd500fac3e747beb20",
+    "public_path": "reports/gru_baseline_seed42_20261121_run01/confusion_matrix.pdf"
+  },
+  {
+    "local_path": "outputs/figures/gru_baseline_seed42_20261121_run01_layout02/confusion_matrix.svg",
+    "bytes": 31253,
+    "sha256": "61d69763b563a9c5bfb089278c9b514b6892a995a201030d6a3649285bcebcf9",
+    "source_csv": "confusion_matrix.csv",
+    "source_sha256": "6ad16c927923423486a222f999bbc795740970124dd896cd500fac3e747beb20",
+    "public_path": null,
+    "scope": "Editable SVG retained in ignored local outputs; PNG/PDF published"
+  }
+]

@@ -28,6 +28,12 @@ PAGES = [
     'reports/cnn_baseline_seed42_20261119_run01/execution_report.md',
     'reports/cnn_baseline_seed42_20261119_run01/reproducibility.md',
     'learning_notes/day02/2026-11-19_cnn_baseline_a.md',
+    'reports/gru_baseline_preflight_20261121/audit_report.md',
+    'reports/gru_baseline_seed42_20261121_run01/README.md',
+    'reports/gru_baseline_seed42_20261121_run01/execution_report.md',
+    'reports/gru_baseline_seed42_20261121_run01/cnn_gru_comparison.md',
+    'reports/gru_baseline_seed42_20261121_run01/reproducibility.md',
+    'learning_notes/day02/2026-11-21_gru_baseline_b.md',
 ]
 
 

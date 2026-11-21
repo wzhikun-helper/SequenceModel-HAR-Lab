@@ -6,7 +6,7 @@
 
 [![Documentation checks](https://github.com/wzhikun-helper/SequenceModel-HAR-Lab/actions/workflows/docs.yml/badge.svg)](https://github.com/wzhikun-helper/SequenceModel-HAR-Lab/actions/workflows/docs.yml)
 
-基于 UCI HAR 手机传感器信号，研究多通道时序数据的表示、预处理与独立评价。已完成Day 01数据基础，并用真实训练窗口运行两层1D CNN的前向、反向与未训练权重重载检查。现已完成CNN Baseline A Seed42正式训练，其他模型与消融未执行。
+基于 UCI HAR 手机传感器信号，研究多通道时序数据的表示、预处理与独立评价。已完成Day 01数据基础，并用真实训练窗口运行两层1D CNN的前向、反向与未训练权重重载检查。现已完成CNN Baseline A Seed42正式训练，GRU Baseline B也已完成固定条件下的单种子训练，其余规划模型与消融未执行。
 
 **128 × 9** 每窗口输入 · **50 Hz** 采样率 · **6** 类活动 · **30** 位受试者
 
@@ -93,9 +93,15 @@ python -B scripts/check_public_docs.py
 
 ![官方测试混淆矩阵](reports/cnn_baseline_seed42_20261119_run01/confusion_matrix.png)
 
+## GRU Baseline B · Seed42
+
+先审计CNN实际配置后，仅替换模型与输入接口；训练30轮，最佳Epoch23。官方测试：**Accuracy 91.8222% · Macro-F1 91.9444%**；14,790参数。单种子比较不表示普遍优越，计时范围不同不作严格速度比较。
+
+[完整报告](reports/gru_baseline_seed42_20261121_run01/execution_report.md) · [CNN配置审计](reports/gru_baseline_preflight_20261121/audit_report.md) · [CNN—GRU比较](reports/gru_baseline_seed42_20261121_run01/cnn_gru_comparison.md)
+
 ## 当前阶段与后续计划
 
-Day 01已验收；Day 02 Lesson 01–02理论已由教师确认通过，CNN最小工程已运行并提交证据，等待教师审阅。CNN Baseline A单种子正式训练已完成；GRU、Transformer、Mamba、跨模型比较与消融未执行。Day 02整体等待教师验收。[进度记录](PROGRESS.md)。
+Day 01已验收；Day 02 Lesson 01–02理论已由教师确认通过，CNN最小工程已运行并提交证据，等待教师审阅。CNN Baseline A单种子正式训练已完成；GRU Baseline B及CNN—GRU单种子比较已执行；Transformer、Mamba和消融未执行。Day 02整体等待教师验收。[进度记录](PROGRESS.md)。
 
 ## 数据引用
 

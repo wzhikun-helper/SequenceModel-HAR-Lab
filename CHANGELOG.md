@@ -2,6 +2,12 @@
 
 只记录本仓库已经完成的变更；模型计划与待执行事项见[项目进度](PROGRESS.md)。
 
+## 2026-11-21
+
+- 基于真实CNN运行配置审计完成GRU Baseline B，保留原CNN代码和结果。
+- 增加集成必要检查、best/last重载、逐轮Accuracy/计时、独立分类复算和CNN比较。
+- 发布真实CSV、PNG/PDF、报告与学习补充；权重、stdout和可编辑SVG留本地。
+
 ## 2026-11-19
 
 - 新增带MaxPool的CNN Baseline A，保留旧模型；Seed42正式训练15轮，验证选出Epoch7。

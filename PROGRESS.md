@@ -1,6 +1,6 @@
 # 项目进度
 
-更新日期：2026-11-19。当前阶段：**CNN Baseline A Seed42正式训练和最终测试已执行，等待教师验收；Day 02未宣布全部完成。**
+更新日期：2026-11-21。当前阶段：**CNN A与GRU B单种子正式结果已归档，等待教师验收；Day 02未宣布全部完成。**
 
 ## 实验进度
 
@@ -13,7 +13,8 @@
 | 学习验收 | 第三章 12/12 通过 | 教师确认的[最终笔记](learning_notes/day01/2026-10-28_teacher_final_notes.md) |
 | CNN最小工程 | 本地执行通过，待教师验收 | 六个真实训练窗口、前向/反向、未训练权重本地保存与重载一致；无优化器更新 |
 | CNN Baseline A | 已执行，待教师验收 | Seed42，最佳Epoch7，15轮Early Stopping；测试Accuracy 89.7523% / Macro-F1 89.8202% |
-| GRU / Transformer / Mamba / 消融 | 未开始 | 无对应结果 |
+| GRU Baseline B | 已执行，待教师验收 | Seed42，最佳Epoch23，实际30轮；测试Accuracy 91.8222% / Macro-F1 91.9444% |
+| Transformer / Mamba / 消融 | 未开始 | 无对应结果 |
 
 训练集 6,037 窗口，验证集 1,315 窗口，测试集 2,947 窗口。[协议与元数据](docs/data_protocol.md) · [数据独立复核](reports/day01_data_20261026_run02/independent_verification.json)。
 
@@ -33,6 +34,10 @@
 ## 2026-11-19正式训练证据
 
 [完整报告](reports/cnn_baseline_seed42_20261119_run01/execution_report.md) · [配置/CSV/图表](reports/cnn_baseline_seed42_20261119_run01/README.md) · [学习补充](learning_notes/day02/2026-11-19_cnn_baseline_a.md)。数据划分、标准化与.gitignore未改，测试不选模。
+
+## 2026-11-21 GRU证据
+
+先审计CNN实际配置，再执行GRU；[审计报告](reports/gru_baseline_preflight_20261121/audit_report.md) · [完整实验](reports/gru_baseline_seed42_20261121_run01/execution_report.md) · [CNN对比](reports/gru_baseline_seed42_20261121_run01/cnn_gru_comparison.md) · [学习补充](learning_notes/day02/2026-11-21_gru_baseline_b.md)。原CNN成果和.gitignore未改。
 
 ## 学习记录的完整性
 
