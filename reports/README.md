@@ -4,6 +4,8 @@
 
 ## 推荐阅读
 
+最新：[Transformer C](transformer_baseline_seed42_20261122_run01/execution_report.md) · [三模型比较](transformer_baseline_seed42_20261122_run01/three_model_comparison.md) · [只读审计](transformer_preflight_20261122/audit_report.md)。CNN/GRU原报告不改。
+
 最新：[GRU Baseline B](gru_baseline_seed42_20261121_run01/execution_report.md) · [实施前CNN配置审计](gru_baseline_preflight_20261121/audit_report.md) · [固定条件CNN—GRU比较](gru_baseline_seed42_20261121_run01/cnn_gru_comparison.md)。历史CNN报告不修改。
 
 最新正式实验：[CNN Baseline A Seed42](cnn_baseline_seed42_20261119_run01/execution_report.md)，含最终测试、曲线与独立复算；待教师验收。

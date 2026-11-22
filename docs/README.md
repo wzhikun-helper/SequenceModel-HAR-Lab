@@ -14,6 +14,7 @@
 | 核对数据实践的实际执行结果 | [报告与历史档案](../reports/README.md) |
 | 查找可运行的数据脚本 | [脚本说明](../scripts/README.md) |
 | 核验GRU及CNN对比 | [GRU报告](../reports/gru_baseline_seed42_20261121_run01/execution_report.md)、[CNN配置审计](../reports/gru_baseline_preflight_20261121/audit_report.md)、[对比](../reports/gru_baseline_seed42_20261121_run01/cnn_gru_comparison.md) |
+| 核验Transformer与三模型 | [报告](../reports/transformer_baseline_seed42_20261122_run01/execution_report.md)、[比较](../reports/transformer_baseline_seed42_20261122_run01/three_model_comparison.md) |
 | 确认当前阶段 | [项目进度](../PROGRESS.md) |
 | 复核CNN Baseline A正式训练 | [报告](../reports/cnn_baseline_seed42_20261119_run01/execution_report.md)、[复现说明](../reports/cnn_baseline_seed42_20261119_run01/reproducibility.md) |
 | 复现CNN最小真实样本工程 | [Day 02运行说明](day02_cnn.md)、[工程报告](../reports/day02_cnn_20261111_run01/README.md)、[学习原答](../learning_notes/day02/README.md) |

@@ -1,0 +1,30 @@
+{
+  "logs/transformer_baseline_seed42_20261122_run01/01_tests.log": {
+    "bytes": 1671,
+    "sha256": "1f396574794793744618f281108b74615798103d354c396a23fe7362dac1e726"
+  },
+  "logs/transformer_baseline_seed42_20261122_run01/02_training.log": {
+    "bytes": 6414,
+    "sha256": "ed95b62642baf5344d24225f4527c653c6fae750072005d8d60d4ea90667fb87"
+  },
+  "logs/transformer_baseline_seed42_20261122_run01/03_verify.log": {
+    "bytes": 1037,
+    "sha256": "7f423176b82f06c56addd350b77c26061efe36331b6ade14687998c60d127b70"
+  },
+  "logs/transformer_baseline_seed42_20261122_run01/04_figures.log": {
+    "bytes": 89,
+    "sha256": "079195f4fb0642b87bf60c1b1943cb31f813cff9132db574cba77749f6fd0aa1"
+  },
+  "logs/transformer_baseline_seed42_20261122_run01/05_contract_tests.log": {
+    "bytes": 2074,
+    "sha256": "57241f6823f86c32f7411084a4d1d920dada9ce744cdcd85fe1b83bd9405a73d"
+  },
+  "logs/transformer_baseline_seed42_20261122_run01/06_docs.log": {
+    "bytes": 205,
+    "sha256": "4adb2e632bb4c9d15968f448b1721d5c58862f7091f42481b4f0750ae7413521"
+  },
+  "logs/transformer_baseline_seed42_20261122_run01/07_remote_before.log": {
+    "bytes": 58,
+    "sha256": "995817d25b31c24a61eb88fbd6cd85dfdb8c387de4bc693ab99f98126dbb0693"
+  }
+}

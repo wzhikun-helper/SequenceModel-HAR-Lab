@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "fixed_position_buffer_nontrainable": true,
+  "exact_approved_architecture_and_parameter_count": true,
+  "preflight_and_best_last_reload_exact": true,
+  "formal_initialization_signature_matches_seed42_initial": true,
+  "shared_saved_classification_verifier_used": true,
+  "checkpoint_position_buffer_checks": {
+    "best": {
+      "max_abs_error_vs_float64_formula": 4.454300034532899e-06,
+      "atol": 1e-05
+    },
+    "last": {
+      "max_abs_error_vs_float64_formula": 4.454300034532899e-06,
+      "atol": 1e-05
+    }
+  },
+  "model_inference_performed": false
+}

@@ -1,0 +1,26 @@
+{
+  "scope": "Audit helper startup only; no model/data changes or training occurred in these attempts",
+  "failed_attempts": [
+    {
+      "mode": "direct script launch",
+      "exit_code": 1,
+      "tool_elapsed_seconds": 0.7237972
+    },
+    {
+      "mode": "direct script launch with -X utf8",
+      "exit_code": 1,
+      "tool_elapsed_seconds": 0.7209913
+    },
+    {
+      "mode": "direct script launch outside sandbox with -X utf8",
+      "exit_code": 1,
+      "tool_elapsed_seconds": 0.4501643
+    }
+  ],
+  "error": "SyntaxError: Non-UTF-8 code starting with '\\xe4' in audit.py on line 96, but no encoding declared",
+  "diagnostics": "Explicit UTF-8 decode and compile of both bytes and decoded text passed without modifying the original helper",
+  "successful_execution": "Python -B -X utf8 -c: Path.read_text(encoding='utf-8'), compile, exec with original __file__",
+  "successful_exit_code": 0,
+  "successful_tool_elapsed_seconds": 7.4688525,
+  "root_cause": "Unresolved direct-launch discrepancy; no unsupported claim that the sandbox or Python version caused it"
+}

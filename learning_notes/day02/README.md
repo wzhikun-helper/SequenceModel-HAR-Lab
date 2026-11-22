@@ -1,5 +1,7 @@
 # Day 02｜CNN输入、卷积与最小工程
 
+最新：[2026-11-22 Transformer C正式实验](2026-11-22_transformer_baseline_c.md)。保留以下历史教学与基线笔记。
+
 最新：[2026-11-21 GRU Baseline B正式实验](2026-11-21_gru_baseline_b.md)，包含CNN配置审计、真实结果与待理解问题。
 
 最新补充：[2026-11-19 Baseline A正式训练](2026-11-19_cnn_baseline_a.md)。以下保留2026-11-11历史记录，当前结果见新补充。

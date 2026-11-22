@@ -1,0 +1,202 @@
+{
+  "status": "PASS",
+  "batches": 2,
+  "losses": [
+    2.116577386856079,
+    1.9397599697113037
+  ],
+  "gradients": [
+    {
+      "projection.weight": {
+        "finite": true,
+        "l2": 0.5751708745956421,
+        "nonzero": 576
+      },
+      "projection.bias": {
+        "finite": true,
+        "l2": 0.1454143524169922,
+        "nonzero": 64
+      },
+      "encoder.layers.0.self_attn.in_proj_weight": {
+        "finite": true,
+        "l2": 0.6159907579421997,
+        "nonzero": 12288
+      },
+      "encoder.layers.0.self_attn.in_proj_bias": {
+        "finite": true,
+        "l2": 0.07333872467279434,
+        "nonzero": 186
+      },
+      "encoder.layers.0.self_attn.out_proj.weight": {
+        "finite": true,
+        "l2": 0.7545881867408752,
+        "nonzero": 4096
+      },
+      "encoder.layers.0.self_attn.out_proj.bias": {
+        "finite": true,
+        "l2": 0.1259903609752655,
+        "nonzero": 64
+      },
+      "encoder.layers.0.linear1.weight": {
+        "finite": true,
+        "l2": 0.40271738171577454,
+        "nonzero": 8192
+      },
+      "encoder.layers.0.linear1.bias": {
+        "finite": true,
+        "l2": 0.04764635115861893,
+        "nonzero": 128
+      },
+      "encoder.layers.0.linear2.weight": {
+        "finite": true,
+        "l2": 0.5343974232673645,
+        "nonzero": 8192
+      },
+      "encoder.layers.0.linear2.bias": {
+        "finite": true,
+        "l2": 0.11520019173622131,
+        "nonzero": 64
+      },
+      "encoder.layers.0.norm1.weight": {
+        "finite": true,
+        "l2": 0.13926072418689728,
+        "nonzero": 64
+      },
+      "encoder.layers.0.norm1.bias": {
+        "finite": true,
+        "l2": 0.11947277188301086,
+        "nonzero": 64
+      },
+      "encoder.layers.0.norm2.weight": {
+        "finite": true,
+        "l2": 0.1532398760318756,
+        "nonzero": 64
+      },
+      "encoder.layers.0.norm2.bias": {
+        "finite": true,
+        "l2": 0.1271754950284958,
+        "nonzero": 64
+      },
+      "classifier.weight": {
+        "finite": true,
+        "l2": 1.7509266138076782,
+        "nonzero": 384
+      },
+      "classifier.bias": {
+        "finite": true,
+        "l2": 0.20780639350414276,
+        "nonzero": 6
+      }
+    },
+    {
+      "projection.weight": {
+        "finite": true,
+        "l2": 0.6295320391654968,
+        "nonzero": 576
+      },
+      "projection.bias": {
+        "finite": true,
+        "l2": 0.16445502638816833,
+        "nonzero": 64
+      },
+      "encoder.layers.0.self_attn.in_proj_weight": {
+        "finite": true,
+        "l2": 0.7102399468421936,
+        "nonzero": 12288
+      },
+      "encoder.layers.0.self_attn.in_proj_bias": {
+        "finite": true,
+        "l2": 0.09863252937793732,
+        "nonzero": 179
+      },
+      "encoder.layers.0.self_attn.out_proj.weight": {
+        "finite": true,
+        "l2": 0.8503611087799072,
+        "nonzero": 4096
+      },
+      "encoder.layers.0.self_attn.out_proj.bias": {
+        "finite": true,
+        "l2": 0.15496769547462463,
+        "nonzero": 64
+      },
+      "encoder.layers.0.linear1.weight": {
+        "finite": true,
+        "l2": 0.44263362884521484,
+        "nonzero": 8192
+      },
+      "encoder.layers.0.linear1.bias": {
+        "finite": true,
+        "l2": 0.05428389459848404,
+        "nonzero": 128
+      },
+      "encoder.layers.0.linear2.weight": {
+        "finite": true,
+        "l2": 0.6189577579498291,
+        "nonzero": 8192
+      },
+      "encoder.layers.0.linear2.bias": {
+        "finite": true,
+        "l2": 0.1400306522846222,
+        "nonzero": 64
+      },
+      "encoder.layers.0.norm1.weight": {
+        "finite": true,
+        "l2": 0.14436635375022888,
+        "nonzero": 64
+      },
+      "encoder.layers.0.norm1.bias": {
+        "finite": true,
+        "l2": 0.14792010188102722,
+        "nonzero": 64
+      },
+      "encoder.layers.0.norm2.weight": {
+        "finite": true,
+        "l2": 0.15450061857700348,
+        "nonzero": 64
+      },
+      "encoder.layers.0.norm2.bias": {
+        "finite": true,
+        "l2": 0.1480247676372528,
+        "nonzero": 64
+      },
+      "classifier.weight": {
+        "finite": true,
+        "l2": 1.9241819381713867,
+        "nonzero": 384
+      },
+      "classifier.bias": {
+        "finite": true,
+        "l2": 0.23983317613601685,
+        "nonzero": 6
+      }
+    }
+  ],
+  "parameter_updates": {
+    "projection.weight": true,
+    "projection.bias": true,
+    "encoder.layers.0.self_attn.in_proj_weight": true,
+    "encoder.layers.0.self_attn.in_proj_bias": true,
+    "encoder.layers.0.self_attn.out_proj.weight": true,
+    "encoder.layers.0.self_attn.out_proj.bias": true,
+    "encoder.layers.0.linear1.weight": true,
+    "encoder.layers.0.linear1.bias": true,
+    "encoder.layers.0.linear2.weight": true,
+    "encoder.layers.0.linear2.bias": true,
+    "encoder.layers.0.norm1.weight": true,
+    "encoder.layers.0.norm1.bias": true,
+    "encoder.layers.0.norm2.weight": true,
+    "encoder.layers.0.norm2.bias": true,
+    "classifier.weight": true,
+    "classifier.bias": true
+  },
+  "total_gradient_nonzero": true,
+  "initial_state_sha256": "29e5b4cdeffc6067f0adff860e00b83598c89e264434cb577e8f2575fb5e32d5",
+  "position_buffer_unchanged": true,
+  "checkpoint": {
+    "path": "checkpoints/transformer_baseline_seed42_20261122_run01/preflight.pt",
+    "bytes": 175986,
+    "sha256": "dabbe676b52d838d550e496977d20403be6d3a66ba836ab8325a8171d2423dd5"
+  },
+  "reload_max_abs_difference": 0.0,
+  "formal_objects_reinitialized": true
+}

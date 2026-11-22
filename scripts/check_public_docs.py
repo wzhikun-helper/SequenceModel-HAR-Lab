@@ -34,6 +34,12 @@ PAGES = [
     'reports/gru_baseline_seed42_20261121_run01/cnn_gru_comparison.md',
     'reports/gru_baseline_seed42_20261121_run01/reproducibility.md',
     'learning_notes/day02/2026-11-21_gru_baseline_b.md',
+    'reports/transformer_preflight_20261122/audit_report.md',
+    'reports/transformer_baseline_seed42_20261122_run01/README.md',
+    'reports/transformer_baseline_seed42_20261122_run01/execution_report.md',
+    'reports/transformer_baseline_seed42_20261122_run01/three_model_comparison.md',
+    'reports/transformer_baseline_seed42_20261122_run01/reproducibility.md',
+    'learning_notes/day02/2026-11-22_transformer_baseline_c.md',
 ]
 
 

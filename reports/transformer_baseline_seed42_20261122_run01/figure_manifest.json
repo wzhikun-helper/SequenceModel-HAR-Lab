@@ -1,0 +1,98 @@
+[
+  {
+    "local_path": "outputs/figures/transformer_baseline_seed42_20261122_run01/training_loss.png",
+    "bytes": 140147,
+    "sha256": "214465329b134f60083fd6725acd6b169b617e1b2352e9400c44ea41d244fe29",
+    "source_csv": "training_history.csv",
+    "source_sha256": "ea2488f0232fac840f16762e8eb50edc5a73fb80355313856a52f89f23a7da8e",
+    "public_path": "reports/transformer_baseline_seed42_20261122_run01/training_loss.png",
+    "pixels": [
+      1980,
+      1140
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ]
+  },
+  {
+    "local_path": "outputs/figures/transformer_baseline_seed42_20261122_run01/training_loss.pdf",
+    "bytes": 15012,
+    "sha256": "643c9e133d8d10eb1cf99cf642853c0ad7cf499d47aebe766784b93c9739b1c9",
+    "source_csv": "training_history.csv",
+    "source_sha256": "ea2488f0232fac840f16762e8eb50edc5a73fb80355313856a52f89f23a7da8e",
+    "public_path": "reports/transformer_baseline_seed42_20261122_run01/training_loss.pdf"
+  },
+  {
+    "local_path": "outputs/figures/transformer_baseline_seed42_20261122_run01/training_loss.svg",
+    "bytes": 16902,
+    "sha256": "56fabd136d6cd9b1c5f3fe7ae90ee30402d2ab74221c1a055b3ec330e13cdcdc",
+    "source_csv": "training_history.csv",
+    "source_sha256": "ea2488f0232fac840f16762e8eb50edc5a73fb80355313856a52f89f23a7da8e",
+    "public_path": null
+  },
+  {
+    "local_path": "outputs/figures/transformer_baseline_seed42_20261122_run01/validation_macro_f1.png",
+    "bytes": 99873,
+    "sha256": "6ef069fdb0d548fabb8c3c052e216003839d994a4a0d89dba4edbc14810c07fc",
+    "source_csv": "training_history.csv",
+    "source_sha256": "ea2488f0232fac840f16762e8eb50edc5a73fb80355313856a52f89f23a7da8e",
+    "public_path": "reports/transformer_baseline_seed42_20261122_run01/validation_macro_f1.png",
+    "pixels": [
+      1980,
+      1140
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ]
+  },
+  {
+    "local_path": "outputs/figures/transformer_baseline_seed42_20261122_run01/validation_macro_f1.pdf",
+    "bytes": 15084,
+    "sha256": "ad58eb1f0c487804cbf8595cb70e47058f6b8bd3de0354ac9602266c440deb47",
+    "source_csv": "training_history.csv",
+    "source_sha256": "ea2488f0232fac840f16762e8eb50edc5a73fb80355313856a52f89f23a7da8e",
+    "public_path": "reports/transformer_baseline_seed42_20261122_run01/validation_macro_f1.pdf"
+  },
+  {
+    "local_path": "outputs/figures/transformer_baseline_seed42_20261122_run01/validation_macro_f1.svg",
+    "bytes": 12644,
+    "sha256": "979828a3640e016965497f567e9bf3c4deab239fe1b94239c0587257e1db2d04",
+    "source_csv": "training_history.csv",
+    "source_sha256": "ea2488f0232fac840f16762e8eb50edc5a73fb80355313856a52f89f23a7da8e",
+    "public_path": null
+  },
+  {
+    "local_path": "outputs/figures/transformer_baseline_seed42_20261122_run01/confusion_matrix.png",
+    "bytes": 157514,
+    "sha256": "1857588335df1aabbe74f118adb95de1da46f9f9e86659e0cd5ef85f40821d57",
+    "source_csv": "confusion_matrix.csv",
+    "source_sha256": "673d22a4f57eacbb9fdf1af916bad8fadfd49ac8c9f3d2fe638619d1842fef3c",
+    "public_path": "reports/transformer_baseline_seed42_20261122_run01/confusion_matrix.png",
+    "pixels": [
+      2010,
+      1650
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ]
+  },
+  {
+    "local_path": "outputs/figures/transformer_baseline_seed42_20261122_run01/confusion_matrix.pdf",
+    "bytes": 21780,
+    "sha256": "054f609e49685f7b37c410bb2c4c8c0b9df4defaa2bd96985dca8fbc90212413",
+    "source_csv": "confusion_matrix.csv",
+    "source_sha256": "673d22a4f57eacbb9fdf1af916bad8fadfd49ac8c9f3d2fe638619d1842fef3c",
+    "public_path": "reports/transformer_baseline_seed42_20261122_run01/confusion_matrix.pdf"
+  },
+  {
+    "local_path": "outputs/figures/transformer_baseline_seed42_20261122_run01/confusion_matrix.svg",
+    "bytes": 31242,
+    "sha256": "c7ce710f45f70d0a7775b056b2a709aa82a017857895b8d82171a64dc8d036a2",
+    "source_csv": "confusion_matrix.csv",
+    "source_sha256": "673d22a4f57eacbb9fdf1af916bad8fadfd49ac8c9f3d2fe638619d1842fef3c",
+    "public_path": null
+  }
+]

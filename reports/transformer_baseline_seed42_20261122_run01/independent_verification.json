@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "selection_and_patience_replayed": true,
+  "epoch_coverage": true,
+  "classification_metrics_recomputed_from_predictions": true,
+  "classification_tolerance": 1e-14,
+  "test_loss_scope": "Recorded original forward loss, not reconstructed from argmax labels",
+  "fixed_official_test_labels_match": true,
+  "common_configs_equal": true,
+  "runtime_adam_matches_audit": true,
+  "all_first_epoch_batches_exactly_match_cnn_after_layout_swap": true,
+  "input_and_source_hashes_match": true,
+  "best_last_checkpoint_hashes_match": true,
+  "model_inference_performed": false
+}

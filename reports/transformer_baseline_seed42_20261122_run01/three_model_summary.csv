@@ -1,0 +1,4 @@
+model,test_accuracy,test_macro_f1,test_loss,parameters,best_epoch,epochs,process_wall_seconds,epoch_loop_seconds,timing_scope,inference_seconds
+CNN A,0.8975229046487954,0.8982018561794408,0.290570255923886,27270,7,15,40.1383191,,CNN excludes separate preflight; GRU/Transformer include integrated preflight,
+GRU B,0.9182219205972175,0.9194442175604504,0.2553186292638721,14790,23,30,231.5272979,223.95418199999997,CNN excludes separate preflight; GRU/Transformer include integrated preflight,
+Transformer C,0.8808958262639973,0.8803260911986305,0.4259046597310592,34502,7,15,189.7535182,180.39570840000002,CNN excludes separate preflight; GRU/Transformer include integrated preflight,

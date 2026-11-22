@@ -45,6 +45,10 @@ python -I -S -B -m unittest discover -s tests -v
 
 [train_gru_baseline.py](train_gru_baseline.py)集成预检查及正式训练，复用审计后的CNN种子/评价/选模逻辑；[verify_gru_baseline.py](verify_gru_baseline.py)复算保存预测，[fig03_gru_baseline.py](fig03_gru_baseline.py)读CSV生成图。[复现与审计前置条件](../reports/gru_baseline_seed42_20261121_run01/reproducibility.md)。
 
+## Transformer Baseline C
+
+[train_transformer_baseline.py](train_transformer_baseline.py)复用GRU loader/Adam和CNN评价/seed/选模函数；[verify_transformer_baseline.py](verify_transformer_baseline.py)复用保存预测复算并加固定buffer核验；[fig04_transformer_baseline.py](fig04_transformer_baseline.py)读CSV生成三图。[复现说明](../reports/transformer_baseline_seed42_20261122_run01/reproducibility.md)。不改旧基线入口。
+
 ## 历史归档工具
 
 [archive_day01_20261028.py](archive_day01_20261028.py) 与 [prepare_day01_git_sync.py](prepare_day01_git_sync.py) 保留当日归档操作，使用固定日期、快照及独占输出目录，不属于可反复执行的通用数据API。阅读历史实现即可，不要为重新运行它们而删除已有成果。

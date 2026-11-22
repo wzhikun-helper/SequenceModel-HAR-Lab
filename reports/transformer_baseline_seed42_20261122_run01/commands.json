@@ -1,0 +1,172 @@
+[
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "logs/transformer_baseline_seed42_20261122_run01/audit.py"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.7237972,
+    "started_at": null,
+    "finished_at": null,
+    "timing_source": "exec_command tool wall time; wall-clock endpoints not captured",
+    "outside_sandbox": false,
+    "phase": "audit helper startup, no training"
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "logs/transformer_baseline_seed42_20261122_run01/audit.py"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.7209913,
+    "started_at": null,
+    "finished_at": null,
+    "timing_source": "exec_command tool wall time; wall-clock endpoints not captured",
+    "outside_sandbox": false,
+    "phase": "audit helper startup, no training"
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "logs/transformer_baseline_seed42_20261122_run01/audit.py"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.4501643,
+    "started_at": null,
+    "finished_at": null,
+    "timing_source": "exec_command tool wall time; wall-clock endpoints not captured",
+    "outside_sandbox": true,
+    "phase": "audit helper startup, no training"
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-c",
+      "from pathlib import Path; p=Path('logs/transformer_baseline_seed42_20261122_run01/audit.py').resolve(); exec(compile(p.read_text(encoding='utf-8'),str(p),'exec'),{'__file__':str(p),'__name__':'__main__'})"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 7.4688525,
+    "started_at": null,
+    "finished_at": null,
+    "timing_source": "exec_command tool wall time; wall-clock endpoints not captured",
+    "phase": "successful audit"
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests_torch",
+      "-v"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-22T13:23:27.047860+08:00",
+    "elapsed_seconds": 4.5808491,
+    "finished_at": "2026-11-22T13:23:31.628556+08:00",
+    "exit_code": 0,
+    "log": "logs/transformer_baseline_seed42_20261122_run01/01_tests.log"
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "-u",
+      "scripts/train_transformer_baseline.py",
+      "transformer_baseline_seed42_20261122_run01"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-22T13:23:46.863881+08:00",
+    "elapsed_seconds": 189.7535182,
+    "finished_at": "2026-11-22T13:26:56.614036+08:00",
+    "exit_code": 0,
+    "log": "logs/transformer_baseline_seed42_20261122_run01/02_training.log"
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "scripts/verify_transformer_baseline.py",
+      "transformer_baseline_seed42_20261122_run01"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-22T13:29:20.509098+08:00",
+    "elapsed_seconds": 5.1652235,
+    "finished_at": "2026-11-22T13:29:25.674310+08:00",
+    "exit_code": 0,
+    "log": "logs/transformer_baseline_seed42_20261122_run01/03_verify.log"
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "scripts/fig04_transformer_baseline.py",
+      "transformer_baseline_seed42_20261122_run01"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-22T13:29:25.874393+08:00",
+    "elapsed_seconds": 4.5616528,
+    "finished_at": "2026-11-22T13:29:30.436878+08:00",
+    "exit_code": 0,
+    "log": "logs/transformer_baseline_seed42_20261122_run01/04_figures.log"
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-22T13:30:41.322128+08:00",
+    "elapsed_seconds": 0.2602643,
+    "finished_at": "2026-11-22T13:30:41.582312+08:00",
+    "exit_code": 0,
+    "log": "logs/transformer_baseline_seed42_20261122_run01/05_contract_tests.log"
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "scripts/check_public_docs.py"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-22T13:30:41.777997+08:00",
+    "elapsed_seconds": 0.5125493,
+    "finished_at": "2026-11-22T13:30:42.290493+08:00",
+    "exit_code": 0,
+    "log": "logs/transformer_baseline_seed42_20261122_run01/06_docs.log"
+  },
+  {
+    "command": [
+      "git",
+      "ls-remote",
+      "origin",
+      "refs/heads/main"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-22T13:32:33.269452+08:00",
+    "elapsed_seconds": 1.2375265,
+    "finished_at": "2026-11-22T13:32:34.506739+08:00",
+    "exit_code": 0,
+    "log": "logs/transformer_baseline_seed42_20261122_run01/07_remote_before.log"
+  }
+]

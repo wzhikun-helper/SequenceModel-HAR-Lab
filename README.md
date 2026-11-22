@@ -6,7 +6,7 @@
 
 [![Documentation checks](https://github.com/wzhikun-helper/SequenceModel-HAR-Lab/actions/workflows/docs.yml/badge.svg)](https://github.com/wzhikun-helper/SequenceModel-HAR-Lab/actions/workflows/docs.yml)
 
-基于 UCI HAR 手机传感器信号，研究多通道时序数据的表示、预处理与独立评价。已完成Day 01数据基础，并用真实训练窗口运行两层1D CNN的前向、反向与未训练权重重载检查。现已完成CNN Baseline A Seed42正式训练，GRU Baseline B也已完成固定条件下的单种子训练，其余规划模型与消融未执行。
+基于 UCI HAR 手机传感器信号，研究多通道时序数据的表示、预处理与独立评价。已完成Day 01数据基础，并用真实训练窗口运行两层1D CNN的前向、反向与未训练权重重载检查。现已完成CNN Baseline A Seed42正式训练，GRU Baseline B也已完成固定条件下的单种子训练，Transformer Baseline C也已完成；Mamba及消融未执行。
 
 **128 × 9** 每窗口输入 · **50 Hz** 采样率 · **6** 类活动 · **30** 位受试者
 
@@ -99,9 +99,15 @@ python -B scripts/check_public_docs.py
 
 [完整报告](reports/gru_baseline_seed42_20261121_run01/execution_report.md) · [CNN配置审计](reports/gru_baseline_preflight_20261121/audit_report.md) · [CNN—GRU比较](reports/gru_baseline_seed42_20261121_run01/cnn_gru_comparison.md)
 
+## Transformer Baseline C · Seed42
+
+固定正弦编码、单层Post-Norm Encoder，参数34,502。实际15轮，最佳Epoch7；官方测试：**Accuracy 88.0896% · Macro-F1 88.0326%**。共同协议不变，单种子结果待教师验收。
+
+[完整报告](reports/transformer_baseline_seed42_20261122_run01/execution_report.md) · [三模型比较](reports/transformer_baseline_seed42_20261122_run01/three_model_comparison.md) · [审计](reports/transformer_preflight_20261122/audit_report.md)
+
 ## 当前阶段与后续计划
 
-Day 01已验收；Day 02 Lesson 01–02理论已由教师确认通过，CNN最小工程已运行并提交证据，等待教师审阅。CNN Baseline A单种子正式训练已完成；GRU Baseline B及CNN—GRU单种子比较已执行；Transformer、Mamba和消融未执行。Day 02整体等待教师验收。[进度记录](PROGRESS.md)。
+Day 01已验收；Day 02 Lesson 01–02理论已由教师确认通过，CNN最小工程已运行并提交证据，等待教师审阅。CNN Baseline A单种子正式训练已完成；GRU Baseline B及CNN—GRU单种子比较已执行；Transformer C和三模型单种子比较已执行；Mamba和消融未执行。Day 02整体等待教师验收。[进度记录](PROGRESS.md)。
 
 ## 数据引用
 

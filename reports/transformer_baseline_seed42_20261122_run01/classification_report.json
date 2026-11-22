@@ -1,0 +1,44 @@
+{
+  "WALKING": {
+    "official_label": 1,
+    "precision": 0.857976653696498,
+    "recall": 0.8891129032258065,
+    "f1": 0.8732673267326733,
+    "support": 496
+  },
+  "WALKING_UPSTAIRS": {
+    "official_label": 2,
+    "precision": 0.9721518987341772,
+    "recall": 0.8152866242038217,
+    "f1": 0.8868360277136259,
+    "support": 471
+  },
+  "WALKING_DOWNSTAIRS": {
+    "official_label": 3,
+    "precision": 0.8405797101449275,
+    "recall": 0.9666666666666667,
+    "f1": 0.8992248062015504,
+    "support": 420
+  },
+  "SITTING": {
+    "official_label": 4,
+    "precision": 0.7695099818511797,
+    "recall": 0.8635437881873728,
+    "f1": 0.8138195777351248,
+    "support": 491
+  },
+  "STANDING": {
+    "official_label": 5,
+    "precision": 0.8650963597430407,
+    "recall": 0.7593984962406015,
+    "f1": 0.8088088088088088,
+    "support": 532
+  },
+  "LAYING": {
+    "official_label": 6,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 537
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "strict": true,
+  "weights_only": true,
+  "best_max_abs_difference": 0.0,
+  "last_max_abs_difference": 0.0,
+  "validation_replay_exact": true,
+  "checkpoints": {
+    "best_epoch": 7,
+    "best_validation_macro_f1": 0.9245344941682,
+    "best_validation_loss": 0.21264946215959557,
+    "best_epoch_file": "checkpoints/transformer_baseline_seed42_20261122_run01/epoch_007.pt",
+    "best": {
+      "path": "checkpoints/transformer_baseline_seed42_20261122_run01/best_checkpoint.pt",
+      "bytes": 176559,
+      "sha256": "cf73d0a7d3a724bdeb93ae66f5bce7d1035c1e8f2944d67a5b778fe20f23dd2e"
+    },
+    "last": {
+      "path": "checkpoints/transformer_baseline_seed42_20261122_run01/last_checkpoint.pt",
+      "bytes": 176178,
+      "sha256": "4b5c3acb16645df4cb3aafe43f921af1fb31eff501cbaae143c9341dcdc1b9d9"
+    }
+  }
+}
