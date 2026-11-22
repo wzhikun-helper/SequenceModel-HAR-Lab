@@ -107,6 +107,8 @@ python -B scripts/check_public_docs.py
 
 ## 当前阶段与后续计划
 
+Mamba Baseline D 的项目与数据审计已完成，官方 CUDA 运行验证等待可用 Linux GPU 环境。[L0 审计报告](reports/mamba_l0_20261122/README.md)
+
 第五章 CNN 消融比较覆盖原模型、SE 和等参数量残差 MLP，固定数据划分并配对使用 Seed 42、43、44。完整结果、训练成本、图表与限制见[消融实验报告](reports/cnn_ablation_20261122/README.md)。
 
 Day 01 已验收，Day 02 Lesson 01–02 理论已通过。CNN、GRU、Transformer 基线及第五章 CNN 消融结果已归档。消融实验等待教师验收。[进度记录](PROGRESS.md)。

@@ -16,7 +16,7 @@
 | GRU Baseline B | 已执行，待教师验收 | Seed42，最佳Epoch23，实际30轮；测试Accuracy 91.8222% / Macro-F1 91.9444% |
 | Transformer C | 已执行，待验收 | 最佳Epoch7，实际15轮；测试Accuracy 88.0896% / Macro-F1 88.0326% |
 | CNN SE / 等参数残差 MLP 消融 | 已执行，待教师验收 | 三组 × Seed 42、43、44，复用历史 A42。[完整报告](reports/cnn_ablation_20261122/README.md) |
-| Mamba | 未开始 | 无对应结果 |
+| Mamba D | L0 环境阻塞 | 项目与数据审计通过，等待可用 Linux CUDA 环境。[L0 报告](reports/mamba_l0_20261122/README.md) |
 
 训练集 6,037 窗口，验证集 1,315 窗口，测试集 2,947 窗口。[协议与元数据](docs/data_protocol.md) · [数据独立复核](reports/day01_data_20261026_run02/independent_verification.json)。
 

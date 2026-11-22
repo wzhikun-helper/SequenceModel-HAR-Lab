@@ -43,6 +43,8 @@ PAGES = [
     'reports/cnn_ablation_audit_20261122/README.md',
     'reports/cnn_ablation_20261122/README.md',
     'learning_notes/chapter05_cnn_ablation.md',
+    'reports/mamba_l0_20261122/README.md',
+    'learning_notes/mamba_baseline_d.md',
 ]
 
 
