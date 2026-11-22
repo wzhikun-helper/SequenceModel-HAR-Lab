@@ -1,6 +1,6 @@
 # 项目进度
 
-更新日期：2026-11-22。当前阶段 **第五章 CNN 三种子消融已归档，等待教师验收。**
+更新日期：2026-11-22。当前阶段 **Mamba D Seed42 与第五章 CNN 三种子消融已归档，等待教师验收。**
 
 ## 实验进度
 
@@ -16,7 +16,7 @@
 | GRU Baseline B | 已执行，待教师验收 | Seed42，最佳Epoch23，实际30轮；测试Accuracy 91.8222% / Macro-F1 91.9444% |
 | Transformer C | 已执行，待验收 | 最佳Epoch7，实际15轮；测试Accuracy 88.0896% / Macro-F1 88.0326% |
 | CNN SE / 等参数残差 MLP 消融 | 已执行，待教师验收 | 三组 × Seed 42、43、44，复用历史 A42。[完整报告](reports/cnn_ablation_20261122/README.md) |
-| Mamba D | L0 环境阻塞 | 项目与数据审计通过，等待可用 Linux CUDA 环境。[L0 报告](reports/mamba_l0_20261122/README.md) |
+| Mamba D | 已执行，待教师验收 | RTX 3090，最佳第 3 轮，实际 11 轮。官方测试 Accuracy 88.7004% / Macro-F1 88.8610%。[实验档案](experiments/mamba_baseline_d_seed42_20261122/README.md) |
 
 训练集 6,037 窗口，验证集 1,315 窗口，测试集 2,947 窗口。[协议与元数据](docs/data_protocol.md) · [数据独立复核](reports/day01_data_20261026_run02/independent_verification.json)。
 

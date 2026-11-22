@@ -1,0 +1,17 @@
+{
+  "preflight": {
+    "file": "preflight.pt",
+    "sha256": "2672f857c0f7a6548551e7351dbfe41a67fa2d27b4316bc15481b8a69106d829",
+    "bytes": 139119
+  },
+  "best": {
+    "file": "best_checkpoint.pt",
+    "sha256": "3c93057a3ecad07eab8f6756ffb0b3d6e74e721dcb6707084549e99cf2a03f70",
+    "bytes": 139500
+  },
+  "last": {
+    "file": "last_checkpoint.pt",
+    "sha256": "e5f09c40dbadbc771102ef11fb9734a837ecd1fbfcf73cee7a93ab192e7d068f",
+    "bytes": 139119
+  }
+}

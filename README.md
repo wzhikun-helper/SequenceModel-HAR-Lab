@@ -6,7 +6,7 @@
 
 [![Documentation checks](https://github.com/wzhikun-helper/SequenceModel-HAR-Lab/actions/workflows/docs.yml/badge.svg)](https://github.com/wzhikun-helper/SequenceModel-HAR-Lab/actions/workflows/docs.yml)
 
-基于 UCI HAR 手机传感器信号，研究多通道时序数据的表示、预处理与独立评价。已完成Day 01数据基础，并用真实训练窗口运行两层1D CNN的前向、反向与未训练权重重载检查。现已完成CNN Baseline A Seed42正式训练，GRU Baseline B也已完成固定条件下的单种子训练，Transformer Baseline C也已完成；Mamba及消融未执行。
+基于 UCI HAR 手机传感器信号，研究多通道时序数据的表示、预处理与独立评价。已完成Day 01数据基础，并用真实训练窗口运行两层1D CNN的前向、反向与未训练权重重载检查。现已完成CNN Baseline A Seed42正式训练，GRU Baseline B也已完成固定条件下的单种子训练，Transformer Baseline C 和 Mamba Baseline D 均已完成固定条件下的 Seed42 正式实验，CNN 消融已归档。
 
 **128 × 9** 每窗口输入 · **50 Hz** 采样率 · **6** 类活动 · **30** 位受试者
 
@@ -107,7 +107,7 @@ python -B scripts/check_public_docs.py
 
 ## 当前阶段与后续计划
 
-Mamba Baseline D 的项目与数据审计已完成，官方 CUDA 运行验证等待可用 Linux GPU 环境。[L0 审计报告](reports/mamba_l0_20261122/README.md)
+Linux RTX 3090 已执行 Mamba Baseline D 官方 CUDA 核验与 Seed42 正式训练。最佳第 3 轮，实际 11 轮，官方测试 **Accuracy 88.7004% · Macro-F1 88.8610%**。[实验档案](experiments/mamba_baseline_d_seed42_20261122/README.md) · [四模型对照](experiments/mamba_baseline_d_seed42_20261122/reports/four_model_comparison.md) · [早期 Windows L0 记录](reports/mamba_l0_20261122/README.md)
 
 第五章 CNN 消融比较覆盖原模型、SE 和等参数量残差 MLP，固定数据划分并配对使用 Seed 42、43、44。完整结果、训练成本、图表与限制见[消融实验报告](reports/cnn_ablation_20261122/README.md)。
 

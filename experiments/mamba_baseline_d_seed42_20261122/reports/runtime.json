@@ -1,0 +1,20 @@
+{
+  "started_at": "2026-11-22T15:03:09.626776+00:00",
+  "python": "3.9.23",
+  "pytorch": "2.5.1+cu121",
+  "cuda_runtime": "12.1",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "gpu_compute_capability": [
+    8,
+    6
+  ],
+  "mamba": "2.2.6",
+  "torch_cxx11_abi": false,
+  "numpy": "1.24.4",
+  "dtype": "torch.float32",
+  "tf32": false,
+  "amp": false,
+  "deterministic_algorithms": true,
+  "cudnn_deterministic": true,
+  "config_sha256": "b5a37d6418a09bdc2116c0b9b56966c065152af892153c59a0584efd027731b0"
+}

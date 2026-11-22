@@ -66,3 +66,7 @@ The standard-library CI does not execute these PyTorch checks. Lesson 01–02 th
 ## Dataset reference
 
 Reyes-Ortiz et al. (2013). *Human Activity Recognition Using Smartphones*. UCI Machine Learning Repository. [DOI: 10.24432/C54S4K](https://doi.org/10.24432/C54S4K). [Official dataset page](https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones).
+
+## Mamba Baseline D · Seed42
+
+The original Mamba v2.2.6 block was trained in FP32 on an RTX 3090. Official test Accuracy was 88.7004%, Macro-F1 was 88.8610%, and Loss was 0.379041. Validation selected epoch 3 of 11. The run awaits teacher review. [Experiment archive](experiments/mamba_baseline_d_seed42_20261122/README.md) · [Four-model comparison](experiments/mamba_baseline_d_seed42_20261122/reports/four_model_comparison.md)

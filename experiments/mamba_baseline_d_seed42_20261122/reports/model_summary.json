@@ -1,0 +1,119 @@
+{
+  "model": "MambaBaselineD(\n  (projection): Linear(in_features=9, out_features=64, bias=True)\n  (block): Mamba(\n    (in_proj): Linear(in_features=64, out_features=256, bias=False)\n    (conv1d): Conv1d(128, 128, kernel_size=(4,), stride=(1,), padding=(3,), groups=128)\n    (act): SiLU()\n    (x_proj): Linear(in_features=128, out_features=36, bias=False)\n    (dt_proj): Linear(in_features=4, out_features=128, bias=True)\n    (out_proj): Linear(in_features=128, out_features=64, bias=False)\n  )\n  (classifier): Linear(in_features=64, out_features=6, bias=True)\n)",
+  "actual_parameters": 33670,
+  "parameters": {
+    "projection.weight": {
+      "shape": [
+        64,
+        9
+      ],
+      "count": 576,
+      "dtype": "torch.float32",
+      "requires_grad": true
+    },
+    "projection.bias": {
+      "shape": [
+        64
+      ],
+      "count": 64,
+      "dtype": "torch.float32",
+      "requires_grad": true
+    },
+    "block.A_log": {
+      "shape": [
+        128,
+        16
+      ],
+      "count": 2048,
+      "dtype": "torch.float32",
+      "requires_grad": true
+    },
+    "block.D": {
+      "shape": [
+        128
+      ],
+      "count": 128,
+      "dtype": "torch.float32",
+      "requires_grad": true
+    },
+    "block.in_proj.weight": {
+      "shape": [
+        256,
+        64
+      ],
+      "count": 16384,
+      "dtype": "torch.float32",
+      "requires_grad": true
+    },
+    "block.conv1d.weight": {
+      "shape": [
+        128,
+        1,
+        4
+      ],
+      "count": 512,
+      "dtype": "torch.float32",
+      "requires_grad": true
+    },
+    "block.conv1d.bias": {
+      "shape": [
+        128
+      ],
+      "count": 128,
+      "dtype": "torch.float32",
+      "requires_grad": true
+    },
+    "block.x_proj.weight": {
+      "shape": [
+        36,
+        128
+      ],
+      "count": 4608,
+      "dtype": "torch.float32",
+      "requires_grad": true
+    },
+    "block.dt_proj.weight": {
+      "shape": [
+        128,
+        4
+      ],
+      "count": 512,
+      "dtype": "torch.float32",
+      "requires_grad": true
+    },
+    "block.dt_proj.bias": {
+      "shape": [
+        128
+      ],
+      "count": 128,
+      "dtype": "torch.float32",
+      "requires_grad": true
+    },
+    "block.out_proj.weight": {
+      "shape": [
+        64,
+        128
+      ],
+      "count": 8192,
+      "dtype": "torch.float32",
+      "requires_grad": true
+    },
+    "classifier.weight": {
+      "shape": [
+        6,
+        64
+      ],
+      "count": 384,
+      "dtype": "torch.float32",
+      "requires_grad": true
+    },
+    "classifier.bias": {
+      "shape": [
+        6
+      ],
+      "count": 6,
+      "dtype": "torch.float32",
+      "requires_grad": true
+    }
+  }
+}

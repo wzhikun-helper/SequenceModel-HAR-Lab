@@ -1,0 +1,77 @@
+{
+  "seed": 42,
+  "batch_size": 64,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "adam_betas": [
+    0.9,
+    0.999
+  ],
+  "adam_eps": 1e-08,
+  "weight_decay": 0,
+  "max_epochs": 30,
+  "early_stopping_patience": 8,
+  "drop_last": false,
+  "loss": "CrossEntropyLoss",
+  "selection_metric": "validation Macro-F1",
+  "tie_breaker": "validation Loss",
+  "train_shuffle": true,
+  "num_workers": 0,
+  "scheduler": null,
+  "class_weights": null,
+  "augmentation": null,
+  "source_artifact": "day01_data_20261026_run02_audit02",
+  "model": "Mamba Baseline D",
+  "input_shape": [
+    128,
+    9
+  ],
+  "device": "cuda:0",
+  "dtype": "float32",
+  "amp": false,
+  "tf32": false,
+  "torch_threads": 2,
+  "deterministic_algorithms": true,
+  "cudnn_benchmark": false,
+  "cudnn_deterministic": true,
+  "gradient_clipping": null,
+  "validation_shuffle": false,
+  "test_shuffle": false,
+  "loss_reduction": "mean",
+  "pooling": "temporal mean",
+  "linear_bias": true,
+  "classes": 6,
+  "block_class": "mamba_ssm.modules.mamba_simple.Mamba",
+  "mamba_version": "2.2.6",
+  "mamba_source_commit": "d7b1ceb3c367ec9022925e812f507bcf706937c6",
+  "use_fast_path": false,
+  "block": {
+    "d_model": 64,
+    "d_state": 16,
+    "d_conv": 4,
+    "expand": 2
+  },
+  "adam_all_parameters": {
+    "lr": 0.001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null
+  },
+  "label_mapping": {
+    "1": 0,
+    "2": 1,
+    "3": 2,
+    "4": 3,
+    "5": 4,
+    "6": 5
+  }
+}

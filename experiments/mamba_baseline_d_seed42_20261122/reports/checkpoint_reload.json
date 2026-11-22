@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "strict": true,
+  "validation_replay_exact": true,
+  "best_max_abs_difference": 0.0,
+  "last_max_abs_difference": 0.0,
+  "best_sha256": "3c93057a3ecad07eab8f6756ffb0b3d6e74e721dcb6707084549e99cf2a03f70",
+  "last_sha256": "e5f09c40dbadbc771102ef11fb9734a837ecd1fbfcf73cee7a93ab192e7d068f"
+}

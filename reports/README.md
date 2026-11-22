@@ -6,7 +6,9 @@
 
 第五章实验见[CNN SE 与等参数量残差 MLP 的三种子消融](cnn_ablation_20261122/README.md)及[实施前审计](cnn_ablation_audit_20261122/README.md)。
 
-最新：[Transformer C](transformer_baseline_seed42_20261122_run01/execution_report.md) · [三模型比较](transformer_baseline_seed42_20261122_run01/three_model_comparison.md) · [只读审计](transformer_preflight_20261122/audit_report.md)。CNN/GRU原报告不改。
+最新正式实验为 [Mamba D Seed42](../experiments/mamba_baseline_d_seed42_20261122/README.md)，包含 [四模型对照](../experiments/mamba_baseline_d_seed42_20261122/reports/four_model_comparison.md)。
+
+[Transformer C](transformer_baseline_seed42_20261122_run01/execution_report.md) · [三模型比较](transformer_baseline_seed42_20261122_run01/three_model_comparison.md) · [只读审计](transformer_preflight_20261122/audit_report.md)。CNN/GRU原报告不改。
 
 最新：[GRU Baseline B](gru_baseline_seed42_20261121_run01/execution_report.md) · [实施前CNN配置审计](gru_baseline_preflight_20261121/audit_report.md) · [固定条件CNN—GRU比较](gru_baseline_seed42_20261121_run01/cnn_gru_comparison.md)。历史CNN报告不修改。
 

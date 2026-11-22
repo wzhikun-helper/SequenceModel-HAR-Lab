@@ -1,0 +1,20 @@
+{
+  "observed": {
+    "train_standardized.npz": "f94e39898c8dc26367f7bc97f293e74e7543cccf3b1e1ed62b05f33bb30a36f7",
+    "validation_standardized.npz": "aac8b1bd08ae09f96b3d4aba753e2d36b12faed5ecb6f8e8f96d81de226738dc",
+    "test_standardized.npz": "b569c56999ffa3a89147361768f94eccb7441ffd794ac84f07caa06eb23b2e4c",
+    "scaler_train_only.json": "5efe9f855f6a14a19704d5700f60c71e7ea70c28e6ca7c1528f70abbcdd22d89"
+  },
+  "historical": {
+    "scaler_train_only.json": "5efe9f855f6a14a19704d5700f60c71e7ea70c28e6ca7c1528f70abbcdd22d89",
+    "test_standardized.npz": "b569c56999ffa3a89147361768f94eccb7441ffd794ac84f07caa06eb23b2e4c",
+    "train_standardized.npz": "f94e39898c8dc26367f7bc97f293e74e7543cccf3b1e1ed62b05f33bb30a36f7",
+    "validation_standardized.npz": "aac8b1bd08ae09f96b3d4aba753e2d36b12faed5ecb6f8e8f96d81de226738dc"
+  },
+  "byte_matches": {
+    "train_standardized.npz": true,
+    "validation_standardized.npz": true,
+    "test_standardized.npz": true,
+    "scaler_train_only.json": true
+  }
+}

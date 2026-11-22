@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "source_zip_sha256": "c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031",
+  "inner_zip_sha256": "2045e435c955214b38145fb5fa00776c72814f01b203fec405152dac7d5bfeb0",
+  "raw_member_hash_matches": 29,
+  "historical_sha256": {
+    "scaler_train_only.json": "5efe9f855f6a14a19704d5700f60c71e7ea70c28e6ca7c1528f70abbcdd22d89",
+    "test_standardized.npz": "b569c56999ffa3a89147361768f94eccb7441ffd794ac84f07caa06eb23b2e4c",
+    "train_standardized.npz": "f94e39898c8dc26367f7bc97f293e74e7543cccf3b1e1ed62b05f33bb30a36f7",
+    "validation_standardized.npz": "aac8b1bd08ae09f96b3d4aba753e2d36b12faed5ecb6f8e8f96d81de226738dc"
+  },
+  "rebuilt_sha256": {
+    "scaler_train_only.json": "5d6711f597f13163c17cc40b8854e6e50d394adbcd638464c6e261cf6579525d",
+    "test_standardized.npz": "2c94da6f3da5a4e9a5d9f2c6f49e22656a0d54ede01d9f70cfe236dd06bb02bc",
+    "train_standardized.npz": "200f4f47f479846647949bb9e64a02f6843ed64d097efdcf1f514e18e0279ba6",
+    "validation_standardized.npz": "8f65c04e08fc0c6da16d77f00595a207fd7892420a333d6d3bcb378bf8a8ae1e"
+  },
+  "byte_matches": {
+    "scaler_train_only.json": false,
+    "test_standardized.npz": false,
+    "train_standardized.npz": false,
+    "validation_standardized.npz": false
+  },
+  "train_only_scaler_equals_historical": true,
+  "all_normalized_fp32_values_verified_against_raw": true,
+  "labels_subjects_and_order_verified": true
+}

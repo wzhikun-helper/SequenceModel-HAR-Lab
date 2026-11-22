@@ -4,6 +4,8 @@
 
 ## 2026-11-22
 
+- 归档 [Mamba D Seed42](experiments/mamba_baseline_d_seed42_20261122/README.md) 的 Linux CUDA 实测、冻结数据复现、两批梯度和权重重载、一次正式测试及四模型比较。
+
 - 归档 Mamba D 的 L0 审计。冻结输入及现有基线核验通过，Linux CUDA 运行环境仍阻塞后续实验。
 
 - 第五章归档 CNN 原模型、SE 与等参数量残差 MLP 的三种子配对消融。保留九组结果、数据顺序和初始权重配对证据、独立指标复算及科研图表。

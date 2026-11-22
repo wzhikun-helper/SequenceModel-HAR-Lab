@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "mamba": "2.2.6",
+  "python": "3.9.23",
+  "torch": "2.5.1+cu121",
+  "cuda_runtime": "12.1",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "compute_capability": [
+    8,
+    6
+  ],
+  "official_module_sha256": "a17e4c51b582dc0d4d690a649eba521cd0c1ee3dc8f0473a0967cdc9ec0874e3",
+  "cuda_extension_sha256": "4707134644fa382443305adc5bb4e4ff716629856be22f98e1a6ee1b2bf4db50",
+  "fwd_calls": 1,
+  "bwd_calls": 1,
+  "gradient_nonzero": 16384
+}
