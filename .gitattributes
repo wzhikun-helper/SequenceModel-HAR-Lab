@@ -7,3 +7,4 @@ docs/day01/standardization_train_only.json -text whitespace=cr-at-eol
 
 # Preserve generated vector bytes and published SHA-256; SVG path whitespace is valid.
 reports/cnn_baseline_seed42_20261119_run01/*.svg -text whitespace=-blank-at-eol
+reports/chapter06_lesson01_research_draft/results_figure.svg -text whitespace=-blank-at-eol

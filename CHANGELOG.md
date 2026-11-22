@@ -4,6 +4,8 @@
 
 ## 2026-11-22
 
+- 新增 UCI HAR 项目 Skill。首次调用使用历史存档生成 [中文科研报告初稿与调用证据](reports/chapter06_lesson01_research_draft/README.md)。
+
 - 归档 [Mamba D Seed42](experiments/mamba_baseline_d_seed42_20261122/README.md) 的 Linux CUDA 实测、冻结数据复现、两批梯度和权重重载、一次正式测试及四模型比较。
 
 - 归档 Mamba D 的 L0 审计。冻结输入及现有基线核验通过，Linux CUDA 运行环境仍阻塞后续实验。

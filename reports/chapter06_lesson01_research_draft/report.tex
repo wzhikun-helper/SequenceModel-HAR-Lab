@@ -1,0 +1,82 @@
+\documentclass[UTF8,a4paper,11pt,fontset=none]{ctexart}
+\IfFileExists{C:/Windows/Fonts/simsun.ttc}{%
+  \setCJKmainfont[Path=C:/Windows/Fonts/,FontIndex=0,AutoFakeBold=2]{simsun.ttc}
+  \setCJKsansfont[Path=C:/Windows/Fonts/,AutoFakeBold=2]{simhei.ttf}
+}{%
+  \setCJKmainfont[BoldFont=FandolSong-Bold.otf]{FandolSong-Regular.otf}
+  \setCJKsansfont[BoldFont=FandolHei-Bold.otf]{FandolHei-Regular.otf}
+}
+\usepackage[margin=25mm,top=20mm,bottom=20mm]{geometry}
+\usepackage{graphicx,booktabs}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{4pt}
+\linespread{1.12}
+\pagestyle{plain}
+\title{\textbf{UCI HAR 时序活动识别}\\[4pt]\large 四模型基线与 CNN 三种子消融}
+\author{SequenceModel-HAR-Lab}
+\date{研究报告初稿}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+本报告比较同一 UCI HAR 受试者划分上的 CNN、GRU、Transformer 和 Mamba 四个 Seed42 基线，并通过九组历史运行检验 CNN 中加入通道注意力 SE 的表现。当前记录中 GRU 的测试 Macro-F1 最高。SE 的三种子均值高于原 CNN，但配对变化的方向不一致，均值也略低于等参数量残差 MLP。报告使用已归档指标，结论限于当前实现、种子和划分。
+\end{abstract}
+
+\section{数据与评估协议}
+使用 UCI HAR 官方预处理的惯性信号，每个窗口包含 128 个时间点和 9 个通道，对应 50 Hz 下的 2.56 秒。最终训练、验证、官方测试分别包含 6,037、1,315、2,947 个窗口，受试者分别为 17、4、9 人，三集合互不重叠。仅用最终训练集拟合逐通道均值和标准差。每个运行依据验证 Macro-F1 选模，同分时优先较低验证损失。表中损失为归档的交叉熵，Macro-F1 是六类 F1 的算术平均。
+
+\section{四模型 Seed42 基线}
+CNN 用局部卷积提取窗口特征，GRU 用递归末状态汇总序列，Transformer 用自注意力和时间均值，Mamba 使用官方原始选择性状态空间块和时间均值。表~\ref{tab:baselines} 使用各运行的最佳验证 checkpoint 所对应的历史测试结果。基线名称中的 B/C 与后文消融组别独立。
+
+\begin{table}[ht!]
+\centering
+\caption{官方测试集基线。轮数为最佳／实际，参数为可训练参数。}
+\label{tab:baselines}
+\small
+\begin{tabular}{lrrrrrl}
+\toprule
+模型 & Accuracy (\%) & Macro-F1 (\%) & Loss & 参数 & 轮数 & 设备 \\
+\midrule
+\input{baseline_rows}
+\end{tabular}
+\end{table}
+
+前三模型在 CPU 上运行，Mamba 在 Linux RTX 3090 上运行。设备和计时边界不同，耗时不能用来排序四种模型的速度。四个基线各仅有一个种子，无法估计架构表现随初始化或受试者划分变化的幅度。
+
+\noindent\textbf{复现材料}　同目录 CSV 为制表和绘图输入，来源哈希见 \texttt{input\_manifest.json}。
+
+\clearpage
+\section{CNN 三种子消融}
+A 为原始 CNN，B 在时间均值前加入 SE 通道门控，C 在时间均值后加入残差 MLP。A 有 27,270 个参数，B 和 C 各有 31,510 个参数。同种子比较共享卷积与分类头的初值和训练读取顺序，A42 复用历史运行。模块位置和计算方式均有差异，B--C 衡量两个具体增量方案之间的差异。
+
+\begin{table}[ht!]
+\centering
+\caption{九组官方测试结果及 Macro-F1 的三种子汇总。标准差采用样本标准差。}
+\label{tab:ablation}
+\small
+\begin{tabular}{llrrrr}
+\toprule
+种子 & 组别 & Accuracy (\%) & Macro-F1 (\%) & Loss & 轮数 \\
+\midrule
+\input{ablation_rows}
+\end{tabular}
+\qquad
+\begin{tabular}{lrr}
+\toprule
+组别 & 均值 (\%) & 标准差 (pp) \\
+\midrule
+\input{summary_rows}
+\end{tabular}
+\end{table}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.94\linewidth]{results_figure.pdf}
+\caption{Seed42 基线差异与同种子 SE 的配对差值。右图保留全部三个观察值，pp 为百分点。三种子固定同一受试者划分，图中的点反映训练随机性下的观察差异。}
+\label{fig:results}
+\end{figure}
+
+\section{解释与局限}
+图~\ref{fig:results} 中，SE 相对 A 的平均提升主要来自 Seed43；在 Seed42 和 Seed44 上差值均为负。SE 与等参数量残差 MLP 的配对差值也有正有负。三个观察值不足以支持稳定提升或统计显著性，现有结果也无法确定改进来自通道门控机制。进一步检验可预先约定更多种子和受试者划分，并比较活动类别召回与不同受试者上的表现。
+
+\end{document}

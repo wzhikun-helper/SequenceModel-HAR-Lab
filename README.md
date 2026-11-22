@@ -12,6 +12,8 @@
 
 [复现指南](docs/reproducing_day01.md) · [数据协议](docs/data_protocol.md) · [文档导航](docs/README.md) · [项目进度](PROGRESS.md) · [更新记录](CHANGELOG.md)
 
+[中文科研报告初稿](reports/chapter06_lesson01_research_draft/report.pdf) · [报告调用和复现](reports/chapter06_lesson01_research_draft/README.md) · [UCI HAR 项目 Skill](.agents/skills/uci-har-experiment-workflow/SKILL.md)
+
 ## 项目内容
 
 | 已完成 | 实现与证据 |

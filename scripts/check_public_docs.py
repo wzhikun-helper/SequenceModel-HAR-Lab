@@ -45,6 +45,9 @@ PAGES = [
     'learning_notes/chapter05_cnn_ablation.md',
     'reports/mamba_l0_20261122/README.md',
     'learning_notes/mamba_baseline_d.md',
+    '.agents/skills/uci-har-experiment-workflow/SKILL.md',
+    'learning_notes/chapter06_lesson01.md',
+    'reports/chapter06_lesson01_research_draft/README.md',
 ]
 
 

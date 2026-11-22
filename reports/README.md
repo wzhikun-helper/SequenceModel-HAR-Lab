@@ -4,6 +4,8 @@
 
 ## 推荐阅读
 
+[第六章 Lesson 01 项目 Skill 调用](chapter06_lesson01_research_draft/README.md)，包含四模型、CNN 九组消融的中文 LaTeX、PDF、数据核对和复现说明。
+
 第五章实验见[CNN SE 与等参数量残差 MLP 的三种子消融](cnn_ablation_20261122/README.md)及[实施前审计](cnn_ablation_audit_20261122/README.md)。
 
 最新正式实验为 [Mamba D Seed42](../experiments/mamba_baseline_d_seed42_20261122/README.md)，包含 [四模型对照](../experiments/mamba_baseline_d_seed42_20261122/reports/four_model_comparison.md)。
