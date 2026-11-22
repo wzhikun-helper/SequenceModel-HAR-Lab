@@ -1,0 +1,163 @@
+[
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "-u",
+      "scripts/train_cnn_baseline_a.py",
+      "train",
+      "cnn_baseline_seed42_20261119_run01"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-19T11:20:21.769499+08:00",
+    "elapsed_seconds": 40.1383191,
+    "finished_at": "2026-11-19T11:21:01.908289+08:00",
+    "exit_code": 0,
+    "log": "logs/cnn_baseline_seed42_20261119_run01/04_training.log",
+    "reused": true
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "-u",
+      "scripts/train_cnn_ablation.py",
+      "B",
+      "42",
+      "cnn_ablation_B_seed42_20261122_run01"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-22T21:26:06.884100+08:00",
+    "elapsed_seconds": 31.414046,
+    "finished_at": "2026-11-22T21:26:38.300500+08:00",
+    "exit_code": 0,
+    "log": "logs/cnn_ablation_20261122/cnn_ablation_B_seed42_20261122_run01.log",
+    "reused": false
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "-u",
+      "scripts/train_cnn_ablation.py",
+      "C",
+      "42",
+      "cnn_ablation_C_seed42_20261122_run01"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-22T21:26:38.477682+08:00",
+    "elapsed_seconds": 27.4934441,
+    "finished_at": "2026-11-22T21:27:05.971613+08:00",
+    "exit_code": 0,
+    "log": "logs/cnn_ablation_20261122/cnn_ablation_C_seed42_20261122_run01.log",
+    "reused": false
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "-u",
+      "scripts/train_cnn_ablation.py",
+      "A",
+      "43",
+      "cnn_ablation_A_seed43_20261122_run01"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-22T21:27:33.344566+08:00",
+    "elapsed_seconds": 22.834100199999998,
+    "finished_at": "2026-11-22T21:27:56.179409+08:00",
+    "exit_code": 0,
+    "log": "logs/cnn_ablation_20261122/cnn_ablation_A_seed43_20261122_run01.log",
+    "reused": false
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "-u",
+      "scripts/train_cnn_ablation.py",
+      "B",
+      "43",
+      "cnn_ablation_B_seed43_20261122_run01"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-22T21:27:56.345722+08:00",
+    "elapsed_seconds": 55.4961243,
+    "finished_at": "2026-11-22T21:28:51.843804+08:00",
+    "exit_code": 0,
+    "log": "logs/cnn_ablation_20261122/cnn_ablation_B_seed43_20261122_run01.log",
+    "reused": false
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "-u",
+      "scripts/train_cnn_ablation.py",
+      "C",
+      "43",
+      "cnn_ablation_C_seed43_20261122_run01"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-22T21:28:52.017392+08:00",
+    "elapsed_seconds": 36.0225645,
+    "finished_at": "2026-11-22T21:29:28.040863+08:00",
+    "exit_code": 0,
+    "log": "logs/cnn_ablation_20261122/cnn_ablation_C_seed43_20261122_run01.log",
+    "reused": false
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "-u",
+      "scripts/train_cnn_ablation.py",
+      "A",
+      "44",
+      "cnn_ablation_A_seed44_20261122_run01"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-22T21:29:34.700537+08:00",
+    "elapsed_seconds": 57.0048004,
+    "finished_at": "2026-11-22T21:30:31.706541+08:00",
+    "exit_code": 0,
+    "log": "logs/cnn_ablation_20261122/cnn_ablation_A_seed44_20261122_run01.log",
+    "reused": false
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "-u",
+      "scripts/train_cnn_ablation.py",
+      "B",
+      "44",
+      "cnn_ablation_B_seed44_20261122_run01"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-22T21:30:31.883061+08:00",
+    "elapsed_seconds": 60.2971478,
+    "finished_at": "2026-11-22T21:31:32.182297+08:00",
+    "exit_code": 0,
+    "log": "logs/cnn_ablation_20261122/cnn_ablation_B_seed44_20261122_run01.log",
+    "reused": false
+  },
+  {
+    "command": [
+      "E:/pythonenv/python39/python.exe",
+      "-B",
+      "-u",
+      "scripts/train_cnn_ablation.py",
+      "C",
+      "44",
+      "cnn_ablation_C_seed44_20261122_run01"
+    ],
+    "cwd": "D:\\SequenceModel-HAR-Lab",
+    "started_at": "2026-11-22T21:31:32.361363+08:00",
+    "elapsed_seconds": 32.9873485,
+    "finished_at": "2026-11-22T21:32:05.349464+08:00",
+    "exit_code": 0,
+    "log": "logs/cnn_ablation_20261122/cnn_ablation_C_seed44_20261122_run01.log",
+    "reused": false
+  }
+]

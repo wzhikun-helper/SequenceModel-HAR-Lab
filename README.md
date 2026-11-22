@@ -107,7 +107,9 @@ python -B scripts/check_public_docs.py
 
 ## 当前阶段与后续计划
 
-Day 01已验收；Day 02 Lesson 01–02理论已由教师确认通过，CNN最小工程已运行并提交证据，等待教师审阅。CNN Baseline A单种子正式训练已完成；GRU Baseline B及CNN—GRU单种子比较已执行；Transformer C和三模型单种子比较已执行；Mamba和消融未执行。Day 02整体等待教师验收。[进度记录](PROGRESS.md)。
+第五章 CNN 消融比较覆盖原模型、SE 和等参数量残差 MLP，固定数据划分并配对使用 Seed 42、43、44。完整结果、训练成本、图表与限制见[消融实验报告](reports/cnn_ablation_20261122/README.md)。
+
+Day 01 已验收，Day 02 Lesson 01–02 理论已通过。CNN、GRU、Transformer 基线及第五章 CNN 消融结果已归档。消融实验等待教师验收。[进度记录](PROGRESS.md)。
 
 ## 数据引用
 

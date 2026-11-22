@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "seed": 42,
+  "runs": {
+    "A": {
+      "shared_initial": "44e8f83f5c5bed58ad1d252fbd10c889aaa6237bd15eed2a4cdf08b2e2c977ee",
+      "epochs": 15,
+      "orders": [
+        "e93b6e01ca6db3ddff365bf98f76b6d0c85a4d5ca18cf18ad9d719c33bd491de",
+        "a74ea6ea8fc427cc76c8b6e8c69b54679fe2727274dc0cf72552fddd981b0ef0",
+        "1ecffba13f4b15ed7a0cbea8717976b4815b222479730ba7533ef73f8c4e72f2",
+        "181ef6ab76da2e7ea9f2d60fc6d5d3d12640a4463f2d491d95a1271f484020b7",
+        "da635d3056b4e483fa421a43a12b55a8dffaec42f65f7c98803e8274017f779a",
+        "bcdc84353c01ee1b8f7a8926e0bc375470ba1c5259cd53189ac17d54218236fc",
+        "f42e174a1a77a98fd0fc03e9ad0c17a0cd31eecc5ef12139ad2940936e8da14f",
+        "c32d56d71afb07f036f7f5bb1389fe86f8ddaf0e007ab7c79b1365d2a9eaabb3",
+        "73aa74119025771406be68b848d731fc11f889c1b2d7e902db04de919343df7c",
+        "3a60125ad1feb05c24dfcbd6ef0b8141e60e565dacefec524dd20ddf9123ac11",
+        "8ccc0a942f8e965f6da6fbb6ef0066b93dc2fa40296315bc463ec52c70f700bf",
+        "94e73f3a51f83496cc3bc85d4eaaa94a55982612f5b5aa2862b76d2d5e9db0cb",
+        "a1aa582b5427520b35f61ab771bc567a06ea0cc6dfe6cfb5ec5b3713cfab4e78",
+        "49eaf2c3cbe5226ad0bb696225b0f36cad118ee977535c973b55cc606cfd8c18",
+        "ab391373b2ba206cce232d7865b1fed0f77c6b2561071bb059552195581a55fe"
+      ],
+      "order_evidence": "Reconstructed from original loader and seed"
+    },
+    "B": {
+      "shared_initial": "44e8f83f5c5bed58ad1d252fbd10c889aaa6237bd15eed2a4cdf08b2e2c977ee",
+      "epochs": 15,
+      "orders": [
+        "e93b6e01ca6db3ddff365bf98f76b6d0c85a4d5ca18cf18ad9d719c33bd491de",
+        "a74ea6ea8fc427cc76c8b6e8c69b54679fe2727274dc0cf72552fddd981b0ef0",
+        "1ecffba13f4b15ed7a0cbea8717976b4815b222479730ba7533ef73f8c4e72f2",
+        "181ef6ab76da2e7ea9f2d60fc6d5d3d12640a4463f2d491d95a1271f484020b7",
+        "da635d3056b4e483fa421a43a12b55a8dffaec42f65f7c98803e8274017f779a",
+        "bcdc84353c01ee1b8f7a8926e0bc375470ba1c5259cd53189ac17d54218236fc",
+        "f42e174a1a77a98fd0fc03e9ad0c17a0cd31eecc5ef12139ad2940936e8da14f",
+        "c32d56d71afb07f036f7f5bb1389fe86f8ddaf0e007ab7c79b1365d2a9eaabb3",
+        "73aa74119025771406be68b848d731fc11f889c1b2d7e902db04de919343df7c",
+        "3a60125ad1feb05c24dfcbd6ef0b8141e60e565dacefec524dd20ddf9123ac11",
+        "8ccc0a942f8e965f6da6fbb6ef0066b93dc2fa40296315bc463ec52c70f700bf",
+        "94e73f3a51f83496cc3bc85d4eaaa94a55982612f5b5aa2862b76d2d5e9db0cb",
+        "a1aa582b5427520b35f61ab771bc567a06ea0cc6dfe6cfb5ec5b3713cfab4e78",
+        "49eaf2c3cbe5226ad0bb696225b0f36cad118ee977535c973b55cc606cfd8c18",
+        "ab391373b2ba206cce232d7865b1fed0f77c6b2561071bb059552195581a55fe"
+      ],
+      "order_evidence": "Observed in training; exact match to independent replay"
+    },
+    "C": {
+      "shared_initial": "44e8f83f5c5bed58ad1d252fbd10c889aaa6237bd15eed2a4cdf08b2e2c977ee",
+      "epochs": 13,
+      "orders": [
+        "e93b6e01ca6db3ddff365bf98f76b6d0c85a4d5ca18cf18ad9d719c33bd491de",
+        "a74ea6ea8fc427cc76c8b6e8c69b54679fe2727274dc0cf72552fddd981b0ef0",
+        "1ecffba13f4b15ed7a0cbea8717976b4815b222479730ba7533ef73f8c4e72f2",
+        "181ef6ab76da2e7ea9f2d60fc6d5d3d12640a4463f2d491d95a1271f484020b7",
+        "da635d3056b4e483fa421a43a12b55a8dffaec42f65f7c98803e8274017f779a",
+        "bcdc84353c01ee1b8f7a8926e0bc375470ba1c5259cd53189ac17d54218236fc",
+        "f42e174a1a77a98fd0fc03e9ad0c17a0cd31eecc5ef12139ad2940936e8da14f",
+        "c32d56d71afb07f036f7f5bb1389fe86f8ddaf0e007ab7c79b1365d2a9eaabb3",
+        "73aa74119025771406be68b848d731fc11f889c1b2d7e902db04de919343df7c",
+        "3a60125ad1feb05c24dfcbd6ef0b8141e60e565dacefec524dd20ddf9123ac11",
+        "8ccc0a942f8e965f6da6fbb6ef0066b93dc2fa40296315bc463ec52c70f700bf",
+        "94e73f3a51f83496cc3bc85d4eaaa94a55982612f5b5aa2862b76d2d5e9db0cb",
+        "a1aa582b5427520b35f61ab771bc567a06ea0cc6dfe6cfb5ec5b3713cfab4e78"
+      ],
+      "order_evidence": "Observed in training; exact match to independent replay"
+    }
+  },
+  "confusion_and_classification_metrics_recomputed": true,
+  "validation_selection_replayed": true,
+  "test_loss_scope": "Original cross-entropy; cannot recompute from class predictions alone",
+  "model_inference_performed": false,
+  "exact_same_initial_shared_weights_for_new_runs": true
+}

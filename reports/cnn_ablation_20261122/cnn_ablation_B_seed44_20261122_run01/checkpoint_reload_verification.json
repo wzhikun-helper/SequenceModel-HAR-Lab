@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "strict": true,
+  "weights_only": true,
+  "best_max_abs_difference": 0.0,
+  "last_max_abs_difference": 0.0,
+  "validation_replay_exact": true,
+  "checkpoints": {
+    "best": {
+      "path": "checkpoints/cnn_ablation_B_seed44_20261122_run01/best_checkpoint.pt",
+      "sha256": "176a4b0fea09af66c1e69e09f4a6b88f114a62a70376721aebb5e5c90bbf5bf9",
+      "bytes": 129540
+    },
+    "last": {
+      "path": "checkpoints/cnn_ablation_B_seed44_20261122_run01/last_checkpoint.pt",
+      "sha256": "a4acb46a0771c08f233e96c914a1be94acd97126e4e72cd895eddb6cccf1d253",
+      "bytes": 129031
+    }
+  },
+  "best_epoch_file": "checkpoints/cnn_ablation_B_seed44_20261122_run01/epoch_026.pt"
+}

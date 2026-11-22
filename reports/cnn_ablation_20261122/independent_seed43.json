@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "seed": 43,
+  "runs": {
+    "A": {
+      "shared_initial": "da49a32e64b0616dd35ebdc7f8db38437098673a4a214b84de55dcd01d36773d",
+      "epochs": 11,
+      "orders": [
+        "6aa633440b089a073b998cff6cd33ca5884a5c206153bc071a6b24795583603f",
+        "03fd08495b511efabc22e3956b023a5325a2d5a9128a5cea8b041fba2cca4a3b",
+        "43c568aa4bd84db5508405cb4790f582ca1cc08a10e04b2fd27c0304e6e1b338",
+        "0e289cd32fcd9d4cb34ff259200e4a88ee611679dbf4e85398682a6bd0898416",
+        "51aa223f869cc26c83a10870bbac72b1a639344a820b07543cc9b4b28f398ed2",
+        "0fa582ee39f5508c38d6143d0688d4098a26de08f0d3a38edd2b750c7bcbc21c",
+        "4a48ab2fe4fb11956b001fc26e3b86bd8389b638097e162686e4ce68b9aea275",
+        "73343a5644d7cb63c0d07a2af05ccf76d4cc58f64733f8714c0bfd6145b649f6",
+        "752ed7a5abb4b9ab25d025754cc8524e16f93a6aee327ad2890d4e99813d1ffc",
+        "b3f2d139781c49717347793852b9ab5ac4b722cf2ce3787dd98cb8ba3ee646c5",
+        "3bc7f7a88cbeb71c42003e25e09377575ff25232d578b701f47587263c6dc4e1"
+      ],
+      "order_evidence": "Observed in training; exact match to independent replay"
+    },
+    "B": {
+      "shared_initial": "da49a32e64b0616dd35ebdc7f8db38437098673a4a214b84de55dcd01d36773d",
+      "epochs": 27,
+      "orders": [
+        "6aa633440b089a073b998cff6cd33ca5884a5c206153bc071a6b24795583603f",
+        "03fd08495b511efabc22e3956b023a5325a2d5a9128a5cea8b041fba2cca4a3b",
+        "43c568aa4bd84db5508405cb4790f582ca1cc08a10e04b2fd27c0304e6e1b338",
+        "0e289cd32fcd9d4cb34ff259200e4a88ee611679dbf4e85398682a6bd0898416",
+        "51aa223f869cc26c83a10870bbac72b1a639344a820b07543cc9b4b28f398ed2",
+        "0fa582ee39f5508c38d6143d0688d4098a26de08f0d3a38edd2b750c7bcbc21c",
+        "4a48ab2fe4fb11956b001fc26e3b86bd8389b638097e162686e4ce68b9aea275",
+        "73343a5644d7cb63c0d07a2af05ccf76d4cc58f64733f8714c0bfd6145b649f6",
+        "752ed7a5abb4b9ab25d025754cc8524e16f93a6aee327ad2890d4e99813d1ffc",
+        "b3f2d139781c49717347793852b9ab5ac4b722cf2ce3787dd98cb8ba3ee646c5",
+        "3bc7f7a88cbeb71c42003e25e09377575ff25232d578b701f47587263c6dc4e1",
+        "27430e7d5c4b0fbac3da617d2ad77e3a58fbc674e6b564a588c3a756662ca02f",
+        "89bd7348c8e97bd746c27f841f48b2b65d9250f7750862f67a6e8f9ca2b5ef5b",
+        "05c32d1cbafff955d2906d7a37f0f27070f428da8c7427cdfe273c05ffe419a7",
+        "8c6fe07c5adb89d4a33d49825591c8e1d8df07327124c8c60381b4b4a721dcb3",
+        "6a2d61aac76c8ddd96707535e7f529a0a80f77ad37ed6184abb166034b4b9f69",
+        "b345854b4903194aadf66be38d5101f4feba07c3608d2b4a723bf0937bbed11b",
+        "51a6127c4c857213453ebbd017e8cd29df6d8bba959b00e4bfddd606cfae910a",
+        "338f41747865b4e0ef7ee93d4c0da458cf98125f38356874a0afa9d4e6e51e66",
+        "64f2087b089a56b6c9569178e3526f998d9c881c1fc9d7f4d5c53e9fb44e6410",
+        "8077d827ffc398a9b652e2603a9be95a69acdb5fe9c0e512332adc8c2600b95a",
+        "19609c01fb2930050b45af035d04f067a4d2d8442b83ac680e04e3781c6ad3c7",
+        "7048707c3a5539c9571401ea93a3ed9bf7c3babacc31f226369a464a504ec16f",
+        "9c90966d812914c3aee46fea76c30c908cbcadb49ae9df9bc2b74a867949a1ef",
+        "68ae983b1cfe617343f05ee9abf49f0a5730614af61b74ddc29a08fe3e0ae6e0",
+        "46b5f0ae5a1f6fa375d82bca47b10d49fcfce5da11a641ccf2ed108d3ed40668",
+        "353d8344dc503f527230c30ef159f98e44fcd67c969a7d32616b52d824d4181a"
+      ],
+      "order_evidence": "Observed in training; exact match to independent replay"
+    },
+    "C": {
+      "shared_initial": "da49a32e64b0616dd35ebdc7f8db38437098673a4a214b84de55dcd01d36773d",
+      "epochs": 19,
+      "orders": [
+        "6aa633440b089a073b998cff6cd33ca5884a5c206153bc071a6b24795583603f",
+        "03fd08495b511efabc22e3956b023a5325a2d5a9128a5cea8b041fba2cca4a3b",
+        "43c568aa4bd84db5508405cb4790f582ca1cc08a10e04b2fd27c0304e6e1b338",
+        "0e289cd32fcd9d4cb34ff259200e4a88ee611679dbf4e85398682a6bd0898416",
+        "51aa223f869cc26c83a10870bbac72b1a639344a820b07543cc9b4b28f398ed2",
+        "0fa582ee39f5508c38d6143d0688d4098a26de08f0d3a38edd2b750c7bcbc21c",
+        "4a48ab2fe4fb11956b001fc26e3b86bd8389b638097e162686e4ce68b9aea275",
+        "73343a5644d7cb63c0d07a2af05ccf76d4cc58f64733f8714c0bfd6145b649f6",
+        "752ed7a5abb4b9ab25d025754cc8524e16f93a6aee327ad2890d4e99813d1ffc",
+        "b3f2d139781c49717347793852b9ab5ac4b722cf2ce3787dd98cb8ba3ee646c5",
+        "3bc7f7a88cbeb71c42003e25e09377575ff25232d578b701f47587263c6dc4e1",
+        "27430e7d5c4b0fbac3da617d2ad77e3a58fbc674e6b564a588c3a756662ca02f",
+        "89bd7348c8e97bd746c27f841f48b2b65d9250f7750862f67a6e8f9ca2b5ef5b",
+        "05c32d1cbafff955d2906d7a37f0f27070f428da8c7427cdfe273c05ffe419a7",
+        "8c6fe07c5adb89d4a33d49825591c8e1d8df07327124c8c60381b4b4a721dcb3",
+        "6a2d61aac76c8ddd96707535e7f529a0a80f77ad37ed6184abb166034b4b9f69",
+        "b345854b4903194aadf66be38d5101f4feba07c3608d2b4a723bf0937bbed11b",
+        "51a6127c4c857213453ebbd017e8cd29df6d8bba959b00e4bfddd606cfae910a",
+        "338f41747865b4e0ef7ee93d4c0da458cf98125f38356874a0afa9d4e6e51e66"
+      ],
+      "order_evidence": "Observed in training; exact match to independent replay"
+    }
+  },
+  "confusion_and_classification_metrics_recomputed": true,
+  "validation_selection_replayed": true,
+  "test_loss_scope": "Original cross-entropy; cannot recompute from class predictions alone",
+  "model_inference_performed": false,
+  "exact_same_initial_shared_weights_for_new_runs": true
+}

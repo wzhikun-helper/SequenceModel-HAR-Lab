@@ -40,6 +40,9 @@ PAGES = [
     'reports/transformer_baseline_seed42_20261122_run01/three_model_comparison.md',
     'reports/transformer_baseline_seed42_20261122_run01/reproducibility.md',
     'learning_notes/day02/2026-11-22_transformer_baseline_c.md',
+    'reports/cnn_ablation_audit_20261122/README.md',
+    'reports/cnn_ablation_20261122/README.md',
+    'learning_notes/chapter05_cnn_ablation.md',
 ]
 
 

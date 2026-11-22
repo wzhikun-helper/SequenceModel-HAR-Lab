@@ -1,0 +1,215 @@
+[
+  {
+    "local": "outputs/figures/cnn_ablation_20261122/macro_f1_comparison.png",
+    "sha256": "8e4cbd5a44d34dc83a3d5aa92e847c326001c54e3c61b3c54b17e6f7fb0cfe86",
+    "bytes": 84652,
+    "sources": {
+      "reports/cnn_ablation_20261122/results.csv": "b81f52c924ec5a0b3ef334fb1b16367b5bf7bc370aef01b191a47ff1583900ab"
+    },
+    "public": "macro_f1_comparison.png",
+    "pixels": [
+      1950,
+      1080
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ]
+  },
+  {
+    "local": "outputs/figures/cnn_ablation_20261122/macro_f1_comparison.pdf",
+    "sha256": "5f4bc313d5714d9b8e7c3d0dc24a721427701131dd7391950181bd5c31074888",
+    "bytes": 15324,
+    "sources": {
+      "reports/cnn_ablation_20261122/results.csv": "b81f52c924ec5a0b3ef334fb1b16367b5bf7bc370aef01b191a47ff1583900ab"
+    }
+  },
+  {
+    "local": "outputs/figures/cnn_ablation_20261122/macro_f1_comparison.svg",
+    "sha256": "8c9b382b437128760acf4b4138f1573d4ad46f14d2cec12c01b9e9a170246cee",
+    "bytes": 13534,
+    "sources": {
+      "reports/cnn_ablation_20261122/results.csv": "b81f52c924ec5a0b3ef334fb1b16367b5bf7bc370aef01b191a47ff1583900ab"
+    }
+  },
+  {
+    "local": "outputs/figures/cnn_ablation_20261122/paired_differences.png",
+    "sha256": "4539fdf40fba67612cc678de88ee64409ef7742d303168d439a1513522c2dd06",
+    "bytes": 136613,
+    "sources": {
+      "reports/cnn_ablation_20261122/paired.csv": "84db6abad866b19165852fd5a59df866c9f761d98ec85df9b4cb190e40bd4026"
+    },
+    "public": "paired_differences.png",
+    "pixels": [
+      1950,
+      1080
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ]
+  },
+  {
+    "local": "outputs/figures/cnn_ablation_20261122/paired_differences.pdf",
+    "sha256": "dfeb8341d9ddcdb281d11f9659e299726aac82881dec6c8c716b09f4aa898b37",
+    "bytes": 13795,
+    "sources": {
+      "reports/cnn_ablation_20261122/paired.csv": "84db6abad866b19165852fd5a59df866c9f761d98ec85df9b4cb190e40bd4026"
+    }
+  },
+  {
+    "local": "outputs/figures/cnn_ablation_20261122/paired_differences.svg",
+    "sha256": "1467f014b1fcfef0ce315e7f5cf8a15473c6beb4700fb81d72f57674a949635b",
+    "bytes": 11741,
+    "sources": {
+      "reports/cnn_ablation_20261122/paired.csv": "84db6abad866b19165852fd5a59df866c9f761d98ec85df9b4cb190e40bd4026"
+    }
+  },
+  {
+    "local": "outputs/figures/cnn_ablation_20261122/loss_curves.png",
+    "sha256": "47eb1b48a1a87243bdf6d408ca7a3e512fc8ec84f3983d9eb622af488573a0d4",
+    "bytes": 272095,
+    "sources": {
+      "reports/cnn_baseline_seed42_20261119_run01/training_history.csv": "bd71fba6b1c74c2485130c0a4cd7e27bd36db3335d7a9999b9189003984aa0f5",
+      "reports/cnn_ablation_20261122/cnn_ablation_B_seed42_20261122_run01/training_history.csv": "89c2779c88980e7d0870f2870fd41624fcf711c8c8bb85bad15238244e632370",
+      "reports/cnn_ablation_20261122/cnn_ablation_C_seed42_20261122_run01/training_history.csv": "2c165b320393e6d50cdb84b7d577e1e20e9e4988cf12376d8cc27809b55c3bb3",
+      "reports/cnn_ablation_20261122/cnn_ablation_A_seed43_20261122_run01/training_history.csv": "497841b84dc0baa138956e80e5809ec55566f70951f9a9da9420f701dac0fb42",
+      "reports/cnn_ablation_20261122/cnn_ablation_B_seed43_20261122_run01/training_history.csv": "01bab19a2ceba9e67d37c946ba84c1374c06f74946d36b61b2f2d7a9b29b15a4",
+      "reports/cnn_ablation_20261122/cnn_ablation_C_seed43_20261122_run01/training_history.csv": "d099bdc5d53081168f24ae8a4686dd71ad23440d29caea51254c7c5bcd40cf1f",
+      "reports/cnn_ablation_20261122/cnn_ablation_A_seed44_20261122_run01/training_history.csv": "26b9214b4372adddddbb5b9a0a99a6096a8cfcbb1c20df274f82da68d6046fef",
+      "reports/cnn_ablation_20261122/cnn_ablation_B_seed44_20261122_run01/training_history.csv": "e03b3c5654ef610efe2cbdffbcd293258a88698909a10f3f05659c42f795e5d3",
+      "reports/cnn_ablation_20261122/cnn_ablation_C_seed44_20261122_run01/training_history.csv": "a22e2477e71d54083b5484141b412c09f528a382b4fe6ca2be092dc277219022"
+    },
+    "public": "loss_curves.png",
+    "pixels": [
+      2100,
+      2280
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ]
+  },
+  {
+    "local": "outputs/figures/cnn_ablation_20261122/loss_curves.pdf",
+    "sha256": "58671a0aaa51950c1e1e89e9571aa9f0cbdbe5d2699eb047c9a1980563362dd3",
+    "bytes": 15229,
+    "sources": {
+      "reports/cnn_baseline_seed42_20261119_run01/training_history.csv": "bd71fba6b1c74c2485130c0a4cd7e27bd36db3335d7a9999b9189003984aa0f5",
+      "reports/cnn_ablation_20261122/cnn_ablation_B_seed42_20261122_run01/training_history.csv": "89c2779c88980e7d0870f2870fd41624fcf711c8c8bb85bad15238244e632370",
+      "reports/cnn_ablation_20261122/cnn_ablation_C_seed42_20261122_run01/training_history.csv": "2c165b320393e6d50cdb84b7d577e1e20e9e4988cf12376d8cc27809b55c3bb3",
+      "reports/cnn_ablation_20261122/cnn_ablation_A_seed43_20261122_run01/training_history.csv": "497841b84dc0baa138956e80e5809ec55566f70951f9a9da9420f701dac0fb42",
+      "reports/cnn_ablation_20261122/cnn_ablation_B_seed43_20261122_run01/training_history.csv": "01bab19a2ceba9e67d37c946ba84c1374c06f74946d36b61b2f2d7a9b29b15a4",
+      "reports/cnn_ablation_20261122/cnn_ablation_C_seed43_20261122_run01/training_history.csv": "d099bdc5d53081168f24ae8a4686dd71ad23440d29caea51254c7c5bcd40cf1f",
+      "reports/cnn_ablation_20261122/cnn_ablation_A_seed44_20261122_run01/training_history.csv": "26b9214b4372adddddbb5b9a0a99a6096a8cfcbb1c20df274f82da68d6046fef",
+      "reports/cnn_ablation_20261122/cnn_ablation_B_seed44_20261122_run01/training_history.csv": "e03b3c5654ef610efe2cbdffbcd293258a88698909a10f3f05659c42f795e5d3",
+      "reports/cnn_ablation_20261122/cnn_ablation_C_seed44_20261122_run01/training_history.csv": "a22e2477e71d54083b5484141b412c09f528a382b4fe6ca2be092dc277219022"
+    }
+  },
+  {
+    "local": "outputs/figures/cnn_ablation_20261122/loss_curves.svg",
+    "sha256": "b750c62452822c8409705944fc820f83b12af72bf8dfc1f2f58dd68b66ceb077",
+    "bytes": 32044,
+    "sources": {
+      "reports/cnn_baseline_seed42_20261119_run01/training_history.csv": "bd71fba6b1c74c2485130c0a4cd7e27bd36db3335d7a9999b9189003984aa0f5",
+      "reports/cnn_ablation_20261122/cnn_ablation_B_seed42_20261122_run01/training_history.csv": "89c2779c88980e7d0870f2870fd41624fcf711c8c8bb85bad15238244e632370",
+      "reports/cnn_ablation_20261122/cnn_ablation_C_seed42_20261122_run01/training_history.csv": "2c165b320393e6d50cdb84b7d577e1e20e9e4988cf12376d8cc27809b55c3bb3",
+      "reports/cnn_ablation_20261122/cnn_ablation_A_seed43_20261122_run01/training_history.csv": "497841b84dc0baa138956e80e5809ec55566f70951f9a9da9420f701dac0fb42",
+      "reports/cnn_ablation_20261122/cnn_ablation_B_seed43_20261122_run01/training_history.csv": "01bab19a2ceba9e67d37c946ba84c1374c06f74946d36b61b2f2d7a9b29b15a4",
+      "reports/cnn_ablation_20261122/cnn_ablation_C_seed43_20261122_run01/training_history.csv": "d099bdc5d53081168f24ae8a4686dd71ad23440d29caea51254c7c5bcd40cf1f",
+      "reports/cnn_ablation_20261122/cnn_ablation_A_seed44_20261122_run01/training_history.csv": "26b9214b4372adddddbb5b9a0a99a6096a8cfcbb1c20df274f82da68d6046fef",
+      "reports/cnn_ablation_20261122/cnn_ablation_B_seed44_20261122_run01/training_history.csv": "e03b3c5654ef610efe2cbdffbcd293258a88698909a10f3f05659c42f795e5d3",
+      "reports/cnn_ablation_20261122/cnn_ablation_C_seed44_20261122_run01/training_history.csv": "a22e2477e71d54083b5484141b412c09f528a382b4fe6ca2be092dc277219022"
+    }
+  },
+  {
+    "local": "outputs/figures/cnn_ablation_20261122/confusion_matrices.png",
+    "sha256": "a0de13fa646f0a435f6a1d4b8806e3f9745c8f768a1dab15113378395be3ce3c",
+    "bytes": 315210,
+    "sources": {
+      "reports/cnn_baseline_seed42_20261119_run01/confusion_matrix.csv": "5d4b69f3d15c47214df765208f53965fe761e8b927029d5e611f528af8771732",
+      "reports/cnn_ablation_20261122/cnn_ablation_B_seed42_20261122_run01/confusion_matrix.csv": "4afc654b08d8bfff5e01cfce967d5ad2bfef364b56bdab0becd49e51a40efc7e",
+      "reports/cnn_ablation_20261122/cnn_ablation_C_seed42_20261122_run01/confusion_matrix.csv": "70cbc6de055d3764329d7132298afe005d806ca91a4c2b578d62f81462cce204",
+      "reports/cnn_ablation_20261122/cnn_ablation_A_seed43_20261122_run01/confusion_matrix.csv": "ef40f67104f3d7c9ad58b2400c0295f004a3e8c4620bd238165bcdda845a64c7",
+      "reports/cnn_ablation_20261122/cnn_ablation_B_seed43_20261122_run01/confusion_matrix.csv": "eaf7af4366ea2b6751e2b215ef9268183831c27860b047efca26c016b7ed274f",
+      "reports/cnn_ablation_20261122/cnn_ablation_C_seed43_20261122_run01/confusion_matrix.csv": "41a9a2733b9f25f8407c778bc4c7ec867364dcdf570e8cadb04b3fee9174147a",
+      "reports/cnn_ablation_20261122/cnn_ablation_A_seed44_20261122_run01/confusion_matrix.csv": "7dd048032bf1924446d4715c5415146629d7086c434dfc216eb6c6ed3112c2ab",
+      "reports/cnn_ablation_20261122/cnn_ablation_B_seed44_20261122_run01/confusion_matrix.csv": "6ec43d82c6bcff3351e358707a7fb6be2855eafde8628ba6cb7b691ff503219c",
+      "reports/cnn_ablation_20261122/cnn_ablation_C_seed44_20261122_run01/confusion_matrix.csv": "15c0178c549f7d97324600d311e613cecdb5eca08ed698cbe4786af4bef9e89b"
+    },
+    "public": "confusion_matrices.png",
+    "pixels": [
+      2400,
+      2400
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ]
+  },
+  {
+    "local": "outputs/figures/cnn_ablation_20261122/confusion_matrices.pdf",
+    "sha256": "739cad0fbc015a06cffa613bbc9764fd5578a723aaaa1f3a4c6b3e689e26b534",
+    "bytes": 35843,
+    "sources": {
+      "reports/cnn_baseline_seed42_20261119_run01/confusion_matrix.csv": "5d4b69f3d15c47214df765208f53965fe761e8b927029d5e611f528af8771732",
+      "reports/cnn_ablation_20261122/cnn_ablation_B_seed42_20261122_run01/confusion_matrix.csv": "4afc654b08d8bfff5e01cfce967d5ad2bfef364b56bdab0becd49e51a40efc7e",
+      "reports/cnn_ablation_20261122/cnn_ablation_C_seed42_20261122_run01/confusion_matrix.csv": "70cbc6de055d3764329d7132298afe005d806ca91a4c2b578d62f81462cce204",
+      "reports/cnn_ablation_20261122/cnn_ablation_A_seed43_20261122_run01/confusion_matrix.csv": "ef40f67104f3d7c9ad58b2400c0295f004a3e8c4620bd238165bcdda845a64c7",
+      "reports/cnn_ablation_20261122/cnn_ablation_B_seed43_20261122_run01/confusion_matrix.csv": "eaf7af4366ea2b6751e2b215ef9268183831c27860b047efca26c016b7ed274f",
+      "reports/cnn_ablation_20261122/cnn_ablation_C_seed43_20261122_run01/confusion_matrix.csv": "41a9a2733b9f25f8407c778bc4c7ec867364dcdf570e8cadb04b3fee9174147a",
+      "reports/cnn_ablation_20261122/cnn_ablation_A_seed44_20261122_run01/confusion_matrix.csv": "7dd048032bf1924446d4715c5415146629d7086c434dfc216eb6c6ed3112c2ab",
+      "reports/cnn_ablation_20261122/cnn_ablation_B_seed44_20261122_run01/confusion_matrix.csv": "6ec43d82c6bcff3351e358707a7fb6be2855eafde8628ba6cb7b691ff503219c",
+      "reports/cnn_ablation_20261122/cnn_ablation_C_seed44_20261122_run01/confusion_matrix.csv": "15c0178c549f7d97324600d311e613cecdb5eca08ed698cbe4786af4bef9e89b"
+    }
+  },
+  {
+    "local": "outputs/figures/cnn_ablation_20261122/confusion_matrices.svg",
+    "sha256": "ab4c51faec7f5aa04f32a84f673f6b3dd83ece0603f4fddfe4e7e32983aab13e",
+    "bytes": 143459,
+    "sources": {
+      "reports/cnn_baseline_seed42_20261119_run01/confusion_matrix.csv": "5d4b69f3d15c47214df765208f53965fe761e8b927029d5e611f528af8771732",
+      "reports/cnn_ablation_20261122/cnn_ablation_B_seed42_20261122_run01/confusion_matrix.csv": "4afc654b08d8bfff5e01cfce967d5ad2bfef364b56bdab0becd49e51a40efc7e",
+      "reports/cnn_ablation_20261122/cnn_ablation_C_seed42_20261122_run01/confusion_matrix.csv": "70cbc6de055d3764329d7132298afe005d806ca91a4c2b578d62f81462cce204",
+      "reports/cnn_ablation_20261122/cnn_ablation_A_seed43_20261122_run01/confusion_matrix.csv": "ef40f67104f3d7c9ad58b2400c0295f004a3e8c4620bd238165bcdda845a64c7",
+      "reports/cnn_ablation_20261122/cnn_ablation_B_seed43_20261122_run01/confusion_matrix.csv": "eaf7af4366ea2b6751e2b215ef9268183831c27860b047efca26c016b7ed274f",
+      "reports/cnn_ablation_20261122/cnn_ablation_C_seed43_20261122_run01/confusion_matrix.csv": "41a9a2733b9f25f8407c778bc4c7ec867364dcdf570e8cadb04b3fee9174147a",
+      "reports/cnn_ablation_20261122/cnn_ablation_A_seed44_20261122_run01/confusion_matrix.csv": "7dd048032bf1924446d4715c5415146629d7086c434dfc216eb6c6ed3112c2ab",
+      "reports/cnn_ablation_20261122/cnn_ablation_B_seed44_20261122_run01/confusion_matrix.csv": "6ec43d82c6bcff3351e358707a7fb6be2855eafde8628ba6cb7b691ff503219c",
+      "reports/cnn_ablation_20261122/cnn_ablation_C_seed44_20261122_run01/confusion_matrix.csv": "15c0178c549f7d97324600d311e613cecdb5eca08ed698cbe4786af4bef9e89b"
+    }
+  },
+  {
+    "local": "outputs/figures/cnn_ablation_20261122/parameter_counts.png",
+    "sha256": "3846527b8dca1e0d557c6e3f92318aa90829a118b3668ce4b550cf814078358b",
+    "bytes": 73869,
+    "sources": {
+      "reports/cnn_ablation_20261122/results.csv": "b81f52c924ec5a0b3ef334fb1b16367b5bf7bc370aef01b191a47ff1583900ab"
+    },
+    "public": "parameter_counts.png",
+    "pixels": [
+      1800,
+      1050
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ]
+  },
+  {
+    "local": "outputs/figures/cnn_ablation_20261122/parameter_counts.pdf",
+    "sha256": "da9f43edfebab1a60c18ae6bb9d1760df2391567fb9c71ef5af7578b19e67f18",
+    "bytes": 11917,
+    "sources": {
+      "reports/cnn_ablation_20261122/results.csv": "b81f52c924ec5a0b3ef334fb1b16367b5bf7bc370aef01b191a47ff1583900ab"
+    }
+  },
+  {
+    "local": "outputs/figures/cnn_ablation_20261122/parameter_counts.svg",
+    "sha256": "238db6b681d4be53f11cb4de92346baf703b151f04d6ec09ef0e53847555cdbb",
+    "bytes": 7669,
+    "sources": {
+      "reports/cnn_ablation_20261122/results.csv": "b81f52c924ec5a0b3ef334fb1b16367b5bf7bc370aef01b191a47ff1583900ab"
+    }
+  }
+]

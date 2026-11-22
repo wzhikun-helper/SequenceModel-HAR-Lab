@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "losses": [
+    1.7876096963882446,
+    1.7590699195861816
+  ],
+  "input_shape": [
+    64,
+    9,
+    128
+  ],
+  "output_shape": [
+    64,
+    6
+  ],
+  "gradients_nonzero": [
+    {
+      "conv1.weight": 1728,
+      "conv1.bias": 64,
+      "conv2.weight": 24571,
+      "conv2.bias": 128,
+      "classifier.weight": 768,
+      "classifier.bias": 6,
+      "extra.0.weight": 1450,
+      "extra.0.bias": 12,
+      "extra.2.weight": 1536,
+      "extra.2.bias": 128
+    },
+    {
+      "conv1.weight": 1728,
+      "conv1.bias": 64,
+      "conv2.weight": 24543,
+      "conv2.bias": 128,
+      "classifier.weight": 768,
+      "classifier.bias": 6,
+      "extra.0.weight": 1384,
+      "extra.0.bias": 12,
+      "extra.2.weight": 1536,
+      "extra.2.bias": 128
+    }
+  ],
+  "tensors_updated": {
+    "conv1.weight": true,
+    "conv1.bias": true,
+    "conv2.weight": true,
+    "conv2.bias": true,
+    "classifier.weight": true,
+    "classifier.bias": true,
+    "extra.0.weight": true,
+    "extra.0.bias": true,
+    "extra.2.weight": true,
+    "extra.2.bias": true
+  },
+  "reload_max_abs_difference": 0.0,
+  "checkpoint_sha256": "0e519201d5ec7eda9582c6eb703deb822dc02271fbe61ca4dc1a00b41354ca47",
+  "model": "CNNAblation(\n  (conv1): Conv1d(9, 64, kernel_size=(3,), stride=(1,), padding=(1,))\n  (relu1): ReLU()\n  (conv2): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(1,))\n  (relu2): ReLU()\n  (pool): AdaptiveAvgPool1d(output_size=1)\n  (flatten): Flatten(start_dim=1, end_dim=-1)\n  (classifier): Linear(in_features=128, out_features=6, bias=True)\n  (maxpool): MaxPool1d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n  (extra): Sequential(\n    (0): Linear(in_features=128, out_features=16, bias=True)\n    (1): ReLU()\n    (2): Linear(in_features=16, out_features=128, bias=True)\n  )\n)",
+  "parameters": 31510,
+  "added_parameters": 4240,
+  "shared_initial_sha256": "da49a32e64b0616dd35ebdc7f8db38437098673a4a214b84de55dcd01d36773d",
+  "initial_state_sha256": "ed65f17317109e1273869df5d796cd196ff20d09850ea5d04ef816203b7bb0a9"
+}
