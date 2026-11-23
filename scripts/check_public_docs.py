@@ -183,6 +183,18 @@ def check_registry(errors):
                         for row in table_rows), f'{name}: Task03 metrics differ for {label}', errors)
 
 
+
+def check_task03_report_guards(errors):
+    path = ROOT / 'scripts/report_gru_task03.py'
+    try:
+        tree = ast.parse(path.read_text(encoding='utf-8'), filename=str(path))
+    except (OSError, SyntaxError) as exc:
+        errors.append('Task03 report guard check could not parse script: ' + str(exc))
+        return
+    asserts = [node for node in ast.walk(tree) if isinstance(node, ast.Assert)]
+    require(not asserts, 'Task03 report verification must use explicit checks, not optimizable assert statements', errors)
+
+
 def main():
     errors = []
     link_count = 0
@@ -219,6 +231,7 @@ def main():
 
     check_tracked_files(errors)
     check_registry(errors)
+    check_task03_report_guards(errors)
 
     meta = json.loads((ROOT / 'docs/day01/split_metadata.json').read_text(encoding='utf-8'))
     scaler = json.loads((ROOT / 'docs/day01/standardization_train_only.json').read_text(encoding='utf-8'))
