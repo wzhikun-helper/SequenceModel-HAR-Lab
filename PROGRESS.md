@@ -1,6 +1,19 @@
 # 项目进度
 
-更新日期：2026-11-23。当前阶段 **第六章 Lesson 02 · Task 03 GRU GPU 三种子已归档，等待教师验收。**
+更新日期：2026-11-23。当前阶段 **第四次学习规划归档已建立，教师总评据本次任务提供的记录登记。**
+
+## 第四次学习规划归档状态
+
+| 范围 | 状态与依据 |
+| --- | --- |
+| 第 1–2 章 | 数据任务、受试者划分、标准化和信号观察完成。[数据协议](docs/data_protocol.md) |
+| 第 3 章 | Day 01 教师确认 12/12，数据实践已归档。[验收记录](learning_notes/day01/questions_01_12.md) |
+| 第 4 章 | 四模型实验及对照归档，细项教师记录以各历史笔记为准。[四模型对照](experiments/mamba_baseline_d_seed42_20261122/reports/four_model_comparison.md) |
+| 第 5 章 | CNN 三种子消融工程归档。结论与指纹来源已复核。[消融证据](reports/cnn_ablation_20261122/README.md) |
+| 第 6 章 | 完成真实报告调用、Task01 修订、Task03 训练及归档。Task02 自动提供 Skill 元数据，完整指令自动加载及全新会话验证仍待证据。[工作流记录](reports/fourth_plan_final_archive_20261123/skill_usage.md) |
+| 第 7 章 | LaTeX、PDF 两套源／成品及逐页检查归档。[最终报告](reports/fourth_plan_final_archive_20261123/report.pdf) |
+| 第 8 部分 | 本次任务提供教师总评 48/48 通过。题面与证据来源已逐项映射，保留缺失记录。[台账](reports/fourth_plan_final_archive_20261123/question_mapping.csv) |
+| Skill 审计与 GitHub | 审计和证据缺口见最终归档。独立分支发布状态以远程提交为准。[归档入口](reports/fourth_plan_final_archive_20261123/README.md) |
 
 ## 实验进度
 
@@ -18,8 +31,8 @@
 | CNN SE / 等参数残差 MLP 消融 | 已执行，待教师验收 | 三组 × Seed 42、43、44，复用历史 A42。[完整报告](reports/cnn_ablation_20261122/README.md) |
 | Mamba D | 已执行，待教师验收 | RTX 3090，最佳第 3 轮，实际 11 轮。官方测试 Accuracy 88.7004% / Macro-F1 88.8610%。[实验档案](experiments/mamba_baseline_d_seed42_20261122/README.md) |
 | 第六章 Lesson 01 | 已执行报告调用，待教师验收 | [项目 Skill](.agents/skills/uci-har-experiment-workflow/SKILL.md)生成中文科研报告初稿。通过 Skill 发起正式训练仍待执行。[课程记录](learning_notes/chapter06_lesson01.md) |
-| 第六章 Lesson 02 · Task 01 | 文档修订完成，Task 02 待开始 | [修订报告与证据](reports/chapter06_lesson02_task01_revision/README.md)明确 A42 重建与 B42/C42 直接记录的区别，补充 Skill、脚本与实验记录的定义。 |
-| 第六章 Lesson 02 · Task 03 | 独立 GPU 三种子完成，待教师验收 | RTX 3090 上的 GRU Seed42/43/44，平均 Accuracy 90.5780%，Macro-F1 90.6623%。[报告](reports/gru_multiseed_task03_20261123/README.md) · [学习记录](learning_notes/gru_task03_20261123.md) |
+| 第六章 Lesson 02 · Task 01 | 文档修订完成 | [修订报告与证据](reports/chapter06_lesson02_task01_revision/README.md)明确 A42 重建与 B42/C42 直接记录的区别，补充 Skill、脚本与实验记录的定义。 |
+| 第六章 Lesson 02 · Task 03 | 独立 GPU 三种子完成，结果理解据本次教师反馈已通过 | RTX 3090 上的 GRU Seed42/43/44，平均 Accuracy 90.5780%，Macro-F1 90.6623%。[报告](reports/gru_multiseed_task03_20261123/README.md) · [学习复盘](learning_notes/fourth_plan_final_archive.md) |
 
 训练集 6,037 窗口，验证集 1,315 窗口，测试集 2,947 窗口。[协议与元数据](docs/data_protocol.md) · [数据独立复核](reports/day01_data_20261026_run02/independent_verification.json)。
 

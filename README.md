@@ -14,6 +14,8 @@
 
 [中文科研报告初稿](reports/chapter06_lesson01_research_draft/report.pdf) · [报告调用和复现](reports/chapter06_lesson01_research_draft/README.md) · [UCI HAR 项目 Skill](.agents/skills/uci-har-experiment-workflow/SKILL.md)
 
+[第四次学习规划最终归档](reports/fourth_plan_final_archive_20261123/README.md)收录四模型、CNN 九组消融、GRU Task03 三种子、中文报告和 48 道宏观理解题逐项证据。
+
 ## 项目内容
 
 | 已完成 | 实现与证据 |
