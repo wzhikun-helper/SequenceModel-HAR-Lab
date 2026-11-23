@@ -53,7 +53,7 @@ python -B scripts/check_public_docs.py
 python -I -S -B -m unittest discover -s tests -v
 ```
 
-文档检查与 27 项标准库测试构成轻量 CI；其中包含数据契约和发布回归检查。16 项 PyTorch 合成测试另行运行。完整真实数据复现有独立历史记录。准备环境和依赖请按 [Day 01 复现指南](docs/reproducing_day01.md)、[模型入口](scripts/README.md) 及 [Task03 协议](docs/gru_task03_protocol.md) 选择，CUDA 构建参见 [Mamba 环境](experiments/mamba_baseline_d_seed42_20261122/docs/environment.md)。
+文档检查、25 项标准库单元测试及 Task03 报告脚本静态守卫构成轻量 CI。16 项 PyTorch 合成测试另行运行。完整真实数据复现有独立历史记录。准备环境和依赖请按 [Day 01 复现指南](docs/reproducing_day01.md)、[模型入口](scripts/README.md) 及 [Task03 协议](docs/gru_task03_protocol.md) 选择，CUDA 构建参见 [Mamba 环境](experiments/mamba_baseline_d_seed42_20261122/docs/environment.md)。
 
 | 入口 | 查找内容 |
 | --- | --- |
