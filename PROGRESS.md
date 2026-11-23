@@ -1,76 +1,21 @@
 # 项目进度
 
-更新日期：2026-11-23。当前阶段 **第四次学习规划归档已建立，教师总评据本次任务提供的记录登记。**
+更新于 2026-11-23。本页是当前状态的权威入口。单次运行、指标与来源见 [实验注册表](docs/experiment_registry.md)，历史时点见 [CHANGELOG](CHANGELOG.md)。
 
-## 第四次学习规划归档状态
-
-| 范围 | 状态与依据 |
-| --- | --- |
-| 第 1–2 章 | 数据任务、受试者划分、标准化和信号观察完成。[数据协议](docs/data_protocol.md) |
-| 第 3 章 | Day 01 教师确认 12/12，数据实践已归档。[验收记录](learning_notes/day01/questions_01_12.md) |
-| 第 4 章 | 四模型实验及对照归档，细项教师记录以各历史笔记为准。[四模型对照](experiments/mamba_baseline_d_seed42_20261122/reports/four_model_comparison.md) |
-| 第 5 章 | CNN 三种子消融工程归档。结论与指纹来源已复核。[消融证据](reports/cnn_ablation_20261122/README.md) |
-| 第 6 章 | 完成真实报告调用、Task01 修订、Task03 训练及归档。Task02 自动提供 Skill 元数据，完整指令自动加载及全新会话验证仍待证据。[工作流记录](reports/fourth_plan_final_archive_20261123/skill_usage.md) |
-| 第 7 章 | LaTeX、PDF 两套源／成品及逐页检查归档。[最终报告](reports/fourth_plan_final_archive_20261123/report.pdf) |
-| 第 8 部分 | 本次任务提供教师总评 48/48 通过。题面与证据来源已逐项映射，保留缺失记录。[台账](reports/fourth_plan_final_archive_20261123/question_mapping.csv) |
-| Skill 审计与 GitHub | 审计和证据缺口见最终归档。独立分支发布状态以远程提交为准。[归档入口](reports/fourth_plan_final_archive_20261123/README.md) |
-
-## 实验进度
-
-| 阶段 | 状态 | 交付 |
+| 维度 | 当前状态 | 依据 |
 | --- | --- | --- |
-| 数据获取与审计 | 已完成 | 官方来源、压缩包 CRC、本地 SHA-256、窗口与标签检查 |
-| 受试者划分 | 已完成 | 17 人训练 / 4 人验证 / 9 人测试，人员不重叠 |
-| 预处理 | 已完成 | 最终训练集拟合标准化参数；三集合使用同一参数 |
-| 真实信号观察 | 已完成 | WALKING、STANDING 各一个九路窗口 |
-| 学习验收 | 第三章 12/12 通过 | 教师确认的[最终笔记](learning_notes/day01/2026-10-28_teacher_final_notes.md) |
-| CNN最小工程 | 本地执行通过，待教师验收 | 六个真实训练窗口、前向/反向、未训练权重本地保存与重载一致；无优化器更新 |
-| CNN Baseline A | 已执行，待教师验收 | Seed42，最佳Epoch7，15轮Early Stopping；测试Accuracy 89.7523% / Macro-F1 89.8202% |
-| GRU Baseline B | 已执行，待教师验收 | Seed42，最佳Epoch23，实际30轮；测试Accuracy 91.8222% / Macro-F1 91.9444% |
-| Transformer C | 已执行，待验收 | 最佳Epoch7，实际15轮；测试Accuracy 88.0896% / Macro-F1 88.0326% |
-| CNN SE / 等参数残差 MLP 消融 | 已执行，待教师验收 | 三组 × Seed 42、43、44，复用历史 A42。[完整报告](reports/cnn_ablation_20261122/README.md) |
-| Mamba D | 已执行，待教师验收 | RTX 3090，最佳第 3 轮，实际 11 轮。官方测试 Accuracy 88.7004% / Macro-F1 88.8610%。[实验档案](experiments/mamba_baseline_d_seed42_20261122/README.md) |
-| 第六章 Lesson 01 | 已执行报告调用，待教师验收 | [项目 Skill](.agents/skills/uci-har-experiment-workflow/SKILL.md)生成中文科研报告初稿。通过 Skill 发起正式训练仍待执行。[课程记录](learning_notes/chapter06_lesson01.md) |
-| 第六章 Lesson 02 · Task 01 | 文档修订完成 | [修订报告与证据](reports/chapter06_lesson02_task01_revision/README.md)明确 A42 重建与 B42/C42 直接记录的区别，补充 Skill、脚本与实验记录的定义。 |
-| 第六章 Lesson 02 · Task 03 | 独立 GPU 三种子完成，结果理解据本次教师反馈已通过 | RTX 3090 上的 GRU Seed42/43/44，平均 Accuracy 90.5780%，Macro-F1 90.6623%。[报告](reports/gru_multiseed_task03_20261123/README.md) · [学习复盘](learning_notes/fourth_plan_final_archive.md) |
+| 实验执行 | 数据实践、四模型 Seed42、CNN 九组配对（复用 A42）、Task03 GRU GPU 三种子已完成 | [数据审计与全部运行](reports/README.md) |
+| 工程验收 | 原始运行中的阶段检查、历史测试及独立复算有档案。轻量 CI 的覆盖范围单列 | [轻量和真实数据复现](docs/verification.md) · [Task03 工程验收](reports/gru_multiseed_task03_20261123/acceptance.md) |
+| 学习验收 | Day 01 12/12、Day 02 Lesson 01–02 理论通过；第四次规划 48/48 与 Task03 结果理解通过据教师反馈登记 | [Day 01 问答](learning_notes/day01/questions_01_12.md) · [Day 02 记录](learning_notes/day02/README.md) · [最终学习记录](learning_notes/fourth_plan_final_archive.md) |
+| 逐题证据 | PARTIAL。原题与答案 48/48 已映射；历史逐题对话、原始批改及复测覆盖不全 | [台账](reports/fourth_plan_final_archive_20261123/question_mapping.csv) · [勘误](docs/fourth_plan_archive_errata.md) |
+| 报告归档 | 已发布 13 页中文 LaTeX/PDF，归档时逐页检查并校验 SHA-256 | [最终归档](reports/fourth_plan_final_archive_20261123/README.md) |
+| Task03 服务器原件 | PARTIAL。60 项中 18 项公开副本可复核，42 项未独立重算；权重哈希与公开清单已交叉核对 | [证据清单](reports/fourth_plan_final_archive_20261123/evidence_manifest.json) |
+| Skill | 显式读取、真实报告生成和 Task03 训练使用有记录。全新会话自动加载完整指令仍未证实（PARTIAL） | [报告调用](reports/fourth_plan_final_archive_20261123/skill_usage.md) · [Task03 使用记录](reports/gru_multiseed_task03_20261123/skill.md) |
 
-训练集 6,037 窗口，验证集 1,315 窗口，测试集 2,947 窗口。[协议与元数据](docs/data_protocol.md) · [数据独立复核](reports/day01_data_20261026_run02/independent_verification.json)。
+## 下一阶段研究
 
-## 里程碑
+1. 预先固定新受试者划分、种子和评价准则，再检验跨划分稳定性。
+2. 按受试者整理坐站错分并追踪错误来源。
+3. 用共同硬件、精度、框架和计时边界比较成本，另行记录模型容量。
 
-| 日期 | 事项 |
-| --- | --- |
-| 2026-10-26 | 完成环境检查、UCI HAR 数据实践与独立产物复核。 |
-| 2026-10-28 | 归档最终笔记和可恢复问答；初始化 main，完成首批 GitHub 同步及哈希核验。 |
-| 2026-10-30 | 整理公开首页、数据协议、复现指南与历史档案导航，增加文档入口检查。 |
-| 2026-10-31 | 收紧首页信息层次，增加英文概览、贡献约定、更新记录与自动文档检查。 |
-| 2026-10-31（第一轮整改） | 独立venv与新ID完成真实数据全流程复现及旧结果对比；新增25个轻量共享契约测试，复核问答证据类型。 |
-| 2026-11-11 | 教师确认Lesson 01–02理论通过；完成CNN真实样本最小工程，保存实际命令、损失、梯度与重载证据；取回五轮教学原文。 |
-
-2026-10-28 已核验的同步提交为 `b6ac9ced33474068f69f4505d38a01222a9e6562`；这只是当日快照，不作为后续最新提交的固定值。[当日同步回执](reports/day01_github_sync_20261028_run01/sync_receipt.md)。
-
-## 2026-11-19正式训练证据
-
-[完整报告](reports/cnn_baseline_seed42_20261119_run01/execution_report.md) · [配置/CSV/图表](reports/cnn_baseline_seed42_20261119_run01/README.md) · [学习补充](learning_notes/day02/2026-11-19_cnn_baseline_a.md)。数据划分、标准化与.gitignore未改，测试不选模。
-
-## 2026-11-21 GRU证据
-
-先审计CNN实际配置，再执行GRU；[审计报告](reports/gru_baseline_preflight_20261121/audit_report.md) · [完整实验](reports/gru_baseline_seed42_20261121_run01/execution_report.md) · [CNN对比](reports/gru_baseline_seed42_20261121_run01/cnn_gru_comparison.md) · [学习补充](learning_notes/day02/2026-11-21_gru_baseline_b.md)。原CNN成果和.gitignore未改。
-
-## 2026-11-22 Transformer证据
-
-[完整报告](reports/transformer_baseline_seed42_20261122_run01/execution_report.md) · [三模型比较](reports/transformer_baseline_seed42_20261122_run01/three_model_comparison.md) · [学习补充](learning_notes/day02/2026-11-22_transformer_baseline_c.md)。只读旧实验，数据、标准化及.gitignore不变。
-
-## 学习记录的完整性
-
-教师确认第三章正式理解题 12/12 通过。现存教学原文只覆盖原题 4、5、10、12 及 3.2 节的局部读图问答；其余八题的学生原答和逐题批改未取回。验收结论与原始记录完整性分别记录，不用教师解释补造学生回答。[问答索引](learning_notes/day01/questions_01_12.md)。
-
-Day 01已结课；本轮用户明确授权Day 02 CNN最小工程。教师后续阶段准入仍由教师决定，工程自检不等于正式训练或教师验收。[Day 02学习记录](learning_notes/day02/README.md) · [工程报告](reports/day02_cnn_20261111_run01/README.md)。
-
-## 第一轮整改结果
-
-- 完整真实数据复现：通过；官方下载、审计/标准化、绘图、磁盘逐值验证全部退出0。三集合数组完全相同、训练均值/标准差差值为0、两张PNG像素一致。
-- 轻量测试：25个合成契约测试在禁用site packages的独立Python中通过；共享逻辑接入真实流程、文档检查和既有CI，未另建数据下载CI。
-- 图表差异：PDF/SVG文件字节不同，已保存生成时间差异及SVG路径/文本对比，不把数值一致混同为所有文件字节一致。
-- 归档：新增逐字原文／教师摘要／缺失分类索引，本轮没有取得新增原始对话；12/12历史验收结论和原教学文本未改。
-- 当时的证据与限制：[整改报告](reports/remediation_round1_20261031/README.md)。2026-10-31尚未进入第四章与Day 02；当前状态见本页顶部。本轮不改写历史报告。
+[项目治理核验](reports/repository_organization_20261123/acceptance.md)
