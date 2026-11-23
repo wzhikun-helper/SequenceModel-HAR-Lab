@@ -5,6 +5,7 @@ import hashlib
 import json
 import math
 from pathlib import Path
+import re
 import shutil
 from statistics import mean, stdev
 
@@ -22,7 +23,7 @@ SHORT = ('Walk','Up','Down','Sit','Stand','Lay')
 
 
 def read(path):
-    return json.loads(path.read_text())
+    return json.loads(path.read_text(encoding='utf-8'))
 
 
 def save(path, document):
@@ -35,13 +36,19 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+
 def compute_test(predictions, expected_rows, expected_y):
     cm = np.zeros((6,6),dtype=np.int64)
     losses=[]
-    with predictions.open(newline='') as f:
+    with predictions.open(encoding='utf-8',newline='') as f:
         rows=list(csv.DictReader(f))
     require(len(rows)==len(expected_rows)==len(expected_y)==2947, 'Prediction row count differs from the frozen official test set')
     for row,index,truth in zip(rows,expected_rows,expected_y):
+        require(0 <= truth < len(LABELS), 'Frozen label falls outside the activity mapping')
         scores=[float(row[f'logit_{i}']) for i in range(6)]
         require(all(map(math.isfinite,scores)), 'Nonfinite logit in saved predictions')
         top=max(range(6),key=scores.__getitem__)
@@ -53,8 +60,8 @@ def compute_test(predictions, expected_rows, expected_y):
     support=cm.sum(1)
     predicted=cm.sum(0)
     precision=np.divide(diagonal,predicted,out=np.zeros(6),where=predicted!=0)
-    recall=diagonal/support
-    f1=2*diagonal/(support+predicted)
+    recall=np.divide(diagonal,support,out=np.zeros(6),where=support!=0)
+    f1=np.divide(2*diagonal,support+predicted,out=np.zeros(6),where=(support+predicted)!=0)
     return dict(accuracy=float(diagonal.sum()/len(rows)),macro_f1=float(f1.mean()),
                 loss=math.fsum(losses)/len(rows),f1=f1.tolist(),precision=precision.tolist(),
                 recall=recall.tolist(),support=support.tolist(),confusion_matrix=cm.tolist())
@@ -111,53 +118,80 @@ def plot(records, out):
     plt.close(fig)
 
 
-def main(runs,data,out):
-    out.mkdir(parents=True)
-    with np.load(data/'test_standardized.npz',allow_pickle=False) as frozen:
+def verify_runs(runs, data):
+    test_input = data/'test_standardized.npz'
+    frozen_sha = sha(test_input)
+    with np.load(test_input,allow_pickle=False) as frozen:
         ids=frozen['official_row_1based'].tolist()
         truths=(frozen['y']-1).tolist()
+    require(ids == list(range(1, 2948)), 'Frozen input does not preserve the official test row order')
     configs=[]
     records={}
     for seed in SEEDS:
         local=runs/f'seed{seed}'
         result=read(local/'training_result.json')
         test=read(local/'test_metrics.json')
-        with (local/'training_history.csv').open(newline='') as f:
+        with (local/'training_history.csv').open(encoding='utf-8',newline='') as f:
             history=list(csv.DictReader(f))
-        cfg=yaml.safe_load((local/'config.yaml').read_text())
+        cfg=yaml.safe_load((local/'config.yaml').read_text(encoding='utf-8'))
         require(cfg.pop('seed')==seed, f'Seed mismatch in seed{seed} config')
         configs.append(cfg)
         require(result['status']=='PASS' and result['strict_reloads_equal'], f'Seed {seed} run or checkpoint reload did not pass')
         require(result['test_model_evaluation_passes']==test['test_model_evaluation_passes']==1, f'Seed {seed} test evaluation count is not exactly one')
-        require(test['test_artifact_sha256']==sha(data/'test_standardized.npz'), f'Seed {seed} frozen test artifact hash differs')
+        require(test['test_artifact_sha256']==frozen_sha, f'Seed {seed} frozen test artifact hash differs')
         require(test['selection_used_test'] is False and result['order_sha256']==[r['order_sha256'] for r in history], f'Seed {seed} test-selection flag or sampler history differs')
+        require(history and [int(r['epoch']) for r in history] == list(range(1, len(history)+1))
+                and all(math.isfinite(float(r[k])) for r in history
+                        for k in ('validation_macro_f1', 'validation_loss')),
+                f'Seed {seed} has invalid validation history')
         best=max(history,key=lambda r:(float(r['validation_macro_f1']),-float(r['validation_loss'])))
         require(int(best['epoch'])==test['best_epoch']==result['best_epoch'], f'Seed {seed} selected epoch differs from validation history')
         require(len(history)==result['epochs_completed'] and len(set(result['order_sha256']))==len(history), f'Seed {seed} epoch or sampler history is incomplete')
+        require(all(re.fullmatch(r'[0-9a-f]{64}', value)
+                    for value in [result['initial_weight_sha256'], *result['order_sha256']]),
+                f'Seed {seed} initialization or sampler fingerprint is malformed')
         require(sha(local/'best.pt')==result['best_sha256'] and sha(local/'last.pt')==result['last_sha256'], f'Seed {seed} checkpoint hash differs')
-        require((local/'training.log').read_text().rstrip().endswith('Exit code 0'), f'Seed {seed} training log does not record exit code 0')
+        log_lines = (local/'training.log').read_text(encoding='utf-8').strip().splitlines()
+        require(log_lines and log_lines[-1].strip()=='Exit code 0', f'Seed {seed} training log does not record exit code 0')
         independent=compute_test(local/'test_predictions.csv',ids,truths)
-        for key in ('accuracy','macro_f1','precision','recall','f1','loss'):
-            np.testing.assert_allclose(independent[key],test[key],atol=1e-6 if key=='loss' else 1e-14,rtol=0)
+        for key in ('accuracy','macro_f1','precision','recall','f1','loss','support'):
+            actual, archived = np.asarray(independent[key]), np.asarray(test[key])
+            require(actual.shape == archived.shape and np.allclose(
+                actual, archived, atol=1e-6 if key=='loss' else 1e-14, rtol=0),
+                f'Seed {seed} recomputed {key} differs from the saved test metric')
         require(independent['confusion_matrix']==test['confusion_matrix'], f'Seed {seed} confusion matrix differs from independent recomputation')
-        save(local/'independent_verification.json',dict(status='PASS',inference_passes=0,recomputed=independent))
-        fig,ax=plt.subplots(figsize=(5.2,4.5),layout='constrained')
-        fig.colorbar(draw_matrix(ax,test['confusion_matrix'],seed),ax=ax,label='Fraction of true class')
-        fig.savefig(local/'confusion_matrix.png',dpi=165)
-        plt.close(fig)
-        files=sorted(p for p in local.iterdir() if p.is_file())
-        with (local/'SHA256SUMS').open('x') as manifest:
-            for path in files:
-                manifest.write(f'{sha(path)}  {path.name}\n')
-        public=out/f'seed{seed}'
-        public.mkdir()
-        for name in ('config.yaml','training_history.csv','training_result.json','test_metrics.json',
-                     'classification_report.csv','independent_verification.json','SHA256SUMS'):
-            shutil.copyfile(local/name,public/name)
         records[seed]=dict(result=result,test=test,history=history,independent=independent)
     require(configs[0]==configs[1]==configs[2], 'Task03 configurations differ beyond the seed')
     require(len({r['result']['initial_weight_sha256'] for r in records.values()})==3, 'Task03 seeds do not have distinct initial weights')
     require(len({r['result']['order_sha256'][0] for r in records.values()})==3, 'Task03 seeds do not have distinct first-epoch sample orders')
+    return records
+
+
+def main(runs,data,out):
+    out = out.resolve()
+    require(not out.exists() and not any(out.is_relative_to(p.resolve()) for p in (runs,data)),
+            'Report output must be a fresh directory outside the input directories')
+    records = verify_runs(runs, data)
+    out.mkdir(parents=True)
+    for seed, record in records.items():
+        local = runs/f'seed{seed}'
+        public = out/f'seed{seed}'
+        public.mkdir()
+        for name in ('config.yaml','training_history.csv','training_result.json','test_metrics.json',
+                     'classification_report.csv'):
+            shutil.copyfile(local/name, public/name)
+        verified = public/'independent_verification.json'
+        save(verified,dict(status='PASS',inference_passes=0,recomputed=record['independent']))
+        fig,ax=plt.subplots(figsize=(5.2,4.5),layout='constrained')
+        fig.colorbar(draw_matrix(ax,record['test']['confusion_matrix'],seed),ax=ax,label='Fraction of true class')
+        matrix = public/'confusion_matrix.png'
+        fig.savefig(matrix,dpi=165)
+        plt.close(fig)
+        files={p.name:p for p in local.iterdir() if p.is_file() and p.name!='SHA256SUMS'}
+        files.update({verified.name:verified, matrix.name:matrix})
+        with (public/'SHA256SUMS').open('x',encoding='utf-8') as manifest:
+            for name,path in sorted(files.items()):
+                manifest.write(f'{sha(path)}  {name}\n')
 
     fields=('accuracy','macro_f1','loss')
     stats={k:dict(mean=mean(r['test'][k] for r in records.values()),
