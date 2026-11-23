@@ -40,13 +40,13 @@ def compute_test(predictions, expected_rows, expected_y):
     losses=[]
     with predictions.open(newline='') as f:
         rows=list(csv.DictReader(f))
-    assert len(rows)==len(expected_rows)==len(expected_y)==2947
+    require(len(rows)==len(expected_rows)==len(expected_y)==2947, 'Prediction row count differs from the frozen official test set')
     for row,index,truth in zip(rows,expected_rows,expected_y):
         scores=[float(row[f'logit_{i}']) for i in range(6)]
-        assert all(map(math.isfinite,scores))
+        require(all(map(math.isfinite,scores)), 'Nonfinite logit in saved predictions')
         top=max(range(6),key=scores.__getitem__)
-        assert (int(row['official_row_1based']),int(row['true_label_0based']),
-                int(row['pred_label_0based']))==(index,truth,top)
+        require((int(row['official_row_1based']),int(row['true_label_0based']),
+                int(row['pred_label_0based']))==(index,truth,top), 'Saved prediction row, label, or argmax differs')
         cm[truth,top]+=1
         losses.append(scores[top]-scores[truth]+math.log(math.fsum(math.exp(x-scores[top]) for x in scores)))
     diagonal=cm.diagonal()
@@ -125,21 +125,21 @@ def main(runs,data,out):
         with (local/'training_history.csv').open(newline='') as f:
             history=list(csv.DictReader(f))
         cfg=yaml.safe_load((local/'config.yaml').read_text())
-        assert cfg.pop('seed')==seed
+        require(cfg.pop('seed')==seed, f'Seed mismatch in seed{seed} config')
         configs.append(cfg)
-        assert result['status']=='PASS' and result['strict_reloads_equal']
-        assert result['test_model_evaluation_passes']==test['test_model_evaluation_passes']==1
-        assert test['test_artifact_sha256']==sha(data/'test_standardized.npz')
-        assert test['selection_used_test'] is False and result['order_sha256']==[r['order_sha256'] for r in history]
+        require(result['status']=='PASS' and result['strict_reloads_equal'], f'Seed {seed} run or checkpoint reload did not pass')
+        require(result['test_model_evaluation_passes']==test['test_model_evaluation_passes']==1, f'Seed {seed} test evaluation count is not exactly one')
+        require(test['test_artifact_sha256']==sha(data/'test_standardized.npz'), f'Seed {seed} frozen test artifact hash differs')
+        require(test['selection_used_test'] is False and result['order_sha256']==[r['order_sha256'] for r in history], f'Seed {seed} test-selection flag or sampler history differs')
         best=max(history,key=lambda r:(float(r['validation_macro_f1']),-float(r['validation_loss'])))
-        assert int(best['epoch'])==test['best_epoch']==result['best_epoch']
-        assert len(history)==result['epochs_completed'] and len(set(result['order_sha256']))==len(history)
-        assert sha(local/'best.pt')==result['best_sha256'] and sha(local/'last.pt')==result['last_sha256']
-        assert (local/'training.log').read_text().rstrip().endswith('Exit code 0')
+        require(int(best['epoch'])==test['best_epoch']==result['best_epoch'], f'Seed {seed} selected epoch differs from validation history')
+        require(len(history)==result['epochs_completed'] and len(set(result['order_sha256']))==len(history), f'Seed {seed} epoch or sampler history is incomplete')
+        require(sha(local/'best.pt')==result['best_sha256'] and sha(local/'last.pt')==result['last_sha256'], f'Seed {seed} checkpoint hash differs')
+        require((local/'training.log').read_text().rstrip().endswith('Exit code 0'), f'Seed {seed} training log does not record exit code 0')
         independent=compute_test(local/'test_predictions.csv',ids,truths)
         for key in ('accuracy','macro_f1','precision','recall','f1','loss'):
             np.testing.assert_allclose(independent[key],test[key],atol=1e-6 if key=='loss' else 1e-14,rtol=0)
-        assert independent['confusion_matrix']==test['confusion_matrix']
+        require(independent['confusion_matrix']==test['confusion_matrix'], f'Seed {seed} confusion matrix differs from independent recomputation')
         save(local/'independent_verification.json',dict(status='PASS',inference_passes=0,recomputed=independent))
         fig,ax=plt.subplots(figsize=(5.2,4.5),layout='constrained')
         fig.colorbar(draw_matrix(ax,test['confusion_matrix'],seed),ax=ax,label='Fraction of true class')
@@ -155,9 +155,9 @@ def main(runs,data,out):
                      'classification_report.csv','independent_verification.json','SHA256SUMS'):
             shutil.copyfile(local/name,public/name)
         records[seed]=dict(result=result,test=test,history=history,independent=independent)
-    assert configs[0]==configs[1]==configs[2]
-    assert len({r['result']['initial_weight_sha256'] for r in records.values()})==3
-    assert len({r['result']['order_sha256'][0] for r in records.values()})==3
+    require(configs[0]==configs[1]==configs[2], 'Task03 configurations differ beyond the seed')
+    require(len({r['result']['initial_weight_sha256'] for r in records.values()})==3, 'Task03 seeds do not have distinct initial weights')
+    require(len({r['result']['order_sha256'][0] for r in records.values()})==3, 'Task03 seeds do not have distinct first-epoch sample orders')
 
     fields=('accuracy','macro_f1','loss')
     stats={k:dict(mean=mean(r['test'][k] for r in records.values()),
