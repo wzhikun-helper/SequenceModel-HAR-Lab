@@ -1,0 +1,149 @@
+{
+  "status": "PASS",
+  "seed": 44,
+  "initial_weight_sha256": "902ca3cbcec9df22d622cb5747e23e364f6cdc0c15c286f8d75a3b25d49254b2",
+  "order_sha256": [
+    "f63bb0d5c7cab8258a1bcec3e46e6ead85e5f249ea587755af7c0aa1433a7ef7",
+    "c4bfed35f1ba6b60192437281c6a85eb4f59147858caa23e236f97065ca68f7a",
+    "b525cbfc1cd93db262ad6f86c745071af2b0980e6af5f90ef58193196e293911",
+    "e59806902f57f95d81d7009b5e5f57e2000ba6c8951ecfcc383638ad78e50557",
+    "e6422fb0efd7cd1819ab6bf4c4c07beefa3f9dcc111ffe0807373944dce0c84c",
+    "1d17ec9942acbba93b215d56af28ee010cc07eb413bc9b0ede5f8f968e067e17",
+    "becf2c257f973cd56240c693ac81eca84996af1dba869ea21f6ab480fadb552a",
+    "91d2c0f99de680ed329546849722f1d0d38898f3907fef7e24c9121bcb8a5935",
+    "4f713900f873e8c1dfc282a120e7eaade99d1da4c8b1b659e70ec0179ecdfe8d",
+    "568d308fbb904170be03028b0d3ec9a408442aeb868b1b6657f7aefec7c11f0e",
+    "5dad2f333e8b6c81b7fe9cff41c42538c291d2246e5a6e193b1339e8bf5a02a4",
+    "46e0a724e62026d3d755fac1c2bad709f23cb420b50f18ef84889da33ed1c467",
+    "59d50a43bd0b5841227b2d76832ccd0e9e60b7c5691c1944f726754062d0818e",
+    "9446ab4e7bc66af4911d1ec950f2dd9e8de4318dc6ad455475c44d2f0e8e8d1c",
+    "723da5b9de3549f69a66eecbbcfc0d29dec1a67d7e53dd824e5a5f065b52119d",
+    "441135a832d6dce3e53b4b886ce3803b416387e971256a1f81d7240ab917273a",
+    "63187fef61008a25da54088483bcce9367152a15b4abf9b74ac00f8d55bac813",
+    "becc3a097d609f206b869fa0c169890ed00d47ffec39ab55a5e03d38cd3f83e6",
+    "be909ca6835d9dc50c184001903c4706f46d5ef5d80cf44c054a4243db17920f",
+    "63d3c0c837ec37c2376f881c9ceb7771ed24720ddcbf0a4f1576812f344d3052",
+    "2a3c4fce9ff002e60380f645716c4a49f655d3b73115de3351e36c24721964e0",
+    "7d43ec95e56c5e386f7146ba8673d5e0f56c315cbb60059712512dbd59583176",
+    "ab5eee6da09a88677bfd50cb7352141e5e8bb26cb2508cdc76824fd6b586e6b9",
+    "6d89e6c92ffdaab443b74769ca772d799c4b8b38ae258b7cab01a020c3c630de",
+    "c6447daaf82a70afe469b1990f2f816cab576ec023512443d13627760650fc08",
+    "fc0f5373ad5b5e586bf310eab98cccb540bb8abbcd04c6d565db86a45f1bbd0c",
+    "de6d65e0988ba310aa4fb87aa69b88f94b5cc3021bb5a746968cd5b95ee63694",
+    "c1db0f9cabb671b4a6a00ec4461482639ff7b8a134b0fdb587caf5dbfacc3e77",
+    "7ed226d6e6abbf510a7f3f0b7950f937fd9f9f1bb46532b171582903e38e3995",
+    "fcb0e07cf4078ef483d252b8afadd5737fbc0d9906813a20668f31cbf64ae400"
+  ],
+  "order_encoding": "concatenated official training row IDs, little-endian int64",
+  "best_epoch": 24,
+  "epochs_completed": 30,
+  "optimizer_steps": 2850,
+  "stopped_early": false,
+  "final_stale_count": 6,
+  "best_validation": {
+    "n": 1315,
+    "accuracy": 0.9589353612167301,
+    "macro_f1": 0.9576468243422801,
+    "precision": [
+      1.0,
+      1.0,
+      1.0,
+      0.8185840707964602,
+      0.9346733668341709,
+      1.0
+    ],
+    "recall": [
+      1.0,
+      1.0,
+      1.0,
+      0.9343434343434344,
+      0.8193832599118943,
+      1.0
+    ],
+    "f1": [
+      1.0,
+      1.0,
+      1.0,
+      0.8726415094339622,
+      0.8732394366197183,
+      1.0
+    ],
+    "support": [
+      266,
+      210,
+      193,
+      198,
+      227,
+      221
+    ],
+    "confusion_matrix": [
+      [
+        266,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        210,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        193,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        185,
+        13,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        41,
+        186,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        221
+      ]
+    ],
+    "zero_division": 0,
+    "macro_classes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "confusion_orientation": "rows=true, columns=predicted",
+    "loss": 0.10209625166178656
+  },
+  "test_model_evaluation_passes": 1,
+  "best_sha256": "1d6043a7fed8d00a4af962ab9d36ee411f6012b0f88326c3696918ab970fa6e6",
+  "last_sha256": "d87e7ba22dc820cf1bca70fe7d322b6849442e881beff77bc365dd182f0602ec",
+  "strict_reloads_equal": true,
+  "started_at": "2026-11-23T03:02:22.779614+00:00",
+  "finished_at": "2026-11-23T03:02:28.891763+00:00",
+  "training_seconds": 5.169051527045667,
+  "prep_head": "e5cedf921441d1b2424f8399d5c5469173850f1f"
+}

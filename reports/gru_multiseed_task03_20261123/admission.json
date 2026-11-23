@@ -1,0 +1,62 @@
+{
+  "training_authorization": "APPROVED",
+  "prep_head": "e5cedf921441d1b2424f8399d5c5469173850f1f",
+  "data_sha256": {
+    "train_standardized.npz": "f94e39898c8dc26367f7bc97f293e74e7543cccf3b1e1ed62b05f33bb30a36f7",
+    "validation_standardized.npz": "aac8b1bd08ae09f96b3d4aba753e2d36b12faed5ecb6f8e8f96d81de226738dc",
+    "test_standardized.npz": "b569c56999ffa3a89147361768f94eccb7441ffd794ac84f07caa06eb23b2e4c",
+    "scaler_train_only.json": "5efe9f855f6a14a19704d5700f60c71e7ea70c28e6ca7c1528f70abbcdd22d89"
+  },
+  "checks": [
+    {
+      "id": 1,
+      "criterion": "complete Git clone at authorized target",
+      "status": "PASS"
+    },
+    {
+      "id": 2,
+      "criterion": "clean reviewed worktree",
+      "status": "PASS"
+    },
+    {
+      "id": 3,
+      "criterion": "RTX 3090, CUDA GRU real batches",
+      "status": "PASS"
+    },
+    {
+      "id": 4,
+      "criterion": "actual CPU config, preserved source digests, archived epoch log and provenance",
+      "status": "PASS"
+    },
+    {
+      "id": 5,
+      "criterion": "raw UCI digests and exact frozen NPZ/scaler digests",
+      "status": "PASS"
+    },
+    {
+      "id": 6,
+      "criterion": "fixed mutually exclusive subjects",
+      "status": "PASS"
+    },
+    {
+      "id": 7,
+      "criterion": "identical GPU configurations excluding seed",
+      "status": "PASS"
+    },
+    {
+      "id": 8,
+      "criterion": "25 contract and 16 Torch tests plus real-batch and replay probes",
+      "status": "PASS"
+    },
+    {
+      "id": 9,
+      "criterion": "writable outputs and at least 20 GiB free",
+      "status": "PASS"
+    },
+    {
+      "id": 10,
+      "criterion": "no unresolved control-variable difference within GPU group",
+      "status": "PASS"
+    }
+  ]
+}

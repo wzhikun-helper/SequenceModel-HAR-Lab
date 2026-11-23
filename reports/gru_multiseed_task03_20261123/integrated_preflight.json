@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "batches": 2,
+  "losses": [
+    1.8723125457763672,
+    1.8170263767242432
+  ],
+  "gradients": [
+    {
+      "gru.weight_ih_l0": {
+        "finite": true,
+        "nonzero": 1728,
+        "l2": 0.44525134563446045
+      },
+      "gru.weight_hh_l0": {
+        "finite": true,
+        "nonzero": 12288,
+        "l2": 0.12758073210716248
+      },
+      "gru.bias_ih_l0": {
+        "finite": true,
+        "nonzero": 192,
+        "l2": 0.06280618906021118
+      },
+      "gru.bias_hh_l0": {
+        "finite": true,
+        "nonzero": 192,
+        "l2": 0.03387867286801338
+      },
+      "classifier.weight": {
+        "finite": true,
+        "nonzero": 384,
+        "l2": 0.44520172476768494
+      },
+      "classifier.bias": {
+        "finite": true,
+        "nonzero": 6,
+        "l2": 0.10801946371793747
+      }
+    },
+    {
+      "gru.weight_ih_l0": {
+        "finite": true,
+        "nonzero": 1728,
+        "l2": 0.4981403648853302
+      },
+      "gru.weight_hh_l0": {
+        "finite": true,
+        "nonzero": 12288,
+        "l2": 0.1397240310907364
+      },
+      "gru.bias_ih_l0": {
+        "finite": true,
+        "nonzero": 192,
+        "l2": 0.11332954466342926
+      },
+      "gru.bias_hh_l0": {
+        "finite": true,
+        "nonzero": 192,
+        "l2": 0.05780397728085518
+      },
+      "classifier.weight": {
+        "finite": true,
+        "nonzero": 384,
+        "l2": 0.48178330063819885
+      },
+      "classifier.bias": {
+        "finite": true,
+        "nonzero": 6,
+        "l2": 0.22249798476696014
+      }
+    }
+  ],
+  "updated_parameters": {
+    "gru.weight_ih_l0": true,
+    "gru.weight_hh_l0": true,
+    "gru.bias_ih_l0": true,
+    "gru.bias_hh_l0": true,
+    "classifier.weight": true,
+    "classifier.bias": true
+  },
+  "shapes": {
+    "input": [
+      64,
+      128,
+      9
+    ],
+    "output": [
+      64,
+      128,
+      64
+    ],
+    "h_n": [
+      1,
+      64,
+      64
+    ],
+    "last_hidden": [
+      64,
+      64
+    ],
+    "classifier_input": [
+      64,
+      64
+    ],
+    "logits": [
+      64,
+      6
+    ]
+  },
+  "formal_objects_reinitialized_after_checks": true,
+  "separate_minimal_experiment": false
+}

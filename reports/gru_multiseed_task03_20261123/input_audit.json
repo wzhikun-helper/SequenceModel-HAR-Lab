@@ -1,0 +1,121 @@
+{
+  "status": "PASS",
+  "prep_head": "e5cedf921441d1b2424f8399d5c5469173850f1f",
+  "environment": {
+    "python": "3.9.23",
+    "pytorch": "2.5.1+cu121",
+    "cuda": "12.1",
+    "cudnn": 90100,
+    "numpy": "1.24.4",
+    "matplotlib": "3.7.5",
+    "pyyaml": "6.0.3",
+    "gpu": "NVIDIA GeForce RTX 3090, 535.309.01, 24576 MiB, 356 MiB, 0 %",
+    "os": "Ubuntu 24.04.3 LTS"
+  },
+  "data_sha256": {
+    "train_standardized.npz": "f94e39898c8dc26367f7bc97f293e74e7543cccf3b1e1ed62b05f33bb30a36f7",
+    "validation_standardized.npz": "aac8b1bd08ae09f96b3d4aba753e2d36b12faed5ecb6f8e8f96d81de226738dc",
+    "test_standardized.npz": "b569c56999ffa3a89147361768f94eccb7441ffd794ac84f07caa06eb23b2e4c",
+    "scaler_train_only.json": "5efe9f855f6a14a19704d5700f60c71e7ea70c28e6ca7c1528f70abbcdd22d89"
+  },
+  "original_raw_members": 29,
+  "original_archives": 2,
+  "archives_sha256": {
+    "config.json": "eafef58dbfac049c3c73cb225190d0167dd71e2eadbfe50d56008546974d6928",
+    "training_history.csv": "061a86d96e7fd8d7083724bc55252b4a82020dbbe1af27bfdf9d9d794abfa0ae",
+    "runtime_conditions.json": "81e62fd66495cb491a3bfb9972ae78681a59f8e596b9db529aa568676d4fc953",
+    "environment.json": "beaf655df7172072f9158faf124f30e73c2bdb77e629daa40c3be64b4177165e",
+    "test_metrics.json": "95367c6ec8308d776c2ce1b4b6c867d2723ab39c74cc1b4e8309c16ccb1108e6",
+    "training_result.json": "5136bdcee5f087d82a7883826afcd7d2ca64550ee4bb382d81ac59b48fcbf4ff"
+  },
+  "source_sha256": {
+    "scripts/train_gru_baseline.py": "b2bd02546a598e6880c51c21ae340ffefa0559991b6c2494f7d9e0c84692719d",
+    "src/har_lab/gru_baseline_b.py": "da407adb782541dac71cccacdd1ce506bfc3e8884215dfe934d96606b3f8ca9e",
+    "scripts/train_cnn_baseline_a.py": "0bf65d723810b9b9cbb5069eadd5f4f39fafdb02f469ba24de5c0cfa4ccb8608",
+    "scripts/cnn_metrics.py": "face6e05ae92255b4be5b0f0328e78ac736b83822c11502caf2ad6918a40df86",
+    "scripts/har_contracts.py": "4bc41977190db5ccf29f6453fcdb5e5b06128a47c799e28c342bcedf1b3dc3ba",
+    "src/har_lab/cnn.py": "f855f4e2d7f3d7541a74bcc1b36463898002eab9937fbf8d4d259bb7efbc1fc4"
+  },
+  "historic_stdout_present": false,
+  "historic_stdout_manifest": {
+    "logs/gru_baseline_seed42_20261121_run01/01_tests.log": {
+      "bytes": 1320,
+      "sha256": "11f7b6730180f1f8725b49e4ca76f26b3c06c2c1da6817c61bd5bce44b70aaaa"
+    },
+    "logs/gru_baseline_seed42_20261121_run01/02_training.log": {
+      "bytes": 12268,
+      "sha256": "22bcf0870b7b6a320df1ffd442e1b4a6871b4000ce4b58c7fc74edffea40d087"
+    },
+    "logs/gru_baseline_seed42_20261121_run01/03_verify.log": {
+      "bytes": 566,
+      "sha256": "f9b14fde744ec0cbc116546f72e5a96c7378cebf1015303a97d0092c77768a79"
+    },
+    "logs/gru_baseline_seed42_20261121_run01/04_figures.log": {
+      "bytes": 92,
+      "sha256": "1d68616ae7527ebad0be696cc0a9b36f20310013be56e806d782d9e928825127"
+    },
+    "logs/gru_baseline_seed42_20261121_run01/05_figures_revision.log": {
+      "bytes": 92,
+      "sha256": "1d68616ae7527ebad0be696cc0a9b36f20310013be56e806d782d9e928825127"
+    },
+    "logs/gru_baseline_seed42_20261121_run01/06_contract_tests.log": {
+      "bytes": 2074,
+      "sha256": "57241f6823f86c32f7411084a4d1d920dada9ce744cdcd85fe1b83bd9405a73d"
+    },
+    "logs/gru_baseline_seed42_20261121_run01/07_docs.log": {
+      "bytes": 205,
+      "sha256": "b748fc95de2c146350dafb0c9a05a4f293e0a21b491153fc47a29d76b8b8d402"
+    },
+    "logs/gru_baseline_seed42_20261121_run01/08_remote_before.log": {
+      "bytes": 58,
+      "sha256": "bfa2f492ca19b908b6ae3a49c7b2dcc747eb028d3a72a415709b8139ca06e1b8"
+    }
+  },
+  "historic_metrics": {
+    "accuracy": 0.9182219205972175,
+    "macro_f1": 0.9194442175604504,
+    "loss": 0.2553186292638721,
+    "best_epoch": 23
+  },
+  "historical_epochs": 30,
+  "space_available": 185362923520,
+  "runtime_comparison": "Windows PyTorch 2.0.1 CPU versus Linux PyTorch 2.5.1 CUDA; Adam options preserved, backend implementation may differ",
+  "standardized_split_subjects": {
+    "train": [
+      7,
+      8,
+      11,
+      14,
+      15,
+      16,
+      17,
+      19,
+      21,
+      22,
+      23,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "validation": [
+      1,
+      3,
+      5,
+      6
+    ],
+    "test": [
+      2,
+      4,
+      9,
+      10,
+      12,
+      13,
+      18,
+      20,
+      24
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "same_seed_initialization": "aca78c39fa5da151a895285bdb94d71a4dc784c5e91b0d04323ea56e636ebb46",
+  "all_seeds_distinct": true,
+  "original_loader_order_equal": true,
+  "checkpoint_reload_exact": true,
+  "adam_defaults": {
+    "lr": 0.001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null
+  },
+  "tf32": false,
+  "amp": false,
+  "fp32": true
+}
