@@ -30,3 +30,5 @@ flowchart TD
 ## 核验边界
 
 48 道题的连续编号、题面、说明和来源可核对。逐题教师原文覆盖仍为 PARTIAL；任务提供的总结性验收保持原登记。PDF 引用与章节按原发布版本查阅，原版无单列目录。
+
+[PR #1 逐题原件状态扩展台账](../reports/repository_organization_20261123/question_mapping.csv)保留原台账各字段，并增加逐题状态。9 题 PARTIAL，39 题 MISSING，0 题达到原规划逐字题面、学生原答及教师反馈对应齐全的 FULL。教师 48/48 总评级别独立登记。

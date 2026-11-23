@@ -4,6 +4,7 @@ Historical transcripts/reports intentionally retain execution-machine paths.
 This checks curated entry pages, their assets, and published metadata, not those archives.
 """
 import ast
+import csv
 import hashlib
 from html.parser import HTMLParser
 import json
@@ -58,6 +59,9 @@ PAGES = [
     'reports/gru_multiseed_task03_20261123/README.md',
     'reports/fourth_plan_final_archive_20261123/README.md',
     'reports/repository_organization_20261123/acceptance.md',
+    'reports/repository_organization_20261123/security_audit.md',
+    'reports/repository_organization_20261123/skill_verification.md',
+    'reports/repository_organization_20261123/final_release_checklist.md',
 ]
 SKILL = '.agents/skills/uci-har-experiment-workflow/SKILL.md'
 REGISTRY = 'docs/experiment_registry.md'
@@ -193,6 +197,56 @@ def check_task03_report_guards(errors):
         return
     asserts = [node for node in ast.walk(tree) if isinstance(node, ast.Assert)]
     require(not asserts, 'Task03 report verification must use explicit checks, not optimizable assert statements', errors)
+    require(any(isinstance(node, ast.FunctionDef) and node.name == 'require' for node in tree.body),
+            'Task03 report must define its explicit verification guard', errors)
+
+
+def check_delivery_records(errors):
+    delivery = ROOT / 'reports/repository_organization_20261123'
+    source = ROOT / 'reports/fourth_plan_final_archive_20261123/question_mapping.csv'
+    with source.open(encoding='utf-8', newline='') as first, \
+            (delivery/'question_mapping.csv').open(encoding='utf-8', newline='') as second:
+        original, expanded = list(csv.DictReader(first)), list(csv.DictReader(second))
+    require([row['题号'] for row in expanded] == [str(i) for i in range(1, 49)]
+            and len(original) == len(expanded)
+            and all(all(new.get(key) == value for key, value in old.items())
+                    and new.get('逐题原件等级') in {'FULL', 'PARTIAL', 'MISSING'}
+                    and new.get('原件对应范围')
+                    for old, new in zip(original, expanded)),
+            'expanded question mapping differs from historical rows or lacks provenance', errors)
+    with (delivery/'task03_evidence_status.csv').open(encoding='utf-8', newline='') as stream:
+        rows = list(csv.DictReader(stream))
+    root = ROOT / 'reports/gru_multiseed_task03_20261123'
+    manifests = {(str(seed), name): sha for seed in (42, 43, 44)
+                 for line in (root/f'seed{seed}'/'SHA256SUMS').read_text(encoding='utf-8').splitlines()
+                 for sha, name in [line.split()]}
+    observed = {(row['Seed'], row['文件']): row['历史 SHA-256'] for row in rows}
+    require(observed == manifests and len(rows) == len(manifests) == 60,
+            'Task03 evidence ledger differs from historical SHA-256 manifests', errors)
+    public_count = 0
+    for row in rows:
+        seed, name, stated = row['Seed'], row['文件'], row['公开副本']
+        public = root / f'seed{seed}' / name
+        if stated:
+            public_count += 1
+            expected = public.relative_to(ROOT).as_posix()
+            if stated != expected or not public.is_file() or row['本轮可见范围'] != 'PASS':
+                errors.append('invalid public evidence path or status: ' + stated)
+                continue
+            raw = public.read_bytes()
+            require(row['历史 SHA-256'] in {
+                hashlib.sha256(raw).hexdigest(),
+                hashlib.sha256(raw.replace(b'\r\n', b'\n')).hexdigest(),
+            }, 'public evidence hash mismatch: ' + expected, errors)
+        else:
+            require(not public.is_file() and row['本轮可见范围'] == 'PARTIAL',
+                    'unavailable server evidence must remain PARTIAL: ' + name, errors)
+    require(public_count == 18, 'public evidence scope differs from the release ledger', errors)
+    clone = 'git clone https://github.com/wzhikun-helper/SequenceModel-HAR-Lab.git'
+    for name in ('README.md', 'README.en.md'):
+        commands = [line for line in (ROOT/name).read_text(encoding='utf-8').splitlines()
+                    if line.startswith('git clone ')]
+        require(commands == [clone], f'{name}: expected the default-branch clone command', errors)
 
 
 def main():
@@ -232,6 +286,7 @@ def main():
     check_tracked_files(errors)
     check_registry(errors)
     check_task03_report_guards(errors)
+    check_delivery_records(errors)
 
     meta = json.loads((ROOT / 'docs/day01/split_metadata.json').read_text(encoding='utf-8'))
     scaler = json.loads((ROOT / 'docs/day01/standardization_train_only.json').read_text(encoding='utf-8'))

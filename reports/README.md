@@ -20,3 +20,5 @@
 - CSV 历史、配置和测试指标用于追溯原运行。复算 JSON 是后续依据冻结预测、标签或归档记录进行的核对。统计、图和 PDF 是派生产物。
 - 原始数据与运行权重、机器 stdout 和大体积预测文件应留在当地。Task03 的逐样本预测与检查点原件在服务器。60 项文件清单中 **18 项公开副本可直接复核，42 项服务器文件尚未独立重新核验（PARTIAL）**。
 - 失败记录保留原含义。Day 01 的 `audit/` 为首次序列化失败现场；有效结果在 `audit02/`。历史 Git 状态和机器路径按归档时间解读。[课程原始归档](day01_archive_20261028_run01/archive_report.md)
+
+[PR #1 最终交付清单](repository_organization_20261123/final_release_checklist.md) · [公开安全审计](repository_organization_20261123/security_audit.md) · [新会话 Skill 复核](repository_organization_20261123/skill_verification.md)

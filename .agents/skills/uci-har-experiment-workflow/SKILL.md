@@ -7,6 +7,8 @@ description: Audit or summarize archived SequenceModel-HAR-Lab runs, generate a 
 
 先判定任务是只读核验、报告汇总还是用户明确授权的新训练。从仓库根目录先读取[数据协议](../../../docs/data_protocol.md)，再查 [实验注册表](../../../docs/experiment_registry.md) 和 [报告入口](../../../reports/README.md)。审计当前 HEAD、配置和证据来源后按任务范围执行。只读核验直接比较公开归档、冻结哈希及指标来源，保留原数据、分割、配置、历史运行与 Checkpoint。
 
+教师负责教学解释与验收，学生负责给出自己的理解，Codex 负责实现、复核和归档。新增整理明确标注来源；历史原答、教师反馈、复测与工程判断分别记载。新验收不能替代历史原件。
+
 ## 汇总与报告
 
 1. 从仓库根目录读取 [数据协议](../../../docs/data_protocol.md) 和 [报告入口](../../../reports/README.md)。记录 Git HEAD、状态，以及请求中指定的实验来源。服务器已有公开归档时，从对应 Git 提交核验；直接服务器核验需要已授权的访问入口。

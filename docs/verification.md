@@ -16,6 +16,13 @@ python -I -S -B -m unittest discover -s tests -v
 
 第二条命令禁用用户与系统site packages，仅用标准库；不需要NumPy、PyTorch、数据文件或GPU。CI沿用[既有工作流](../.github/workflows/docs.yml)，保持只读权限和禁止目录追踪检查。
 
+Task03 真正的报告行为在已具备报告依赖的本地环境运行。以下命令只使用合成预测和字节夹具，核对正常报告、坏权重/日志/指标/配置、NaN、计数和 argmax，以及验证失败时输入和输出边界。GitHub Actions 只执行轻量文档和标准库检查。
+
+```sh
+python -B -m unittest discover -s tests_torch
+python -O -B -m unittest discover -s tests_torch -p test_task03_report.py
+```
+
 [共享契约](../scripts/har_contracts.py)被真实审计、磁盘验证和文档检查共同调用；[合成测试](../tests/test_har_contracts.py)包含正确输入与错误反例：
 
 - 形状只能是正数窗口数×128时间点×9通道，窗口数与标签/清单一致。

@@ -18,4 +18,10 @@
 2. 按受试者整理坐站错分并追踪错误来源。
 3. 用共同硬件、精度、框架和计时边界比较成本，另行记录模型容量。
 
-[项目治理核验](reports/repository_organization_20261123/acceptance.md)
+[项目治理核验](reports/repository_organization_20261123/acceptance.md) · [PR 最终清单](reports/repository_organization_20261123/final_release_checklist.md)
+
+Task03 清单已逐项登记，18 个公开 Git 文件的哈希均匹配，42 个服务器原件仍为 PARTIAL。[60 项状态表](reports/repository_organization_20261123/task03_evidence_status.csv)
+
+48 题历史原件重新分级为 0 FULL、9 PARTIAL、39 MISSING。总评 48/48 维持历史登记。[逐题状态表](reports/repository_organization_20261123/question_mapping.csv)
+
+独立新会话已验证 Skill 元数据自动发现，并执行只读核验。全文由会话主动读取，完整指令自动注入仍为 PARTIAL。[实际会话复核](reports/repository_organization_20261123/skill_verification.md)

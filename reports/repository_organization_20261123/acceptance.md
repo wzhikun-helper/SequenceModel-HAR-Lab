@@ -41,6 +41,10 @@
 - **PARTIAL · 逐题原文**：原题完整，保存的同主题学生原答与定向教师摘要覆盖有限。
 - **PARTIAL · Skill 自动加载**：记录显示元数据发现及显式读取，缺少新会话自动加载完整指令的证据。
 
+## PR #1 最终交付补充
+
+远程 Head 从本地 `77d6caf` 快进至 `279800c` 后开始本次修复。其 [Actions 运行 45192891843](https://github.com/wzhikun-helper/SequenceModel-HAR-Lab/actions/runs/45192891843) 实际成功。此后的变更和证据见 [最终验收清单](final_release_checklist.md)、[公开安全审计](security_audit.md) 与 [独立 Skill 会话](skill_verification.md)。旧版 PDF、题目、模型指标、源数据及权重保留。
+
 
 ## K. PR 追加交付修订 · 2026-11-23
 

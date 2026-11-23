@@ -24,6 +24,6 @@ for seed in 42 43 44; do
 done
 ```
 
-每次正式执行将完整命令、起止时间和退出码与 stdout 一并保存为各运行的 `training.log`。新运行完成后执行 `python -B scripts/report_gru_task03.py "$RUNS" "$FROZEN_DATA" "$NEW_REPORT"`，验证保存 logits、生成三张汇总图，并完成每个运行的 `SHA256SUMS`。公开副本附有哈希清单，本地原始运行目录包含逐文件校验所需的全部实际文件。
+每次正式执行将完整命令、起止时间和退出码与 stdout 一并保存为各运行的 `training.log`，以单独一行 `Exit code 0` 记录成功。新运行完成后执行 `python -B scripts/report_gru_task03.py "$RUNS" "$FROZEN_DATA" "$NEW_REPORT"`，先验证三组的保存 logits、指标、权重哈希和采样证据，再把图、复算和新 SHA-256 清单写入新报告目录。运行目录保持只读，历史清单继续按生成当时的范围解释。公开副本的范围见 [60 项状态表](../reports/repository_organization_20261123/task03_evidence_status.csv)。
 
 历史 CPU 采用 Windows 和 PyTorch 2.0.1，本次 GPU 采用 Ubuntu 和 PyTorch 2.5.1+cu121。CPU 结果仅作为历史参考。平台、版本和后端共同变化，速度和分数差异均不能归因于 GPU 单独作用。

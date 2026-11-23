@@ -36,6 +36,8 @@ A 为原 CNN，B 为 CNN+SE，C 为等参数量残差 MLP。B−A 按 Seed42、4
 
 样本标准差为 Accuracy 0.7711 pp、Macro-F1 0.7774 pp、Loss 0.025912。SITTING 在三组中均为最低 F1。三个种子使用相同受试者划分，结果衡量该划分下的训练波动；历史 CPU GRU 与本组的环境和软件不同。[Task03 汇总](../reports/gru_multiseed_task03_20261123/summary.json) · [实际环境](../reports/gru_multiseed_task03_20261123/input_audit.json)
 
+Task03 公开副本与服务器原件的差别逐项列于 [60 项证据状态表](../reports/repository_organization_20261123/task03_evidence_status.csv)。公开副本 18 项匹配，服务器原件 42 项仍为 PARTIAL。
+
 ## 逐运行证据
 
 Git 列固定的是归档提交。运行时源码或预备提交以该行 SHA-256／报告所记录的实际来源为准。Task03 的 `task03/seedNN` 是按公开种子目录和原运行布局登记的定位名。权重均保留在受控本地环境。**PARTIAL** 表示本次公开仓库核验缺少未公开原件，不否定各行的指标核对或历史重载／复算记录。Mamba 与 Task03 的逐样本服务器原件当前未重新获取；Task03 清单 60 项中 18 项可由公开副本复核，42 项仍据服务器历史记录。A42 的历史训练缺少同期初始化与顺序指纹及 Last 权重。

@@ -66,6 +66,8 @@ python -B scripts/report_gru_task03.py "$RUNS" "$FROZEN_DATA" "$NEW_REPORT"
 
 每次正式运行必须保存实际命令、stdout、起止时间、退出码、配置、训练历史、Best/Last 权重、测试预测和文件哈希。公开仓库只发布经审查的汇总与证据副本；原始权重和受控运行文件按协议留在实验环境。脚本的具体输入结构、输出清单和历史环境差异见 Task03 协议与[公开报告](../reports/gru_multiseed_task03_20261123/README.md)。
 
+报告入口适用于已完成且原件可访问的运行。先校验全部种子，再把独立复算、图和新清单写入 `NEW_REPORT`；输入目录与旧报告保持只读。无服务器原件时可查 [60 项状态表](../reports/repository_organization_20261123/task03_evidence_status.csv) 了解公开核验范围。
+
 ## 历史归档工具
 
 [archive_day01_20261028.py](archive_day01_20261028.py) 与 [prepare_day01_git_sync.py](prepare_day01_git_sync.py) 保留当日归档操作，使用固定日期、快照及独占输出目录，不属于可反复执行的通用数据API。阅读历史实现即可，不要为重新运行它们而删除已有成果。
