@@ -47,12 +47,13 @@ These are separate RTX 3090 runs. The historical CPU GRU Seed42 remains a separa
 ## Navigation and reproduction
 
 ```sh
-git clone --branch docs/repository-organization-20261123 https://github.com/wzhikun-helper/SequenceModel-HAR-Lab.git
+git clone https://github.com/wzhikun-helper/SequenceModel-HAR-Lab.git
 cd SequenceModel-HAR-Lab
 python -B scripts/check_public_docs.py
+python -I -S -B -m unittest discover -s tests -v
 ```
 
-Lightweight CI runs documentation checks and 25 synthetic data-contract tests. The 16 synthetic PyTorch tests run separately. Full real-data reproduction has its own historical record. For environment and dependency instructions, see the [Day 01 reproduction guide](docs/reproducing_day01.md), [model entry points](scripts/README.md), [Task03 protocol](docs/gru_task03_protocol.md), and [Mamba CUDA environment](experiments/mamba_baseline_d_seed42_20261122/docs/environment.md).
+Lightweight CI runs documentation checks and 27 standard-library tests, including data-contract and release-regression checks. The 16 synthetic PyTorch tests run separately. Full real-data reproduction has its own historical record. For environment and dependency instructions, see the [Day 01 reproduction guide](docs/reproducing_day01.md), [model entry points](scripts/README.md), [Task03 protocol](docs/gru_task03_protocol.md), and [Mamba CUDA environment](experiments/mamba_baseline_d_seed42_20261122/docs/environment.md).
 
 | Location | Contents |
 | --- | --- |
