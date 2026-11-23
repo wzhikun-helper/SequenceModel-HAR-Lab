@@ -8,13 +8,15 @@
 }
 \usepackage[margin=25mm,top=20mm,bottom=20mm]{geometry}
 \usepackage{graphicx,booktabs}
+\providecommand{\ReportAssets}{}
+\providecommand{\ReportEdition}{研究报告初稿}
 \setlength{\parindent}{2em}
 \setlength{\parskip}{4pt}
 \linespread{1.12}
 \pagestyle{plain}
 \title{\textbf{UCI HAR 时序活动识别}\\[4pt]\large 四模型基线与 CNN 三种子消融}
 \author{SequenceModel-HAR-Lab}
-\date{研究报告初稿}
+\date{\ReportEdition}
 \begin{document}
 \maketitle
 
@@ -37,41 +39,44 @@ CNN 用局部卷积提取窗口特征，GRU 用递归末状态汇总序列，Tra
 \toprule
 模型 & Accuracy (\%) & Macro-F1 (\%) & Loss & 参数 & 轮数 & 设备 \\
 \midrule
-\input{baseline_rows}
+\input{\ReportAssets baseline_rows}
 \end{tabular}
 \end{table}
 
 前三模型在 CPU 上运行，Mamba 在 Linux RTX 3090 上运行。设备和计时边界不同，耗时不能用来排序四种模型的速度。四个基线各仅有一个种子，无法估计架构表现随初始化或受试者划分变化的幅度。
 
-\noindent\textbf{复现材料}　同目录 CSV 为制表和绘图输入，来源哈希见 \texttt{input\_manifest.json}。
+\noindent\textbf{复现材料}　归档 CSV 为制表和绘图输入，来源哈希见 \texttt{input\_manifest.json}。
 
 \clearpage
 \section{CNN 三种子消融}
-A 为原始 CNN，B 在时间均值前加入 SE 通道门控，C 在时间均值后加入残差 MLP。A 有 27,270 个参数，B 和 C 各有 31,510 个参数。同种子比较共享卷积与分类头的初值和训练读取顺序，A42 复用历史运行。模块位置和计算方式均有差异，B--C 衡量两个具体增量方案之间的差异。
+A 为原始 CNN，B 在时间均值前加入 SE 通道门控，C 在时间均值后加入残差 MLP。A 有 27,270 个参数，B 和 C 各有 31,510 个参数。模块位置和计算方式均有差异，B--C 衡量两个具体增量方案之间的差异。
+
+B42、C42 在训练时保存了共享卷积与分类头的初始权重指纹，以及各自逐轮实际读取的训练批次顺序指纹。A42 沿用历史指标；原训练未保存这两类指纹。后续审计按原始源码和 Seed42 确定性配置重建初始权重，并用原数据加载器回放采样顺序。B42、C42 的直接记录在各自覆盖的轮次内与重建结果一致。A42 的配对依据来自事后重建。
 
 \begin{table}[ht!]
 \centering
 \caption{九组官方测试结果及 Macro-F1 的三种子汇总。标准差采用样本标准差。}
 \label{tab:ablation}
 \small
-\begin{tabular}{llrrrr}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}[t]{llrrrr}
 \toprule
 种子 & 组别 & Accuracy (\%) & Macro-F1 (\%) & Loss & 轮数 \\
 \midrule
-\input{ablation_rows}
+\input{\ReportAssets ablation_rows}
 \end{tabular}
-\qquad
-\begin{tabular}{lrr}
+\hspace{1em}
+\begin{tabular}[t]{lrr}
 \toprule
 组别 & 均值 (\%) & 标准差 (pp) \\
 \midrule
-\input{summary_rows}
+\input{\ReportAssets summary_rows}
 \end{tabular}
 \end{table}
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=0.94\linewidth]{results_figure.pdf}
+\includegraphics[width=0.94\linewidth]{\ReportAssets results_figure.pdf}
 \caption{Seed42 基线差异与同种子 SE 的配对差值。右图保留全部三个观察值，pp 为百分点。三种子固定同一受试者划分，图中的点反映训练随机性下的观察差异。}
 \label{fig:results}
 \end{figure}

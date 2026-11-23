@@ -1,6 +1,6 @@
 # 项目进度
 
-更新日期：2026-11-22。当前阶段 **第六章 Lesson 01 已执行报告生成，等待教师验收。**
+更新日期：2026-11-23。当前阶段 **第六章 Lesson 02 · Task 01 文档修订完成，等待复核。**
 
 ## 实验进度
 
@@ -18,6 +18,7 @@
 | CNN SE / 等参数残差 MLP 消融 | 已执行，待教师验收 | 三组 × Seed 42、43、44，复用历史 A42。[完整报告](reports/cnn_ablation_20261122/README.md) |
 | Mamba D | 已执行，待教师验收 | RTX 3090，最佳第 3 轮，实际 11 轮。官方测试 Accuracy 88.7004% / Macro-F1 88.8610%。[实验档案](experiments/mamba_baseline_d_seed42_20261122/README.md) |
 | 第六章 Lesson 01 | 已执行报告调用，待教师验收 | [项目 Skill](.agents/skills/uci-har-experiment-workflow/SKILL.md)生成中文科研报告初稿。通过 Skill 发起正式训练仍待执行。[课程记录](learning_notes/chapter06_lesson01.md) |
+| 第六章 Lesson 02 · Task 01 | 文档修订完成，Task 02 待开始 | [修订报告与证据](reports/chapter06_lesson02_task01_revision/README.md)明确 A42 重建与 B42/C42 直接记录的区别，补充 Skill、脚本与实验记录的定义。 |
 
 训练集 6,037 窗口，验证集 1,315 窗口，测试集 2,947 窗口。[协议与元数据](docs/data_protocol.md) · [数据独立复核](reports/day01_data_20261026_run02/independent_verification.json)。
 
