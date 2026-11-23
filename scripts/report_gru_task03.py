@@ -20,6 +20,9 @@ import yaml
 SEEDS = (42, 43, 44)
 LABELS = ('WALKING','WALKING_UPSTAIRS','WALKING_DOWNSTAIRS','SITTING','STANDING','LAYING')
 SHORT = ('Walk','Up','Down','Sit','Stand','Lay')
+CLASS_FIELDS = ('label', 'activity', 'precision', 'recall', 'f1', 'support')
+HISTORY_LOSSES = ('training_loss', 'validation_loss')
+HISTORY_RATES = ('validation_accuracy', 'validation_macro_f1')
 
 
 def read(path):
@@ -39,6 +42,46 @@ def sha(path):
 def require(condition, message):
     if not condition:
         raise ValueError(message)
+
+
+def read_history(path):
+    required = {'epoch', 'order_sha256', *HISTORY_LOSSES, *HISTORY_RATES}
+    with path.open(encoding='utf-8', newline='') as stream:
+        reader = csv.DictReader(stream)
+        fields = reader.fieldnames or []
+        require(required.issubset(fields) and len(set(fields)) == len(fields),
+                f'{path}: training history has missing or duplicate fields')
+        rows = list(reader)
+    rates = (*HISTORY_RATES, 'training_accuracy') if 'training_accuracy' in fields else HISTORY_RATES
+    require(bool(rows), f'{path}: empty training history')
+    for epoch, row in enumerate(rows, 1):
+        require(None not in row and None not in row.values(), f'{path}: malformed history row {epoch}')
+        require(int(row['epoch']) == epoch, f'{path}: epochs must be continuous starting at 1')
+        for key in (*HISTORY_LOSSES, *rates):
+            value = float(row[key])
+            require(math.isfinite(value) and value >= 0 and (key not in rates or value <= 1),
+                    f'{path}: {key} out of range at epoch {epoch}')
+    return rows
+
+
+def verify_classification_report(path, recomputed):
+    with path.open(encoding='utf-8', newline='') as stream:
+        reader = csv.DictReader(stream)
+        require(tuple(reader.fieldnames or ()) == CLASS_FIELDS, f'{path}: invalid classification report header')
+        rows = list(reader)
+    require(len(rows) == len(LABELS), f'{path}: expected exactly six class rows')
+    for i, (row, activity) in enumerate(zip(rows, LABELS)):
+        require(None not in row and None not in row.values(), f'{path}: malformed class row {i+1}')
+        require(row['label'] == str(i+1) and row['activity'] == activity,
+                f'{path}: class label or order differs at row {i+1}')
+        require(int(row['support']) == recomputed['support'][i], f'{path}: support differs for {activity}')
+        for key in ('precision', 'recall', 'f1'):
+            value = float(row[key])
+            require(math.isfinite(value) and 0 <= value <= 1
+                    and math.isclose(value, recomputed[key][i], abs_tol=1e-14, rel_tol=0),
+                    f'{path}: {key} differs or is invalid for {activity}')
+    require(math.isclose(mean(float(row['f1']) for row in rows), recomputed['macro_f1'],
+                         abs_tol=1e-14, rel_tol=0), f'{path}: class F1 mean differs from Macro-F1')
 
 
 def compute_test(predictions, expected_rows, expected_y):
@@ -131,8 +174,7 @@ def verify_runs(runs, data):
         local=runs/f'seed{seed}'
         result=read(local/'training_result.json')
         test=read(local/'test_metrics.json')
-        with (local/'training_history.csv').open(encoding='utf-8',newline='') as f:
-            history=list(csv.DictReader(f))
+        history=read_history(local/'training_history.csv')
         cfg=yaml.safe_load((local/'config.yaml').read_text(encoding='utf-8'))
         require(cfg.pop('seed')==seed, f'Seed mismatch in seed{seed} config')
         configs.append(cfg)
@@ -140,10 +182,6 @@ def verify_runs(runs, data):
         require(result['test_model_evaluation_passes']==test['test_model_evaluation_passes']==1, f'Seed {seed} test evaluation count is not exactly one')
         require(test['test_artifact_sha256']==frozen_sha, f'Seed {seed} frozen test artifact hash differs')
         require(test['selection_used_test'] is False and result['order_sha256']==[r['order_sha256'] for r in history], f'Seed {seed} test-selection flag or sampler history differs')
-        require(history and [int(r['epoch']) for r in history] == list(range(1, len(history)+1))
-                and all(math.isfinite(float(r[k])) for r in history
-                        for k in ('validation_macro_f1', 'validation_loss')),
-                f'Seed {seed} has invalid validation history')
         best=max(history,key=lambda r:(float(r['validation_macro_f1']),-float(r['validation_loss'])))
         require(int(best['epoch'])==test['best_epoch']==result['best_epoch'], f'Seed {seed} selected epoch differs from validation history')
         require(len(history)==result['epochs_completed'] and len(set(result['order_sha256']))==len(history), f'Seed {seed} epoch or sampler history is incomplete')
@@ -160,6 +198,7 @@ def verify_runs(runs, data):
                 actual, archived, atol=1e-6 if key=='loss' else 1e-14, rtol=0),
                 f'Seed {seed} recomputed {key} differs from the saved test metric')
         require(independent['confusion_matrix']==test['confusion_matrix'], f'Seed {seed} confusion matrix differs from independent recomputation')
+        verify_classification_report(local/'classification_report.csv', independent)
         records[seed]=dict(result=result,test=test,history=history,independent=independent)
     require(configs[0]==configs[1]==configs[2], 'Task03 configurations differ beyond the seed')
     require(len({r['result']['initial_weight_sha256'] for r in records.values()})==3, 'Task03 seeds do not have distinct initial weights')
