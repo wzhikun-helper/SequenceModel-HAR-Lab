@@ -49,6 +49,23 @@ python -I -S -B -m unittest discover -s tests -v
 
 [train_transformer_baseline.py](train_transformer_baseline.py)复用GRU loader/Adam和CNN评价/seed/选模函数；[verify_transformer_baseline.py](verify_transformer_baseline.py)复用保存预测复算并加固定buffer核验；[fig04_transformer_baseline.py](fig04_transformer_baseline.py)读CSV生成三图。[复现说明](../reports/transformer_baseline_seed42_20261122_run01/reproducibility.md)。不改旧基线入口。
 
+## GRU Task03 GPU 三种子
+
+[训练入口](train_gru_task03.py)执行已批准的三种子实验；[汇总与独立复算入口](report_gru_task03.py)读取已完成的运行、核验逐样本 logits 和指标，并生成比较图。执行前必须满足[Task03 协议](../docs/gru_task03_protocol.md)中的环境、冻结输入、干净 Git 工作区和准入记录要求。不要伪造或复用旧的 `admission.json`。
+
+在已审核的完整克隆和 Linux CUDA 环境中，先按协议准备 `RUNS`、`FROZEN_DATA` 与本次准入记录：
+
+```sh
+python -B -u scripts/train_gru_task03.py --preflight "$RUNS/audit/gpu_preflight"
+for seed in 42 43 44; do
+  python -B -u scripts/train_gru_task03.py --seed "$seed" \
+    --out "$RUNS/seed$seed" --admission "$RUNS/audit/admission.json"
+done
+python -B scripts/report_gru_task03.py "$RUNS" "$FROZEN_DATA" "$NEW_REPORT"
+```
+
+每次正式运行必须保存实际命令、stdout、起止时间、退出码、配置、训练历史、Best/Last 权重、测试预测和文件哈希。公开仓库只发布经审查的汇总与证据副本；原始权重和受控运行文件按协议留在实验环境。脚本的具体输入结构、输出清单和历史环境差异见 Task03 协议与[公开报告](../reports/gru_multiseed_task03_20261123/README.md)。
+
 ## 历史归档工具
 
 [archive_day01_20261028.py](archive_day01_20261028.py) 与 [prepare_day01_git_sync.py](prepare_day01_git_sync.py) 保留当日归档操作，使用固定日期、快照及独占输出目录，不属于可反复执行的通用数据API。阅读历史实现即可，不要为重新运行它们而删除已有成果。
