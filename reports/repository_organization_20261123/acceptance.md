@@ -45,6 +45,8 @@
 
 远程 Head 从本地 `77d6caf` 快进至 `279800c` 后开始本次修复。其 [Actions 运行 45192891843](https://github.com/wzhikun-helper/SequenceModel-HAR-Lab/actions/runs/45192891843) 实际成功。此后的变更和证据见 [最终验收清单](final_release_checklist.md)、[公开安全审计](security_audit.md) 与 [独立 Skill 会话](skill_verification.md)。旧版 PDF、题目、模型指标、源数据及权重保留。
 
+最后一轮独立验收保留上述历史快照，并新增类别 CSV 与逐轮历史验证和单独的 Task03 行为 CI。归档期数值与原始指纹不变。最新状态见[最终状态核验](final_release_checklist.md#最终状态核验)。
+
 
 ## K. PR 追加交付修订 · 2026-11-23
 

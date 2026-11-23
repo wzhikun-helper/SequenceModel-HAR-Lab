@@ -16,7 +16,7 @@ python -I -S -B -m unittest discover -s tests -v
 
 第二条命令禁用用户与系统site packages，仅用标准库；不需要NumPy、PyTorch、数据文件或GPU。CI沿用[既有工作流](../.github/workflows/docs.yml)，保持只读权限和禁止目录追踪检查。
 
-Task03 真正的报告行为在已具备报告依赖的本地环境运行。以下命令只使用合成预测和字节夹具，核对正常报告、坏权重/日志/指标/配置、NaN、计数和 argmax，以及验证失败时输入和输出边界。GitHub Actions 只执行轻量文档和标准库检查。
+Task03 的报告行为测试使用合成预测和字节夹具，覆盖正常报告、坏权重／日志／指标／配置、类别 CSV 与曲线字段，以及失败时输入和输出边界。独立 GitHub Actions 作业在 Python 3.11 环境安装 NumPy 1.24.4、Matplotlib 3.7.5 和 PyYAML 6.0.2，执行下面第二条命令。原轻量作业继续执行文档和标准库检查。两个作业均无需真实数据、PyTorch、GPU 或服务器。
 
 ```sh
 python -B -m unittest discover -s tests_torch

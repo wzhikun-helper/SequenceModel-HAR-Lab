@@ -53,7 +53,7 @@ python -B scripts/check_public_docs.py
 python -I -S -B -m unittest discover -s tests -v
 ```
 
-The clone checks out the repository's default branch. PR reviewers can find the organization branch in the [release checklist](reports/repository_organization_20261123/final_release_checklist.md). Lightweight CI runs documentation checks, 25 standard-library unit tests, and static checks. The 16 synthetic PyTorch tests and four Task03 report behavior tests run separately in the local environment.
+The clone checks out the repository's default branch. PR reviewers can find the organization branch in the [release checklist](reports/repository_organization_20261123/final_release_checklist.md). Lightweight CI runs documentation checks, 25 standard-library unit tests, and static checks. A separate job runs eight synthetic Task03 reporting tests under `python -O`. The 16 synthetic PyTorch tests run locally.
 
 For data reproduction, run `python -m pip install -r requirements-data.txt` in an isolated environment. Follow the official download and processing commands in the [Day 01 guide](docs/reproducing_day01.md). Raw files go to `data/raw/<Run>` and standardized artifacts to `data/processed/<Artifacts>`. See [CPU dependencies](requirements-cnn.txt), [training and reporting entry points](scripts/README.md), and the CUDA environments for [Task03](docs/gru_task03_protocol.md) and [Mamba](experiments/mamba_baseline_d_seed42_20261122/docs/environment.md).
 

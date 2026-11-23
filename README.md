@@ -53,7 +53,7 @@ python -B scripts/check_public_docs.py
 python -I -S -B -m unittest discover -s tests -v
 ```
 
-默认克隆检出仓库默认分支。PR 审查时按 [交付清单](reports/repository_organization_20261123/final_release_checklist.md) 核对整理分支。轻量 CI 含文档、25 项标准库单元测试和静态检查。16 项 PyTorch 合成测试和 4 项 Task03 报告行为测试在本地另行运行。
+默认克隆检出仓库默认分支。PR 审查时按 [交付清单](reports/repository_organization_20261123/final_release_checklist.md) 核对整理分支。轻量 CI 含文档、25 项标准库单元测试和静态检查。独立 CI 作业在 `python -O` 下执行 8 项 Task03 合成报告测试。16 项 PyTorch 合成测试在本地另行运行。
 
 需要复现数据时，在独立环境中执行 `python -m pip install -r requirements-data.txt`。从 [Day 01 复现指南](docs/reproducing_day01.md) 调用官方下载与处理脚本，原始文件位于 `data/raw/<Run>`，标准化产物位于 `data/processed/<Artifacts>`。CPU 模型依赖见 [requirements-cnn.txt](requirements-cnn.txt)，训练或报告入口见 [脚本索引](scripts/README.md)；CUDA 为 [Task03 协议](docs/gru_task03_protocol.md) 和 [Mamba 环境](experiments/mamba_baseline_d_seed42_20261122/docs/environment.md)。
 
