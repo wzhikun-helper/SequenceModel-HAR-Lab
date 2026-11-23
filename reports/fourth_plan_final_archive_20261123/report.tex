@@ -1,0 +1,146 @@
+\documentclass[UTF8,a4paper,11pt,fontset=none]{ctexart}
+\IfFileExists{C:/Windows/Fonts/simsun.ttc}{%
+  \setCJKmainfont[Path=C:/Windows/Fonts/,FontIndex=0,AutoFakeBold=2]{simsun.ttc}
+  \setCJKsansfont[Path=C:/Windows/Fonts/,AutoFakeBold=2]{simhei.ttf}
+}{%
+  \setCJKmainfont[BoldFont=FandolSong-Bold.otf]{FandolSong-Regular.otf}
+  \setCJKsansfont[BoldFont=FandolHei-Bold.otf]{FandolHei-Regular.otf}
+}
+\usepackage[margin=24mm,top=20mm,bottom=20mm]{geometry}
+\usepackage{amsmath,graphicx,booktabs,url}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{3pt}
+\linespread{1.12}
+\pagestyle{plain}
+\ctexset{paragraph={runin=false,beforeskip=0.55ex,afterskip=0.22ex}}
+\input{tables}
+\title{\textbf{UCI HAR 时序活动识别}\\[4pt]\large 第四次学习规划最终归档}
+\author{SequenceModel-HAR-Lab}
+\date{2026 年 11 月 23 日}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+本报告收录四模型 Seed42 基线、CNN 三种子配对消融、GRU Task03 GPU 三种子以及第四次学习规划第八部分的 48 道宏观理解题。GRU 在本次四模型基线中测试 Macro-F1 最高。SE 相对原 CNN 的均值提高主要由 Seed43 驱动。GRU Task03 的种子波动限于固定受试者划分。教师总体验收 48/48 依据任务提供的结论登记；逐字原答与逐题验收证据的可恢复范围另行注明。
+\end{abstract}
+
+\section{研究目标与任务}
+以手机惯性信号为输入学习跨受试者活动分类，比较四个序列模型的具体实现、检验 CNN 通道重加权的收益，再用三次 GRU 运行观察随机初始化与采样顺序的联合变化。
+
+\section{数据与预处理}
+UCI HAR 使用 50 Hz 的九路惯性信号，每个窗口为 \(128\times9\)，覆盖 2.56 秒。标签为步行、上楼、下楼、坐、站和躺。使用官方时序窗口；561 维统计特征属于另一种表示。\cite{uci,protocol}
+
+冻结集合为训练 6037 窗口／17 人、验证 1315／4、官方测试 2947／9，受试者互斥。只用训练集拟合逐通道参数，\(z=(x-\mu_{\rm train})/\sigma_{\rm train}\)。训练使用交叉熵并更新参数，验证以 Macro-F1 优先选模，同分比较 Loss。官方测试仅对选好的模型进行最终评价。
+
+\section{序列模型与信息处理}
+CNN 用一维卷积提取局部变化并经池化聚合。GRU 递归更新隐藏状态，由更新门和重置门调节信息传递，取末状态分类。Transformer 先投影并加位置编码，通过自注意力交换时间点信息，再平均聚合。官方 Mamba-1 用输入依赖的选择性状态空间更新，随后时间平均。四个模型均输出六类 logits。
+
+\clearpage
+\section{四模型 Seed42 基线}
+表~\ref{tab:four} 取自各运行的指标、配置和训练归档。本次四个具体实现中 GRU 的 Accuracy 和 Macro-F1 最高，测试 Loss 最低。Mamba D 使用 Linux RTX 3090，另外三组为 CPU，耗时缺少共同硬件与计时口径。\cite{four}
+
+\begin{table}[htbp]
+\centering\small
+\caption{四模型 Seed42 官方测试结果，轮数为最佳／实际。}\label{tab:four}
+\begin{tabular}{lrrrrrl}
+\toprule
+模型 & Accuracy (\%) & Macro-F1 (\%) & Loss & 参数 & 轮数 & 设备 \\
+\midrule
+\FourRows
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{CNN 三种子消融}
+A 使用 27,270 参数的原始 CNN。B 在时间平均前加入 SE，通过 \(128\to16\to128\) 的通道门控缩放特征；C 在池化后加入等参数残差 MLP。B 和 C 各增加 4,240 参数。B/C 新运行直接保存共享层初始化指纹与实际逐轮采样指纹。A42 使用历史指标，原训练没有这两类指纹。审计按原构造和确定性配置重建初始化并回放批次顺序，与 B42 的 15 轮和 C42 的 13 轮直接记录匹配。\cite{abl,trace}
+
+\begin{table}[htbp]
+\centering\small
+\caption{CNN 三组测试 Macro-F1（\%）及同种子差值（百分点）。}\label{tab:ab}
+\begin{tabular}{rrrrrr}
+\toprule
+Seed & A & B & C & B--A & B--C \\
+\midrule
+\AblationRows
+\bottomrule
+\end{tabular}
+\quad
+\begin{tabular}{lrr}
+\toprule
+组 & 均值（\%） & 样本 SD（百分点） \\
+\midrule
+\AblationStats
+\bottomrule
+\end{tabular}
+\end{table}
+
+表~\ref{tab:ab} 与图~\ref{fig:pair} 的三组配对中，B--A 仅 Seed43 为正，平均 +0.6575 个百分点。B--C 的平均为 \(-0.0286\) 个百分点。当前证据支持这三次运行的描述性比较，不能判定 SE 普遍有效或无效。B/C 同参数量，插入点和运算存在差异，因果解释仍需额外对照。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.96\linewidth]{../chapter06_lesson01_research_draft/results_figure.pdf}
+\caption{归档的四模型 Macro-F1 与 CNN 配对差值。每个点来自实际历史运行；右图横线为零差值。}\label{fig:pair}
+\end{figure}
+
+\clearpage
+\section{GRU Task03 三种子与错分}
+Task03 三组采用 Ubuntu 24.04.3、RTX 3090、Python 3.9.23、PyTorch 2.5.1+cu121 与 NumPy 1.24.4。历史 CPU Seed42 采用 Windows 与 PyTorch 2.0.1，其 Macro-F1 为 91.9444\%，GPU Task03 Seed42 为 91.3919\%。操作系统、PyTorch 版本及后端共同变化，分数差异无法单独归因于设备。历史 CPU 指标和 Task03 GPU 指标分开保留。\cite{gru,task}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Task03 三次官方测试及样本标准差。Accuracy 与 Macro-F1 行单位为 \%，其标准差为百分点。}\label{tab:gru}
+\begin{tabular}{lrrrrr}
+\toprule
+Seed & Accuracy & Macro-F1 & Loss & 最佳轮 & 实际轮 \\
+\midrule
+\GruRows
+\bottomrule
+\end{tabular}
+\end{table}
+
+表~\ref{tab:gru} 中 Seed43 的 Loss 最低，但 Accuracy 和 Macro-F1 也最低。交叉熵读真类概率，后两项使用硬预测。三个种子保持相同划分，Macro-F1 样本标准差为 0.7774 个百分点，只描述当前初始化与采样的联合波动。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{../gru_multiseed_task03_20261123/confusion_matrices.png}
+\caption{Task03 原归档三种子混淆矩阵，行是真实类别，列是预测类别。}\label{fig:cm}
+\end{figure}
+
+图~\ref{fig:cm} 中，坐被预测为站的次数为 51、104、77，站被预测为坐为 109、93、88。SITTING 在三组均为最低 F1，跨种子跨度 3.06 个百分点；LAYING 每组均正确 510/537。这些计数和归档独立复算一致，逐样本预测留在服务器。坐站信号是否难以区分仍是待验证机制。
+
+\clearpage
+\section{Skill 工作流与科研证据}
+Skill 定义任务流程，Script 执行具体操作，Experiment Record 保存实际运行证据。本次主动读取项目 Skill 完整指令后，按汇总路径交叉检查各基线原始记录、CNN 九组及 Task03 指标并编译报告。自动提供的 Skill 名称与路径只能证明元数据发现。复用档案中的训练指纹、检查点哈希和预测复算报告时，应分别标记同期记录、后续复核和当前可独立检查的范围。
+
+Task03 三份 SHA256SUMS 共列出 60 个历史运行文件。此处可以复算公开副本的 18 项，Best/Last 的哈希与运行结果和清单交叉核对。其余 42 项包括实际权重、逐样本预测和原始日志，远程工作目录访问未成功，保留历史核验记录。数据、预测、权重均按项目约定留在各自环境。
+
+\section{原规划 48 道宏观理解题}\label{sec:questions}
+题目取自原规划 PDF 第 12--15 页。\cite{plan} 原版每组从 1 到 6 重新印刷编号，本文按各节定义的全局范围编号，CSV 同时保存两种编号。答案为依据学习或实验档案整理的最终理解。保存的 4 条学生原答来自 Day 01 同主题问答，引用处明确标识。教师 48/48 总评按任务提供的验收记录保留，个别原文缺口见逐题记录。下列简写可在证据索引中定位。
+
+\begin{description}
+\item[数据协议、Day 01 问答] 分割、训练集标准化、可取得的逐字学习记录。\cite{protocol,day}
+\item[CNN 档案、历史 GRU 档案、Transformer 档案、四模型档案] 模型结构、配置、曲线及官方测试指标。\cite{cnn,gru,tr,four}
+\item[CNN 消融、Seed42 复核、GRU Task03、Skill 调用] 配对、重建、三种子和执行记录。\cite{abl,trace,task,skill}
+\end{description}
+\input{questions}
+
+\clearpage
+\section{总结与局限}
+已形成从冻结数据、监督分类、四模型对照、参数量匹配消融到固定划分种子波动的科研学习闭环。四个基线各只有一个种子；三个种子仍共享受试者划分，不提供跨划分不确定性。混淆矩阵描述错分，无法独立揭示成因。后续如需扩大结论，可先预注册更多种子和受试者划分，针对坐站检查跨受试者错例，再用固定环境和共同计时协议评估设备与运行成本。
+
+\begin{thebibliography}{12}
+\raggedright
+\bibitem{uci} Anguita 等. Human Activity Recognition Using Smartphones. UCI Machine Learning Repository, 2012. DOI \texttt{10.24432/C54S4K}.
+\bibitem{protocol} 项目数据与评估协议。 \path{docs/data_protocol.md}
+\bibitem{day} Day 01 历史问答。 \path{learning_notes/day01/questions_01_12.md}
+\bibitem{cnn} CNN 正式训练报告。 \path{reports/cnn_baseline_seed42_20261119_run01/execution_report.md}
+\bibitem{gru} GRU 历史 CPU 训练报告。 \path{reports/gru_baseline_seed42_20261121_run01/execution_report.md}
+\bibitem{tr} Transformer 正式实验。 \path{reports/transformer_baseline_seed42_20261122_run01/execution_report.md}
+\bibitem{four} Mamba 档案及四模型对照。 \path{experiments/mamba_baseline_d_seed42_20261122/reports/four_model_comparison.md}
+\bibitem{abl} CNN 三种子消融。 \path{reports/cnn_ablation_20261122/README.md}
+\bibitem{trace} Seed42 独立复核。 \path{reports/cnn_ablation_20261122/independent_seed42.json}
+\bibitem{task} GRU Task03 归档。 \path{reports/gru_multiseed_task03_20261123/README.md}
+\bibitem{skill} Skill 实际报告调用。 \path{reports/chapter06_lesson01_research_draft/README.md}
+\bibitem{plan} 第四次学习规划。原规划 PDF，第八部分，第 12--15 页。文件指纹见归档证据清单。
+\end{thebibliography}
+\end{document}

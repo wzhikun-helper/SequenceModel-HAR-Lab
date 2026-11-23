@@ -1,122 +1,74 @@
 # SequenceModel-HAR-Lab
 
-**跨受试者人体活动识别 · 可追溯的数据准备与序列模型实验**
+**用同一受试者划分研究时序活动分类、参数量匹配消融与训练随机性。**
 
-简体中文 · [English](README.en.md)
+简体中文 · [English](README.en.md) · [阅读路线](docs/README.md) · [实验注册表](docs/experiment_registry.md) · [当前进度](PROGRESS.md)
 
-[![Documentation checks](https://github.com/wzhikun-helper/SequenceModel-HAR-Lab/actions/workflows/docs.yml/badge.svg)](https://github.com/wzhikun-helper/SequenceModel-HAR-Lab/actions/workflows/docs.yml)
+## 数据与评价
 
-基于 UCI HAR 手机传感器信号，研究多通道时序数据的表示、预处理与独立评价。已完成Day 01数据基础，并用真实训练窗口运行两层1D CNN的前向、反向与未训练权重重载检查。现已完成CNN Baseline A Seed42正式训练，GRU Baseline B也已完成固定条件下的单种子训练，Transformer Baseline C 和 Mamba Baseline D 均已完成固定条件下的 Seed42 正式实验，CNN 消融已归档。
+[UCI HAR](https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones) 包含 30 名参与者的 10,299 个惯性窗口。每个窗口为 **128 × 9**，采样频率 **50 Hz**，预测六类活动。训练／验证／官方测试分别为 **17／4／9** 人、**6,037／1,315／2,947** 窗口，受试者互斥。通道标准化只在最终训练集拟合。验证 Macro-F1 优先选模，同分比较验证 Loss，官方测试用于最终评价。[冻结协议、标签与真实信号](docs/data_protocol.md)
 
-**128 × 9** 每窗口输入 · **50 Hz** 采样率 · **6** 类活动 · **30** 位受试者
+## 四模型 Seed42
 
-[复现指南](docs/reproducing_day01.md) · [数据协议](docs/data_protocol.md) · [文档导航](docs/README.md) · [项目进度](PROGRESS.md) · [更新记录](CHANGELOG.md)
+CNN 使用局部卷积，GRU 使用门控状态，Transformer 使用自注意力与位置编码，Mamba 使用选择性状态空间。
 
-[中文科研报告初稿](reports/chapter06_lesson01_research_draft/report.pdf) · [报告调用和复现](reports/chapter06_lesson01_research_draft/README.md) · [UCI HAR 项目 Skill](.agents/skills/uci-har-experiment-workflow/SKILL.md)
+| 模型 | Accuracy | Macro-F1 | Loss | 参数量 | 设备 |
+| --- | --- | --- | --- | --- | --- |
+| CNN A | 89.7523% | 89.8202% | 0.290570 | 27,270 | CPU |
+| GRU B | 91.8222% | 91.9444% | 0.255319 | 14,790 | CPU |
+| Transformer C | 88.0896% | 88.0326% | 0.425905 | 34,502 | CPU |
+| Mamba D | 88.7004% | 88.8610% | 0.379041 | 33,670 | RTX 3090 |
 
-## 项目内容
+四组共用官方测试集。GRU 在本次四个运行中 Macro-F1 最高。单种子无法确定架构的一般排名，CPU 与 GPU 的训练时间缺少同硬件可比性。[逐运行配置与证据](docs/experiment_registry.md)
 
-| 已完成 | 实现与证据 |
-| --- | --- |
-| 官方数据获取 | UCI来源、ZIP成员CRC、本地SHA-256、安全解压 |
-| 窗口与标签审计 | 全部18路信号文件、10,299个窗口、六类活动与受试者ID |
-| 跨受试者协议 | 训练17人、验证4人、测试9人；保留官方测试集 |
-| 标准化与复核 | 仅最终训练集拟合；独立复核保存数组与原始行的对应关系 |
-| CNN最小工程 | 六个真实训练窗口、27,270参数、一次反向、checkpoint重载输出一致；不含优化器更新 |
+## CNN 三种子消融
 
-[数据审计报告](reports/day01_data_20261026_run02/day01_data_audit.md) · [独立复核结果](reports/day01_data_20261026_run02/independent_verification.json)
+Macro-F1 单位为百分比。残差 MLP 与 SE 有相同的新增参数量。
 
-## 数据协议
+| 组别 | Seed42 | Seed43 | Seed44 | 均值 |
+| --- | --- | --- | --- | --- |
+| A · 原 CNN | 89.8202 | 88.5241 | 90.0424 | 89.4623 |
+| B · CNN + SE | 89.7161 | 91.1212 | 89.5221 | 90.1198 |
+| C · CNN + 残差 MLP | 89.6185 | 92.1449 | 88.6817 | 90.1484 |
 
-使用官方已预处理的九路 `Inertial Signals`，保留时间顺序；不把561维工程特征当作序列输入。数组布局为 **N × 128 × 9**，标签保留官方1—6。
+SE 相对原 CNN 平均 **+0.6575 pp**，只有 Seed43 改善；相对等参数残差 MLP 平均 **−0.0286 pp**。当前缺少稳定独立增益的证据。[配对、样本标准差和原始报告](docs/experiment_registry.md#cnn-三种子消融)
 
-| 集合 | 人数 | 窗口数 | 划分规则 |
-| --- | ---: | ---: | --- |
-| 训练 | 17 | 6,037 | 官方训练人员，排除验证集 |
-| 验证 | 4 | 1,315 | 官方训练ID升序前四人：1、3、5、6 |
-| 测试 | 9 | 2,947 | 官方测试人员、顺序与标签完整保留 |
+## GRU Task03 GPU 三种子
 
-三集合受试者互不重叠；标准化参数仅从最终训练集拟合。[人员ID、类别分布与标准化定义](docs/data_protocol.md)。
+| 种子 | Accuracy | Macro-F1 | Loss |
+| --- | --- | --- | --- |
+| 42 | 91.2793% | 91.3919% | 0.362237 |
+| 43 | 89.7523% | 89.8447% | 0.313432 |
+| 44 | 90.7024% | 90.7504% | 0.352929 |
+| 均值 | 90.5780% | 90.6623% | 0.342866 |
 
-## 真实信号
+本组为 RTX 3090 上的独立实验。历史 CPU GRU Seed42 保持独立；硬件和软件同时变化，无法单独归因。三种子共享受试者划分，只反映该划分下的训练随机性；SITTING 始终是 F1 最低类别。[Task03 逐类结果](reports/gru_multiseed_task03_20261123/comparison.md)
 
-WALKING与STANDING各展示一个最终训练窗口，均来自受试者7，保留g与rad/s物理单位，对应通道使用相同纵轴范围。这是样本观察，不是类别总体比较或模型性能结果。
+## 阅读与复现
 
-<details>
-<summary>展开九路信号对照图 · WALKING / STANDING</summary>
-
-<table>
-  <tr><th>WALKING · 官方训练第1397行</th><th>STANDING · 官方训练第1316行</th></tr>
-  <tr>
-    <td><img src="docs/day01/walking_nine_channels.png" alt="WALKING窗口九路真实信号" width="420"></td>
-    <td><img src="docs/day01/standing_nine_channels.png" alt="STANDING窗口九路真实信号" width="420"></td>
-  </tr>
-</table>
-
-[完整图表说明与来源校验](docs/day01/README.md)
-
-</details>
-
-## 使用与复现
-
-```powershell
+```sh
 git clone https://github.com/wzhikun-helper/SequenceModel-HAR-Lab.git
 cd SequenceModel-HAR-Lab
 python -B scripts/check_public_docs.py
+python -I -S -B -m unittest discover -s tests -v
 ```
 
-以上检查仅用Python标准库，不下载数据。完整的数据准备命令、已验证依赖和新运行目录约定见[Day 01复现指南](docs/reproducing_day01.md)。数据流程无需GPU或PyTorch。
+默认克隆检出仓库默认分支。PR 审查时按 [交付清单](reports/repository_organization_20261123/final_release_checklist.md) 核对整理分支。轻量 CI 含文档、25 项标准库单元测试和静态检查。独立 CI 作业在 `python -O` 下执行 8 项 Task03 合成报告测试。16 项 PyTorch 合成测试在本地另行运行。
 
-## 验证状态
+需要复现数据时，在独立环境中执行 `python -m pip install -r requirements-data.txt`。从 [Day 01 复现指南](docs/reproducing_day01.md) 调用官方下载与处理脚本，原始文件位于 `data/raw/<Run>`，标准化产物位于 `data/processed/<Artifacts>`。CPU 模型依赖见 [requirements-cnn.txt](requirements-cnn.txt)，训练或报告入口见 [脚本索引](scripts/README.md)；CUDA 为 [Task03 协议](docs/gru_task03_protocol.md) 和 [Mamba 环境](experiments/mamba_baseline_d_seed42_20261122/docs/environment.md)。
 
-| 验证层 | 最新证据 | 范围 |
-| --- | --- | --- |
-| 轻量CI | 文档检查与25个合成契约测试；运行状态见上方Actions标识 | 不下载完整数据、不训练、不需要第三方包或GPU |
-| 独立环境真实数据复现 | 2026-10-31已完整运行并通过，与旧运行的数值及PNG像素一致 | 新venv、新运行ID、官方重新下载、实际审计/标准化/绘图/逐值复核 |
-
-[整改报告与实际运行证据](reports/remediation_round1_20261031/README.md) · [两层验证的范围与限制](docs/verification.md)。轻量CI通过不能替代真实数据完整复现通过。
-
-**Day 02 CNN最小工程：** 本地4个PyTorch测试和真实样本检查通过；[结果报告](reports/day02_cnn_20261111_run01/README.md) · [运行说明](docs/day02_cnn.md) · [理论学习与原答](learning_notes/day02/README.md)。上方轻量CI不运行PyTorch或CNN真实数据验证。
-
-| 目录 | 内容 |
+| 入口 | 查找内容 |
 | --- | --- |
-| [docs/](docs/README.md) | 数据协议、复现指南、代表图与小型元数据 |
-| [scripts/](scripts/README.md) | 下载、审计、绘图和验证入口 |
-| [learning_notes/](learning_notes/day01/README.md) | 知识笔记、理解题与原始教学记录 |
-| [reports/](reports/README.md) | 审计结果、校验清单与历史执行档案 |
+| [docs/](docs/README.md) | 数据协议、环境、复现与实验注册 |
+| [src/](src/har_lab) · [scripts/](scripts/README.md) · [configs/](configs/gru_task03) | 模型、执行入口和版本化配置 |
+| [reports/](reports/README.md) · [experiments/](experiments/mamba_baseline_d_seed42_20261122/README.md) | 公开归档、复算记录、科研图表和 Mamba 实验 |
+| [学习记录](learning_notes/fourth_plan_final_archive.md) · [项目 Skill](.agents/skills/uci-har-experiment-workflow/SKILL.md) | 教学验收与工作流 |
+| [贡献说明](CONTRIBUTING.md) · [更新记录](CHANGELOG.md) | 新运行登记和保护规则 |
 
-数据集、处理数组、模型权重和本地日志不进入版本管理。[变更与贡献约定](CONTRIBUTING.md)。
+## 证据等级与后续研究
 
-## CNN Baseline A · Seed42
+**PASS** 仅用于本次实查通过的范围。**PARTIAL** 表示原件缺口。Task03 的 60 项运行清单中，18 项公开副本可复核，42 项仍依赖服务器历史校验。教师总评 48/48 已登记，逐题对话覆盖仍为 PARTIAL。[最终报告与 48 题](reports/fourth_plan_final_archive_20261123/README.md)
 
-固定配置正式运行，最佳Epoch7，连续8轮无改善后第15轮停止。官方测试2947窗口：**Accuracy 89.7523% · Macro-F1 89.8202%**。单种子、CPU，等待教师验收。
+后续方向为多受试者划分、多随机种子、分受试者分析坐站错分，以及在共同环境中测量运行成本。[项目进度和证据缺口](PROGRESS.md)
 
-[完整报告](reports/cnn_baseline_seed42_20261119_run01/execution_report.md) · [配置/逐轮证据](reports/cnn_baseline_seed42_20261119_run01/README.md) · [学习补充](learning_notes/day02/2026-11-19_cnn_baseline_a.md)
-
-![官方测试混淆矩阵](reports/cnn_baseline_seed42_20261119_run01/confusion_matrix.png)
-
-## GRU Baseline B · Seed42
-
-先审计CNN实际配置后，仅替换模型与输入接口；训练30轮，最佳Epoch23。官方测试：**Accuracy 91.8222% · Macro-F1 91.9444%**；14,790参数。单种子比较不表示普遍优越，计时范围不同不作严格速度比较。
-
-[完整报告](reports/gru_baseline_seed42_20261121_run01/execution_report.md) · [CNN配置审计](reports/gru_baseline_preflight_20261121/audit_report.md) · [CNN—GRU比较](reports/gru_baseline_seed42_20261121_run01/cnn_gru_comparison.md)
-
-## Transformer Baseline C · Seed42
-
-固定正弦编码、单层Post-Norm Encoder，参数34,502。实际15轮，最佳Epoch7；官方测试：**Accuracy 88.0896% · Macro-F1 88.0326%**。共同协议不变，单种子结果待教师验收。
-
-[完整报告](reports/transformer_baseline_seed42_20261122_run01/execution_report.md) · [三模型比较](reports/transformer_baseline_seed42_20261122_run01/three_model_comparison.md) · [审计](reports/transformer_preflight_20261122/audit_report.md)
-
-## 当前阶段与后续计划
-
-Linux RTX 3090 已执行 Mamba Baseline D 官方 CUDA 核验与 Seed42 正式训练。最佳第 3 轮，实际 11 轮，官方测试 **Accuracy 88.7004% · Macro-F1 88.8610%**。[实验档案](experiments/mamba_baseline_d_seed42_20261122/README.md) · [四模型对照](experiments/mamba_baseline_d_seed42_20261122/reports/four_model_comparison.md) · [早期 Windows L0 记录](reports/mamba_l0_20261122/README.md)
-
-第五章 CNN 消融比较覆盖原模型、SE 和等参数量残差 MLP，固定数据划分并配对使用 Seed 42、43、44。完整结果、训练成本、图表与限制见[消融实验报告](reports/cnn_ablation_20261122/README.md)。
-
-Day 01 已验收，Day 02 Lesson 01–02 理论已通过。CNN、GRU、Transformer 基线及第五章 CNN 消融结果已归档。消融实验等待教师验收。[进度记录](PROGRESS.md)。
-
-## 数据引用
-
-Reyes-Ortiz et al. (2013). *Human Activity Recognition Using Smartphones*. UCI Machine Learning Repository. [DOI: 10.24432/C54S4K](https://doi.org/10.24432/C54S4K)。
-
-[官方数据页](https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones) · [来源、校验信息与已知限制](reports/day01_data_20261026_run02/download_provenance.json)
+数据引用：[Human Activity Recognition Using Smartphones · DOI 10.24432/C54S4K](https://doi.org/10.24432/C54S4K)。

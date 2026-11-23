@@ -4,7 +4,7 @@
 
 | 验证层 | 实际执行内容 | 不覆盖的范围 |
 | --- | --- | --- |
-| 轻量CI | 公开文档链接、图片/元数据校验、源码语法，以及25个合成契约单元测试 | 不下载数据、不拟合真实参数、不验证真实数组、不训练模型 |
+| 轻量CI | 公开文档链接、图片与元数据校验、注册表字段、双语首页指标与原始 JSON 对照、跟踪边界、源码语法及 25 个合成契约单元测试 | 不下载数据、不拟合真实参数、不验证真实数组、不训练模型 |
 | 独立环境完整复现 | 新venv安装文档依赖、新ID官方下载、真实数据审计/标准化、绘图、逐值复核、与旧结果比较 | 不等于跨Python版本/跨操作系统复现，也不是模型性能实验 |
 
 ## 轻量测试
@@ -15,6 +15,13 @@ python -I -S -B -m unittest discover -s tests -v
 ```
 
 第二条命令禁用用户与系统site packages，仅用标准库；不需要NumPy、PyTorch、数据文件或GPU。CI沿用[既有工作流](../.github/workflows/docs.yml)，保持只读权限和禁止目录追踪检查。
+
+Task03 的报告行为测试使用合成预测和字节夹具，覆盖正常报告、坏权重／日志／指标／配置、类别 CSV 与曲线字段，以及失败时输入和输出边界。独立 GitHub Actions 作业在 Python 3.11 环境安装 NumPy 1.24.4、Matplotlib 3.7.5 和 PyYAML 6.0.2，执行下面第二条命令。原轻量作业继续执行文档和标准库检查。两个作业均无需真实数据、PyTorch、GPU 或服务器。
+
+```sh
+python -B -m unittest discover -s tests_torch
+python -O -B -m unittest discover -s tests_torch -p test_task03_report.py
+```
 
 [共享契约](../scripts/har_contracts.py)被真实审计、磁盘验证和文档检查共同调用；[合成测试](../tests/test_har_contracts.py)包含正确输入与错误反例：
 

@@ -1,0 +1,38 @@
+{
+  "archive_date_asia_shanghai": "2026-11-23",
+  "result": "public_archive_verified_with_evidence_gaps",
+  "base_commit": "7a3dc521cbe31011be89e215177c135cebe410ce",
+  "main_before": "3cd855f7059f5dcdc7a9a64555bfef4c41b6c870",
+  "archive_branch": "docs/fourth-plan-final-archive-20261123",
+  "checks": {
+    "48_contiguous_ids_and_eight_groups": "PASS",
+    "48_exact_pdf_prompts_with_source_pages": "PASS",
+    "48_final_explanations": "PASS",
+    "per_question_evidence_and_report_section": "PASS",
+    "teacher_corrections_and_retests": "PARTIAL: teacher 48/48 and six directed checks supplied in task; four topical student quotes recoverable; item-specific transcripts incomplete and one numbering discrepancy retained",
+    "four_baselines_vs_original_metrics_configs_and_histories": "PASS",
+    "nine_cnn_runs_and_pairwise_statistics": "PASS",
+    "three_gru_gpu_runs_and_archived_recalculation": "PASS",
+    "a42_reconstruction_vs_b42_c42_direct_fingerprints": "PASS",
+    "latex_pdf_and_figure_sources": "PASS: 13 A4 pages visually inspected; 48 prompts and 15 metric rows machine-checked in PDF",
+    "staged_release_file_sha256_manifest": "PASS: hashes cover every staged deliverable except the manifest itself",
+    "readme_navigation_and_public_docs": "PASS",
+    "server_raw_run_files": "PARTIAL: SSH exit 255 twice, authentication failure and connection closure; live path, permissions, space and 42 server-only files not independently verified"
+  },
+  "check_counts": {
+    "pass": 11,
+    "partial": 2,
+    "failed_archive_checks": 0
+  },
+  "command_evidence": {
+    "plan_extraction": "pdftotext -enc UTF-8 -layout, exit 0",
+    "report_build": "Existing build_har_research_report.collect plus read-only CSV/JSON cross-checks and report generation; 15 distinct runs, 92 input record hashes and 4 frozen input hashes",
+    "first_latex_attempt": "exit 1; corrected CJK table-header row separator spacing, then made bibliography ragged-right to remove line-box warnings",
+    "final_latex": "xelatex -disable-installer -no-shell-escape -interaction=nonstopmode -halt-on-error report.tex, exit 0 twice",
+    "final_pdf_review": "pdfinfo, pdftotext -enc UTF-8 -layout, pdftoppm -r 115 -png, exit 0; visual review of all 13 pages; no overfull/underfull boxes, missing glyphs or unresolved references reported",
+    "tests": "python -B -m unittest discover -s tests (25) and -s tests_torch (16), both exit 0",
+    "docs": "python -B scripts/check_public_docs.py and the same checker with final archive README, skill_usage.md and learning note added in memory"
+  },
+  "historical_training_or_inference_launched": false,
+  "git_release": "Use git log --diff-filter=A --format=%H -- reports/fourth_plan_final_archive_20261123/report.pdf and git ls-remote origin refs/heads/docs/fourth-plan-final-archive-20261123. Publication does not change main."
+}

@@ -1,25 +1,11 @@
 # 文档导航
 
-第一次浏览建议按以下顺序阅读：
+1. [项目概览](../README.md) · [English](../README.en.md)。
+2. [数据协议](data_protocol.md) · [信号图与冻结元数据](day01/README.md)。
+3. 环境准备。数据流程见 [Day 01 指南](reproducing_day01.md)，CPU 基线依赖见 [requirements-cnn.txt](../requirements-cnn.txt)，CUDA 分别见 [Mamba](../experiments/mamba_baseline_d_seed42_20261122/docs/environment.md) 和 [Task03 环境快照](../reports/gru_multiseed_task03_20261123/input_audit.json)。
+4. 模型实现。[CNN](../src/har_lab/cnn_baseline_a.py) · [GRU](../src/har_lab/gru_baseline_b.py) · [Transformer](../src/har_lab/transformer_baseline_c.py) · [Mamba](../experiments/mamba_baseline_d_seed42_20261122/src/mamba_baseline_d.py) · [CNN 消融](../src/har_lab/cnn_ablation.py)。
+5. [实验注册表](experiment_registry.md)。查找运行、配置、历史、指标、权重记录和环境。
+6. [复现与执行入口](../scripts/README.md) · [Task03 协议](gru_task03_protocol.md) · [测试范围](verification.md)。
+7. [报告总索引](../reports/README.md) · [第四次学习规划最终报告](../reports/fourth_plan_final_archive_20261123/report.pdf)。
 
-1. [项目概览](../README.md)：当前成果、真实样本与计划范围。
-2. [数据与评估协议](data_protocol.md)：输入形状、受试者划分、类别分布与标准化约定。
-3. [Day 01 复现指南](reproducing_day01.md)：环境、命令顺序、输出位置与验证边界。
-4. [真实信号与元数据](day01/README.md)：可直接在线查看的代表图和小型参数文件。
-
-| 阅读目的 | 入口 |
-| --- | --- |
-| 理解监督分类、信号窗口与预处理 | [学习笔记](../learning_notes/day01/README.md) |
-| 检查原始回答和理解修正 | [正式理解题索引](../learning_notes/day01/questions_01_12.md) |
-| 核对数据实践的实际执行结果 | [报告与历史档案](../reports/README.md) |
-| 查找可运行的数据脚本 | [脚本说明](../scripts/README.md) |
-| 核验GRU及CNN对比 | [GRU报告](../reports/gru_baseline_seed42_20261121_run01/execution_report.md)、[CNN配置审计](../reports/gru_baseline_preflight_20261121/audit_report.md)、[对比](../reports/gru_baseline_seed42_20261121_run01/cnn_gru_comparison.md) |
-| 核验Transformer与三模型 | [报告](../reports/transformer_baseline_seed42_20261122_run01/execution_report.md)、[比较](../reports/transformer_baseline_seed42_20261122_run01/three_model_comparison.md) |
-| 确认当前阶段 | [项目进度](../PROGRESS.md) |
-| 复核CNN Baseline A正式训练 | [报告](../reports/cnn_baseline_seed42_20261119_run01/execution_report.md)、[复现说明](../reports/cnn_baseline_seed42_20261119_run01/reproducibility.md) |
-| 复现CNN最小真实样本工程 | [Day 02运行说明](day02_cnn.md)、[工程报告](../reports/day02_cnn_20261111_run01/README.md)、[学习原答](../learning_notes/day02/README.md) |
-| 区分轻量CI与真实数据完整复现 | [验证层次与运行证据](verification.md) |
-| English overview | [README.en.md](../README.en.md) |
-| 查看版本演进与提交约定 | [更新记录](../CHANGELOG.md)、[贡献说明](../CONTRIBUTING.md) |
-
-数据与训练状态以已有证据为准。当前没有模型训练结果，历史教学记录中的训练流程说明不等于执行记录。
+[权威进度](../PROGRESS.md) · [归档勘误](fourth_plan_archive_errata.md) · [整理前审计](repository_audit_20261123.md) · [开源组织参考](project_organization_references.md)

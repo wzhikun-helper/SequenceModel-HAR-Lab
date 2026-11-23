@@ -5,7 +5,9 @@ description: Audit or summarize archived SequenceModel-HAR-Lab runs, generate a 
 
 # UCI HAR 实验工作流
 
-先判定任务是汇总、核验还是用户明确授权的新训练。汇总使用归档指标与已保存的验证证据。保留原数据、分割、配置、历史运行与 Checkpoint。
+先判定任务是只读核验、报告汇总还是用户明确授权的新训练。从仓库根目录先读取[数据协议](../../../docs/data_protocol.md)，再查 [实验注册表](../../../docs/experiment_registry.md) 和 [报告入口](../../../reports/README.md)。审计当前 HEAD、配置和证据来源后按任务范围执行。只读核验直接比较公开归档、冻结哈希及指标来源，保留原数据、分割、配置、历史运行与 Checkpoint。
+
+教师负责教学解释与验收，学生负责给出自己的理解，Codex 负责实现、复核和归档。新增整理明确标注来源；历史原答、教师反馈、复测与工程判断分别记载。新验收不能替代历史原件。
 
 ## 汇总与报告
 
@@ -23,8 +25,8 @@ description: Audit or summarize archived SequenceModel-HAR-Lab runs, generate a 
 - CNN 消融：`python -B scripts/train_cnn_ablation.py <A|B|C> <42|43|44> <新运行ID>`，按 [配对协议](../../../reports/cnn_ablation_20261122/reproducibility.md) 核对共享初始化和顺序。
 - Mamba D：使用官方 CUDA 环境及归档入口 `scripts/check_cuda.py`、`scripts/run_mamba.py`、`scripts/verify_and_compare.py`，参数见对应实验说明。
 
-先过环境和真实 Batch 门禁，再按已存配置以验证 Macro-F1 选模，同分比较验证 Loss。最佳模型重载通过后只做一次预定测试。保留训练历史、测试指标、逐类指标、混淆矩阵、配置和重载证据。既有 `verify_*.py` 可能默认写入历史目录，核对参数与写入目标后再执行。
+使用新的 Run ID 与输出目录。先过环境和真实 Batch 门禁，再按已存配置以验证 Macro-F1 选模，同分比较验证 Loss。最佳模型重载通过后只做一次预定测试。保留实际配置、提交、种子、训练历史、测试指标、逐类指标、混淆矩阵、重载、原始日志及预测和相应 SHA-256。权重、原始日志和受控预测留在运行环境。既有 `verify_*.py` 可能默认写入历史目录，核对参数与写入目标后再执行。
 
 ## 核验与归档
 
-回查输入 SHA-256 和历史 Git 差异。运行项目测试、文档检查及暂存区审查。仅按授权提交源码、公开配置、汇总指标及报告，通过正常推送核对远程 SHA；原始数据、权重、凭据及大型日志保留本地。通过 Skill 构建报告和通过 Skill 发起训练分别记证据。
+回查输入 SHA-256 和历史 Git 差异。完成正式归档后更新实验注册表及报告索引。分别登记同期记录、重建记录和历史原件缺口；证据不全标 PARTIAL。运行项目测试、文档检查及暂存区审查。仅按授权提交源码、公开配置、汇总指标及报告，通过正常推送核对远程 SHA。通过 Skill 构建报告、发起训练和自动加载完整指令分别记证据。

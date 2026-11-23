@@ -2,6 +2,14 @@
 
 只记录本仓库已经完成的变更；模型计划与待执行事项见[项目进度](PROGRESS.md)。
 
+## 2026-11-23
+
+- PR #1 增补 60 项 Task03 证据状态、48 题原件覆盖台账、公开安全审计和独立新会话 Skill 复核。Task03 报告生成先完成校验，派生产物写入独立目录；增加优化模式回归测试。
+
+- 完成 [GRU Task03 GPU 三种子实验归档](reports/gru_multiseed_task03_20261123/README.md)，保存实际配置、指标、独立复算与运行文件哈希记录。
+- 发布 [第四次学习规划最终归档](reports/fourth_plan_final_archive_20261123/README.md)，包括 48 题映射及 13 页 LaTeX/PDF。教师总评和历史原件覆盖范围分开登记。
+- 新增 [实验注册表](docs/experiment_registry.md)、双语首页、报告分层导航和独立勘误说明。轻量检查覆盖注册表、双语指标和跟踪文件边界。
+
 ## 2026-11-22
 
 - 新增 UCI HAR 项目 Skill。首次调用使用历史存档生成 [中文科研报告初稿与调用证据](reports/chapter06_lesson01_research_draft/README.md)。

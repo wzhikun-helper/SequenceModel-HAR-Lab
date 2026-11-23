@@ -1,56 +1,24 @@
-# 报告与历史档案
+# 实验报告与证据索引
 
-本目录保留实际执行时的结果与状态。文件名中的日期、运行 ID 和失败标记属于原始证据；不把旧报告中“当时尚无Git仓库”等文字当作当前项目状态。
+按实验类别查找原始运行档案、后续复核和派生产物。最新验收状态见 [PROGRESS](../PROGRESS.md)；每个运行的完整性、配置和 Checkpoint 记录见 [实验注册表](../docs/experiment_registry.md)。
 
-## 推荐阅读
+| 类别 | 原始归档或执行依据 | 复核和派生成果 |
+| --- | --- | --- |
+| 数据获取与审计 | [来源](day01_data_20261026_run02/download_provenance.json) · [最终审计 audit02](day01_data_20261026_run02/day01_data_audit.md) | [逐值独立复核](day01_data_20261026_run02/independent_verification.json) · [真实信号图](../docs/day01/README.md) |
+| 数据独立复现 | [独立环境和执行记录](remediation_round1_20261031/README.md) · [独立下载记录](day01_repro_20261031_run01/download_provenance.json) | [复现验证](day01_repro_20261031_run01/independent_verification.json) · [两次比较](remediation_round1_20261031/comparison/comparison.json) |
+| CNN Baseline A | [正式运行](cnn_baseline_seed42_20261119_run01/execution_report.md) · [最小工程](day02_cnn_20261111_run01/README.md) | [独立复算](cnn_baseline_seed42_20261119_run01/independent_result_verification.json) · [混淆矩阵](cnn_baseline_seed42_20261119_run01/confusion_matrix.png) |
+| GRU Baseline B | [正式运行](gru_baseline_seed42_20261121_run01/execution_report.md) · [前置审计](gru_baseline_preflight_20261121/audit_report.md) | [独立复算](gru_baseline_seed42_20261121_run01/independent_verification.json) · [CNN 与 GRU](gru_baseline_seed42_20261121_run01/cnn_gru_comparison.md) |
+| Transformer Baseline C | [正式运行](transformer_baseline_seed42_20261122_run01/execution_report.md) · [前置审计](transformer_preflight_20261122/audit_report.md) | [独立复算](transformer_baseline_seed42_20261122_run01/independent_verification.json) · [三模型比较](transformer_baseline_seed42_20261122_run01/three_model_comparison.md) |
+| Mamba Baseline D | [Linux CUDA 正式运行](../experiments/mamba_baseline_d_seed42_20261122/README.md) | [独立复算](../experiments/mamba_baseline_d_seed42_20261122/reports/independent_verification.json) · [四模型比较](../experiments/mamba_baseline_d_seed42_20261122/reports/four_model_comparison.md) |
+| CNN SE 消融 | [九组原始指标入口](cnn_ablation_20261122/results.csv) · [前置审计](cnn_ablation_audit_20261122/README.md) | [完整报告](cnn_ablation_20261122/README.md) · [A42 重建与 B42/C42 直录](cnn_ablation_20261122/independent_seed42.json) · [配对图](cnn_ablation_20261122/paired_differences.png) |
+| GRU Task03 | [三种子运行入口、配置、日志表和清单](gru_multiseed_task03_20261123/README.md) | [独立复算与工程验收](gru_multiseed_task03_20261123/acceptance.md) · [汇总与混淆矩阵](gru_multiseed_task03_20261123/comparison.md) |
+| 第四次学习规划 | [最终归档](fourth_plan_final_archive_20261123/README.md) · [48 题台账](fourth_plan_final_archive_20261123/question_mapping.csv) | [最终 PDF](fourth_plan_final_archive_20261123/report.pdf) · [历史初稿](chapter06_lesson01_research_draft/README.md) · [A42 证据修订](chapter06_lesson02_task01_revision/README.md) · [独立勘误](../docs/fourth_plan_archive_errata.md) |
+| 历史失败与整改 | [首次下载失败](day01_data_20261026_run01/download_provenance.json) · [首次序列化失败](day01_data_20261026_run02/audit/FAILED_ATTEMPT_DO_NOT_USE.txt) · [Mamba 早期 L0](mamba_l0_20261122/README.md) · [Task03 恢复](gru_multiseed_task03_20261123/recovery.md) | [整改与复现](remediation_round1_20261031/README.md) · [Day 01 启动](day01_startup_check.md) · [同步前检查](day01_github_preflight_20261028_run01/preflight.md) · [同步回执](day01_github_sync_20261028_run01/sync_receipt.md) |
 
-[第六章 Lesson 01 项目 Skill 调用](chapter06_lesson01_research_draft/README.md)，包含四模型、CNN 九组消融的中文 LaTeX、PDF、数据核对和复现说明。
+## 公开证据和本地原件
 
-第五章实验见[CNN SE 与等参数量残差 MLP 的三种子消融](cnn_ablation_20261122/README.md)及[实施前审计](cnn_ablation_audit_20261122/README.md)。
+- CSV 历史、配置和测试指标用于追溯原运行。复算 JSON 是后续依据冻结预测、标签或归档记录进行的核对。统计、图和 PDF 是派生产物。
+- 原始数据与运行权重、机器 stdout 和大体积预测文件应留在当地。Task03 的逐样本预测与检查点原件在服务器。60 项文件清单中 **18 项公开副本可直接复核，42 项服务器文件尚未独立重新核验（PARTIAL）**。
+- 失败记录保留原含义。Day 01 的 `audit/` 为首次序列化失败现场；有效结果在 `audit02/`。历史 Git 状态和机器路径按归档时间解读。[课程原始归档](day01_archive_20261028_run01/archive_report.md)
 
-最新正式实验为 [Mamba D Seed42](../experiments/mamba_baseline_d_seed42_20261122/README.md)，包含 [四模型对照](../experiments/mamba_baseline_d_seed42_20261122/reports/four_model_comparison.md)。
-
-[Transformer C](transformer_baseline_seed42_20261122_run01/execution_report.md) · [三模型比较](transformer_baseline_seed42_20261122_run01/three_model_comparison.md) · [只读审计](transformer_preflight_20261122/audit_report.md)。CNN/GRU原报告不改。
-
-最新：[GRU Baseline B](gru_baseline_seed42_20261121_run01/execution_report.md) · [实施前CNN配置审计](gru_baseline_preflight_20261121/audit_report.md) · [固定条件CNN—GRU比较](gru_baseline_seed42_20261121_run01/cnn_gru_comparison.md)。历史CNN报告不修改。
-
-最新正式实验：[CNN Baseline A Seed42](cnn_baseline_seed42_20261119_run01/execution_report.md)，含最终测试、曲线与独立复算；待教师验收。
-
-最新工程：[2026-11-11 Day 02 CNN最小验证](day02_cnn_20261111_run01/README.md)，包含真实窗口前向/反向、参数量与未训练checkpoint重载证据；不属于正式训练。
-
-数据复现：[2026-10-31第一轮整改](remediation_round1_20261031/README.md)，包含独立venv全流程的真实运行、旧结果比较、轻量测试及归档复核；与下列历史原始报告分开保存。
-
-| 目的 | 入口 |
-| --- | --- |
-| 数据实践完整结论 | [Day 01数据审计](day01_data_20261026_run02/day01_data_audit.md) |
-| 最终成功运行的机器可读结果 | [audit02/audit_results.json](day01_data_20261026_run02/audit02/audit_results.json) |
-| 独立产物复核 | [independent_verification.json](day01_data_20261026_run02/independent_verification.json) |
-| 官方来源、文件大小与本地哈希 | [download_provenance.json](day01_data_20261026_run02/download_provenance.json) |
-| 总体类别分布 | [class_distribution.csv](day01_data_20261026_run02/audit02/class_distribution.csv) |
-
-跨文件的当前约定另有[数据协议](../docs/data_protocol.md)；可直接在线查看的图及小型元数据位于[docs/day01](../docs/day01/README.md)。
-
-## 如何区分成功运行与失败现场
-
-- `day01_data_20261026_run01/`：第一次下载因网络权限失败，保留真实来源记录。
-- `day01_data_20261026_run02/`：官方下载成功；其 `audit/` 是首次序列化失败现场，**最终成功结果在 `audit02/`**。
-- 当日有效处理产物为本地 `data/processed/day01_data_20261026_run02_audit02/`，不使用首次失败目录内的不完整参数。
-
-## 历史执行档案
-
-<details>
-<summary>环境、教学归档与Git同步记录</summary>
-
-- [启动环境检查](day01_startup_check.md)。
-- [数据执行日志索引](day01_data_20261026_run02/execution_log.md)。
-- [2026-10-28正式归档报告](day01_archive_20261028_run01/archive_report.md)：当次归档完成时尚未配置remote。
-- [同步前检查](day01_github_preflight_20261028_run01/preflight.md)：用户提供地址之前的状态。
-- [后续成功同步回执](day01_github_sync_20261028_run01/sync_receipt.md)：说明上述阻塞后如何完成首次同步。
-
-</details>
-
-## 可移植性与校验边界
-
-历史文件中的绝对路径和被忽略的 `data/`、`outputs/`、`logs/` 链接仅在原执行机器上有效，不把本机路径改写为不存在的GitHub文件。按[复现指南](../docs/reproducing_day01.md)可在新的运行目录生成自己的产物。
-
-历史哈希清单对应产生时的文件字节。README、导航和代码后续可能正常演进，因此旧的“已有文件未变化”结论有时间边界；不要对旧清单静默重算并冒充原始记录。当前文档导航由独立入口检查脚本验证。
+[PR #1 最终交付清单](repository_organization_20261123/final_release_checklist.md) · [公开安全审计](repository_organization_20261123/security_audit.md) · [新会话 Skill 复核](repository_organization_20261123/skill_verification.md)
